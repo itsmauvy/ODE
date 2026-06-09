@@ -649,7 +649,7 @@ body {
 /* ── SUMMER BANNER ── */
 .summer-banner {
   display: flex;
-  height: 340px;
+  height: 510px;
   overflow: hidden;
   background: #4a3830;
 }
