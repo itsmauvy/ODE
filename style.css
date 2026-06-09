@@ -666,24 +666,25 @@ body {
   z-index: 2;
 }
 .summer-eyebrow {
-  font-size: 10px;
+  font-size: 11px;
   letter-spacing: 0.22em;
   color: rgba(255,255,255,0.45);
   text-transform: uppercase;
 }
 .summer-heading {
   font-family: 'Jost', sans-serif;
-  font-size: 22px;
+  font-size: 30px;
   font-weight: 400;
-  letter-spacing: 0.05em;
-  line-height: 1.5;
+  letter-spacing: 0.04em;
+  line-height: 1.4;
   color: var(--white);
+  white-space: pre-line;
 }
 .summer-desc {
-  font-size: 12.5px;
-  line-height: 1.85;
+  font-size: 14px;
+  line-height: 1.9;
   color: rgba(255,255,255,0.6);
-  margin-top: 2px;
+  margin-top: 4px;
 }
 .summer-btn {
   display: inline-block;
