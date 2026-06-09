@@ -654,7 +654,7 @@ body {
   background: #4a3830;
 }
 .summer-left {
-  flex: 0 0 390px;
+  flex: 0 0 450px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -698,12 +698,11 @@ body {
   cursor: none;
   width: fit-content;
   border: 1px solid rgba(255,255,255,0.55);
-  transition: background 0.25s, border-color 0.25s, letter-spacing 0.25s;
+  transition: background 0.25s, border-color 0.25s;
 }
 .summer-btn:hover {
   background: rgba(255,255,255,0.12);
   border-color: var(--white);
-  letter-spacing: 0.22em;
 }
 
 /* 우측 Swiper */
