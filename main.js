@@ -2,6 +2,112 @@ gsap.registerPlugin(ScrollTrigger, CustomEase);
 
 CustomEase.create("expo", "0.16, 1, 0.3, 1");
 
+/* ── MEGA MENU ── */
+const megaProducts = [
+  { id:'1', name:'POCKET BLUSH',        sub:'Soft Balm Blush',     img:'images/ode pocket blush_close.png', cat:['all','best','face'],      badge:'BEST' },
+  { id:'2', name:'POCKET TINT',         sub:'Dewy Lip Tint',       img:'images/ode lip tint.png',           cat:['all','best','new','lip'], badge:'NEW'  },
+  { id:'3', name:'SOLID PERFUME STICK', sub:'Pocket Perfume Stick',img:'images/ode solid perfume stick .png', cat:['all','fragrance','etc'], badge:''    },
+];
+
+const megaMenu     = document.getElementById('mega-menu');
+const megaProdsEl  = document.getElementById('mega-products');
+const megaTabs     = document.querySelectorAll('.mega-tab');
+const navShop      = document.getElementById('nav-shop');
+
+let menuTimer = null;
+
+const collections = [
+  { name:'FIG COLLECTION',       img:'images/fig collection.jpg' },
+  { name:'GUAVA COLLECTION',     img:'images/guava collection.jpg' },
+  { name:'TANGERINE COLLECTION', img:'images/tangerine collection.jpg' },
+  { name:'CHERRY COLLECTION',    img:'images/cherry collection.jpg' },
+];
+
+function renderMegaProducts(cat) {
+  if (cat === 'collection') {
+    megaProdsEl.innerHTML = `<div class="mega-collection-grid">
+      ${collections.map(c => `
+        <div class="mega-col-card">
+          <img src="${c.img}" alt="${c.name}" />
+        </div>
+      `).join('')}
+    </div>`;
+    return;
+  }
+  const list = cat === 'all' ? megaProducts : megaProducts.filter(p => p.cat.includes(cat));
+  if (!list.length) {
+    megaProdsEl.innerHTML = `<p style="color:var(--text-light);font-size:13px;padding-top:16px;">해당 카테고리의 제품이 없습니다.</p>`;
+    return;
+  }
+  megaProdsEl.innerHTML = list.map(p => `
+    <div class="mega-card" data-id="${p.id}">
+      ${p.badge ? `<span class="mega-card-badge ${p.badge==='NEW'?'new-badge':''}">${p.badge}</span>` : '<div style="height:20px;margin-bottom:14px"></div>'}
+      <img class="mega-card-img" src="${p.img}" alt="${p.name}" />
+      <div class="mega-card-name">${p.name}</div>
+      <div class="mega-card-sub">${p.sub}</div>
+    </div>
+  `).join('');
+}
+
+function openMega() {
+  clearTimeout(menuTimer);
+  megaMenu.classList.add('open');
+  renderMegaProducts('all');
+  megaTabs.forEach(t => t.classList.toggle('active', t.dataset.cat === 'all'));
+}
+
+function closeMega() {
+  menuTimer = setTimeout(() => megaMenu.classList.remove('open'), 120);
+}
+
+navShop.addEventListener('mouseenter', openMega);
+navShop.addEventListener('mouseleave', closeMega);
+
+megaMenu.addEventListener('mouseenter', () => clearTimeout(menuTimer));
+megaMenu.addEventListener('mouseleave', closeMega);
+
+megaTabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+    megaTabs.forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    renderMegaProducts(tab.dataset.cat);
+  });
+});
+
+/* ── FILM GRAIN ── */
+(function () {
+  const canvas = document.getElementById('hero-grain');
+  const ctx    = canvas.getContext('2d');
+  let   animId;
+
+  function resize() {
+    canvas.width  = canvas.offsetWidth;
+    canvas.height = canvas.offsetHeight;
+  }
+
+  function drawGrain() {
+    const w = canvas.width;
+    const h = canvas.height;
+    const imageData = ctx.createImageData(w, h);
+    const data      = imageData.data;
+
+    for (let i = 0; i < data.length; i += 4) {
+      const v = (Math.random() * 255) | 0;
+      data[i]     = v;
+      data[i + 1] = v;
+      data[i + 2] = v;
+      data[i + 3] = 255;
+    }
+
+    ctx.putImageData(imageData, 0, 0);
+    animId = requestAnimationFrame(drawGrain);
+  }
+
+  resize();
+  window.addEventListener('resize', resize);
+  drawGrain();
+})();
+
 /* ── CURSOR ── */
 const cursor   = document.getElementById('cursor');
 const follower = document.getElementById('cursor-follower');
@@ -9,12 +115,12 @@ let mx = 0, my = 0, fx = 0, fy = 0;
 
 window.addEventListener('mousemove', e => {
   mx = e.clientX; my = e.clientY;
-  gsap.to(cursor, { x: mx, y: my, duration: 0.08, ease: 'none' });
+  gsap.set(cursor, { x: mx, y: my }); // 점은 즉시 이동
 });
 
 (function followLoop() {
-  fx += (mx - fx) * 0.12;
-  fy += (my - fy) * 0.12;
+  fx += (mx - fx) * 0.15;
+  fy += (my - fy) * 0.15;
   gsap.set(follower, { x: fx, y: fy });
   requestAnimationFrame(followLoop);
 })();
@@ -194,8 +300,10 @@ function showToast(msg) {
 document.querySelectorAll('.quick-add').forEach(btn => {
   btn.addEventListener('click', e => {
     e.stopPropagation();
-    const card  = btn.closest('.product-card');
-    addToBag(card.dataset.id, card.dataset.name, +card.dataset.price);
+    const card    = btn.closest('.product-card');
+    const variant = card.querySelector('.product-desc')?.textContent.trim();
+    const name    = `${card.dataset.name}${variant ? ' · ' + variant : ''}`;
+    addToBag(card.dataset.id, name, +card.dataset.price);
   });
 });
 

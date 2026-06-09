@@ -11,6 +11,19 @@
 </head>
 <body>
 
+  <!-- SVG NOISE FILTER -->
+  <svg style="display:none">
+    <filter id="card-noise" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="4" stitchTiles="stitch" result="noise"/>
+      <feColorMatrix type="saturate" values="0" in="noise" result="grayNoise"/>
+      <feComponentTransfer in="grayNoise" result="fadedNoise">
+        <feFuncA type="linear" slope="0.18"/>
+      </feComponentTransfer>
+      <feBlend in="SourceGraphic" in2="fadedNoise" mode="soft-light" result="blend"/>
+      <feComposite in="blend" in2="SourceGraphic" operator="in"/>
+    </filter>
+  </svg>
+
   <!-- CURSOR -->
   <div class="cursor" id="cursor"></div>
   <div class="cursor-follower" id="cursor-follower"></div>
@@ -24,12 +37,37 @@
   <!-- HEADER -->
   <header class="header" id="header">
     <nav class="nav-left">
-      <a href="#shop" class="nav-link">SHOP</a>
-      <a href="#collection" class="nav-link">COLLECTION</a>
+      <div class="nav-item" id="nav-shop">
+        <a href="#shop" class="nav-link">SHOP</a>
+      </div>
       <a href="#about" class="nav-link">ABOUT</a>
+      <a href="#stockist" class="nav-link">STOCKIST</a>
     </nav>
+
+    <!-- MEGA DROPDOWN -->
+    <div class="mega-menu" id="mega-menu">
+      <div class="mega-inner">
+        <!-- 서브 카테고리 탭 -->
+        <div class="mega-tabs">
+          <button class="mega-tab active" data-cat="all">ALL</button>
+          <button class="mega-tab" data-cat="best">BEST</button>
+          <button class="mega-tab" data-cat="new">NEW</button>
+          <button class="mega-tab" data-cat="lip">LIP</button>
+          <button class="mega-tab" data-cat="face">FACE</button>
+          <button class="mega-tab" data-cat="fragrance">FRAGRANCE</button>
+          <button class="mega-tab" data-cat="etc">ETC</button>
+          <div class="mega-tab-divider"></div>
+          <button class="mega-tab collection-tab" data-cat="collection">COLLECTION</button>
+        </div>
+        <!-- 제품 그리드 -->
+        <div class="mega-products" id="mega-products">
+          <!-- JS로 채워짐 -->
+        </div>
+        <a href="#shop" class="mega-shop-all">SHOP ALL COLLECTIONS →</a>
+      </div>
+    </div>
     <a href="#" class="logo">
-      <img src="ode logo.png" alt="ODE" />
+      <img src="images/ode logo.png" alt="ODE" />
     </a>
     <nav class="nav-right">
       <a href="#" class="nav-link search-btn">SEARCH</a>
@@ -41,7 +79,7 @@
   <!-- HERO -->
   <section class="hero" id="hero">
     <div class="hero-media">
-      <img src="ode hero1.png" alt="ODE" class="hero-img" id="hero-img" />
+      <img src="images/ode hero1.png" alt="ODE" class="hero-img" id="hero-img" />
       <div class="hero-overlay"></div>
     </div>
     <div class="hero-content">
@@ -58,6 +96,7 @@
         </svg>
       </a>
     </div>
+    <canvas class="hero-grain" id="hero-grain"></canvas>
     <div class="hero-scroll-hint" id="hero-scroll">
       <span>SCROLL</span>
       <div class="scroll-line"></div>
@@ -76,8 +115,8 @@
 
       <div class="product-card reveal-card" data-id="1" data-name="POCKET BLUSH" data-price="23000">
         <div class="product-img-wrap">
-          <img src="ode pocket blush_close.png" alt="Pocket Blush" class="product-img main-img" />
-          <img src="ode pb model.png" alt="Pocket Blush Model" class="product-img hover-img" />
+          <img src="images/ode pocket blush_close.png" alt="Pocket Blush" class="product-img main-img" />
+          <img src="images/ode pb model.png" alt="Pocket Blush Model" class="product-img hover-img" />
           <div class="card-overlay">
             <button class="quick-add" data-id="1">QUICK ADD</button>
           </div>
@@ -88,14 +127,14 @@
             <span class="product-price">23,000원</span>
           </div>
           <p class="product-sub">Soft Balm Blush</p>
-          <p class="product-desc">피그 루스</p>
+          <p class="product-desc">피그 무스</p>
         </div>
       </div>
 
       <div class="product-card reveal-card" data-id="2" data-name="POCKET TINT" data-price="18000">
         <div class="product-img-wrap">
-          <img src="ode lip tint.png" alt="Pocket Tint" class="product-img main-img" />
-          <img src="ode pt model.png" alt="Pocket Tint Model" class="product-img hover-img" />
+          <img src="images/ode lip tint.png" alt="Pocket Tint" class="product-img main-img" />
+          <img src="images/ode pt model.png" alt="Pocket Tint Model" class="product-img hover-img" />
           <div class="card-overlay">
             <button class="quick-add" data-id="2">QUICK ADD</button>
           </div>
@@ -112,8 +151,8 @@
 
       <div class="product-card reveal-card" data-id="3" data-name="SOLID PERFUME STICK" data-price="25000">
         <div class="product-img-wrap">
-          <img src="ode solid perfume stick .png" alt="Solid Perfume Stick" class="product-img main-img" />
-          <img src="ode sp model.png" alt="Solid Perfume Model" class="product-img hover-img" />
+          <img src="images/ode solid perfume stick .png" alt="Solid Perfume Stick" class="product-img main-img" />
+          <img src="images/ode sp model.png" alt="Solid Perfume Model" class="product-img hover-img" />
           <div class="card-overlay">
             <button class="quick-add" data-id="3">QUICK ADD</button>
           </div>
@@ -124,7 +163,7 @@
             <span class="product-price">25,000원</span>
           </div>
           <p class="product-sub">Pocket Perfume Stick</p>
-          <p class="product-desc">텐더 터치</p>
+          <p class="product-desc">우디 피그</p>
         </div>
       </div>
 
@@ -135,7 +174,7 @@
   <section class="collection" id="collection">
     <div class="collection-bg" id="col-bg"></div>
     <div class="collection-content">
-      <p class="section-tag col-reveal">ODE COLLECTION</p>
+      <p class="section-tag col-reveal">ODE SUMMER COLLECTION</p>
       <h2 class="collection-title col-reveal">
         <em>Carry your glow,</em><br/>everywhere you go.
       </h2>
