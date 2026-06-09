@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PRODUCT — ODE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="product.css" />
+  <link rel="stylesheet" href="cart.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header" id="header">
+    <nav class="nav-left">
+      <div class="nav-item" id="nav-shop">
+        <a href="#" class="nav-link">SHOP</a>
+      </div>
+      <a href="index.html#about" class="nav-link">ABOUT</a>
+      <a href="index.html#stockist" class="nav-link">STOCKIST</a>
+    </nav>
+    <a href="index.html" class="logo">
+      <img src="images/ode logo.png" alt="ODE" />
+    </a>
+    <nav class="nav-right">
+      <div class="nav-search" id="nav-search">
+        <span class="nav-search-label" id="nav-search-label">SEARCH</span>
+        <div class="nav-search-field">
+          <svg class="nav-search-icon" width="13" height="13" viewBox="0 0 20 20" fill="none">
+            <circle cx="8.5" cy="8.5" r="5.5" stroke="currentColor" stroke-width="1.4"/>
+            <path d="M13 13l4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+          </svg>
+          <input class="nav-search-input" id="nav-search-input" type="text" autocomplete="off" spellcheck="false" placeholder="포컷블러셔" />
+        </div>
+      </div>
+      <a href="login.html" class="nav-link">LOGIN</a>
+      <a href="#" class="nav-link" id="bag-btn">BAG (<span class="bag-count-el">0</span>)</a>
+    </nav>
+  </header>
+
+  <!-- MEGA DROPDOWN -->
+  <div class="mega-menu" id="mega-menu">
+    <div class="mega-inner">
+      <div class="mega-tabs">
+        <button class="mega-tab active" data-cat="all">ALL</button>
+        <button class="mega-tab" data-cat="best">BEST</button>
+        <button class="mega-tab" data-cat="new">NEW</button>
+        <button class="mega-tab" data-cat="lip">LIP</button>
+        <button class="mega-tab" data-cat="face">FACE</button>
+        <button class="mega-tab" data-cat="fragrance">FRAGRANCE</button>
+        <button class="mega-tab" data-cat="body">BODY</button>
+        <button class="mega-tab" data-cat="etc">ETC</button>
+        <div class="mega-tab-divider"></div>
+        <button class="mega-tab collection-tab" data-cat="collection">COLLECTION</button>
+      </div>
+      <div class="mega-products" id="mega-products"></div>
+      <a href="index.html#shop" class="mega-shop-all">SHOP ALL COLLECTIONS →</a>
+    </div>
+  </div>
+
+  <!-- BAG SIDEBAR -->
+  <div class="bag-overlay" id="bag-overlay"></div>
+  <aside class="bag-sidebar" id="bag-sidebar">
+    <div class="bag-header">
+      <span class="bag-header-count">0 ITEMS</span>
+      <button class="bag-close" id="bag-close">✕</button>
+    </div>
+    <div id="bag-shipping-bar"></div>
+    <div class="bag-body" id="bag-body"></div>
+    <div class="bag-footer" id="bag-footer"></div>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main">
+
+    <!-- LEFT: 이미지 갤러리 -->
+    <div class="gallery">
+      <div class="gallery-main" id="gallery-main">
+        <img class="gallery-main-img" id="gallery-active-img" src="" alt="" />
+      </div>
+      <div class="gallery-thumbs" id="gallery-thumbs"></div>
+    </div>
+
+    <!-- RIGHT: 제품 상세 -->
+    <div class="detail">
+
+      <div class="detail-header">
+        <div class="detail-badges" id="detail-badges"></div>
+        <div class="detail-name-row">
+          <h1 class="detail-name" id="detail-name"></h1>
+        </div>
+        <p class="detail-sub" id="detail-sub"></p>
+      </div>
+
+      <div class="detail-rating">
+        <div class="stars">
+          <span class="star filled">★</span>
+          <span class="star filled">★</span>
+          <span class="star filled">★</span>
+          <span class="star filled">★</span>
+          <span class="star half">★</span>
+        </div>
+        <span class="rating-count" id="rating-count"></span>
+      </div>
+
+      <div class="detail-price-row">
+        <span class="detail-price" id="detail-price"></span>
+        <span class="detail-shipping" id="detail-shipping">50,000원 이상 구매 시 무료배송</span>
+      </div>
+
+      <div class="detail-desc" id="detail-desc"></div>
+
+      <!-- 컬러 드롭다운 -->
+      <div class="color-dropdown-wrap" id="color-dropdown-wrap">
+        <button class="color-dropdown-btn" id="color-dropdown-btn">
+          <span class="color-dropdown-dot" id="color-dropdown-dot"></span>
+          <span class="color-dropdown-label">Color:&nbsp;</span>
+          <span class="color-dropdown-name-group">
+            <span class="color-dropdown-selected" id="color-dropdown-selected"></span>
+            <span class="color-item-badge" id="color-dropdown-btn-badge" style="display:none"></span>
+          </span>
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+        </button>
+        <div class="color-dropdown-list" id="color-dropdown-list"></div>
+      </div>
+
+      <!-- 스와치 -->
+      <div class="detail-options" id="detail-options"></div>
+
+      <!-- 수량 + 합계 -->
+      <div class="detail-qty-row">
+        <div class="qty-control">
+          <button class="qty-btn" id="qty-minus">−</button>
+          <span class="qty-num" id="qty-num">1</span>
+          <button class="qty-btn" id="qty-plus">+</button>
+        </div>
+        <div class="detail-total">
+          합계 <strong id="detail-total">0원</strong>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="detail-cta">
+        <button class="btn-cart" id="btn-cart">ADD TO CART</button>
+        <button class="btn-buy" id="btn-buy">BUY NOW</button>
+      </div>
+
+      <!-- 배송 안내 -->
+      <div class="detail-info">
+        <div class="info-row">
+          <span class="info-label">배송</span>
+          <span class="info-val">일반배송 · 2–3일 이내 출고<br/><em>50,000원 이상 무료배송</em></span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">교환/반품</span>
+          <span class="info-val">수령 후 7일 이내 가능</span>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+<div class="toast" id="toast"></div>
+<script src="cart.js"></script>
+<script src="nav.js"></script>
+<script src="product.js"></script>
+</body>
+</html>

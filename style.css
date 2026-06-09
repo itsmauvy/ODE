@@ -215,12 +215,14 @@ body {
   width: 100%;
 }
 .mega-card {
-  cursor: auto;
+  cursor: pointer;
   padding: 20px;
   background: var(--beige-light);
   border-radius: 16px;
   transition: background 0.2s;
   position: relative;
+  text-decoration: none;
+  display: block;
 }
 .mega-card:hover { background: var(--beige); }
 .mega-card-badge {
@@ -676,12 +678,12 @@ body {
 }
 .summer-heading {
   font-family: 'Jost', sans-serif;
-  font-size: 36px;
+  font-size: 30px;
   font-weight: 400;
   letter-spacing: 0.04em;
   line-height: 1.4;
   color: var(--white);
-  white-space: pre-line;
+  white-space: nowrap;
 }
 .summer-desc {
   font-size: 16px;
@@ -982,7 +984,7 @@ body {
 .nav-search-result-sub { font-size: 11px; color: var(--text-light); margin-top: 2px; font-weight: 300; }
 .nav-search-no-result { padding: 10px 0; font-size: 11px; color: var(--text-light); }
 
-/* ── BAG SIDEBAR ── */
+/* ── BAG SIDEBAR (moved to cart.css) ── */
 .bag-overlay {
   display: none;
   position: fixed;

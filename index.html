@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="cart.css" />
 </head>
 <body>
 
@@ -58,7 +59,7 @@
         </div>
       </div>
       <a href="login.html" class="nav-link" id="login-btn">LOGIN</a>
-      <a href="#" class="nav-link" id="bag-btn">BAG (<span id="bag-count">0</span>)</a>
+      <a href="#" class="nav-link" id="bag-btn">BAG (<span class="bag-count-el">0</span>)</a>
     </nav>
   </header>
 
@@ -96,7 +97,7 @@
         <span class="line italic">물드는 생기</span>
       </h1>
       <p class="hero-sub" id="hero-sub">FIG MOUSSE POCKET BLUSHER</p>
-      <a href="#shop" class="hero-cta" id="hero-cta">
+      <a href="product.html?id=1&color=0" class="hero-cta" id="hero-cta">
         <span>SHOP NOW</span>
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
           <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1"/>
@@ -120,9 +121,9 @@
 
     <div class="product-grid">
 
-      <div class="product-card reveal-card" data-id="1" data-name="POCKET BLUSH" data-price="23000">
+      <div class="product-card reveal-card" data-id="1" data-name="POCKET BLUSH" data-price="23000" onclick="location.href='product.html?id=1'">
         <div class="product-img-wrap">
-          <img src="images/ode pocket blush_close.png" alt="Pocket Blush" class="product-img main-img" />
+          <img src="images/blush_figmousse.png" alt="Pocket Blush" class="product-img main-img" />
           <img src="images/ode pb model.png" alt="Pocket Blush Model" class="product-img hover-img" />
           <div class="card-overlay">
             <button class="quick-add" data-id="1">QUICK ADD</button>
@@ -138,7 +139,7 @@
         </div>
       </div>
 
-      <div class="product-card reveal-card" data-id="2" data-name="POCKET TINT" data-price="18000">
+      <div class="product-card reveal-card" data-id="2" data-name="POCKET TINT" data-price="18000" onclick="location.href='product.html?id=2'">
         <div class="product-img-wrap">
           <img src="images/ode lip tint.png" alt="Pocket Tint" class="product-img main-img" />
           <img src="images/ode pt model.png" alt="Pocket Tint Model" class="product-img hover-img" />
@@ -156,7 +157,7 @@
         </div>
       </div>
 
-      <div class="product-card reveal-card" data-id="3" data-name="SOLID PERFUME STICK" data-price="25000">
+      <div class="product-card reveal-card" data-id="3" data-name="SOLID PERFUME STICK" data-price="25000" onclick="location.href='product.html?id=3'">
         <div class="product-img-wrap">
           <img src="images/ode solid perfume stick .png" alt="Solid Perfume Stick" class="product-img main-img" />
           <img src="images/ode sp model new.png" alt="Solid Perfume Model" class="product-img hover-img" />
@@ -189,14 +190,14 @@
     <div class="summer-right">
       <div class="swiper summer-swiper">
         <div class="swiper-wrapper">
-          <div class="swiper-slide summer-slide summer-slide--swap"><img class="slide-main" src="images/ode spf eye patch.jpg" alt="SPF Eye Patch" /><img class="slide-hover" src="images/ode eye patch_nobg.png" alt="SPF Eye Patch Product" /><div class="slide-overlay"><span class="slide-name">SPF Eye Patch</span></div></div>
-          <div class="swiper-slide summer-slide summer-slide--swap"><img class="slide-main" src="images/ode pouch model.png" alt="Pouch Model" /><img class="slide-hover" src="images/ode pouch_nobg.png" alt="Pouch Product" /><div class="slide-overlay"><span class="slide-name">Pouch</span></div></div>
-          <div class="swiper-slide summer-slide summer-slide--swap"><img class="slide-main" src="images/coconut blush_model.jpg" alt="Coconut Blush Model" /><img class="slide-hover" src="images/coconut pocket blush 1.png" alt="Coconut Pocket Blush" /><div class="slide-overlay"><span class="slide-name">Coconut Pocket Blush</span></div></div>
-          <div class="swiper-slide summer-slide summer-slide--swap"><img class="slide-main" src="images/ode body mist.jpg" alt="Body Mist" /><img class="slide-hover" src="images/ode body mist 1.png" alt="Body Mist Product" /><div class="slide-overlay"><span class="slide-name">Body Mist</span></div></div>
-          <div class="swiper-slide summer-slide summer-slide--swap"><img class="slide-main" src="images/ode spf eye patch.jpg" alt="SPF Eye Patch" /><img class="slide-hover" src="images/ode eye patch_nobg.png" alt="SPF Eye Patch Product" /><div class="slide-overlay"><span class="slide-name">SPF Eye Patch</span></div></div>
-          <div class="swiper-slide summer-slide summer-slide--swap"><img class="slide-main" src="images/ode pouch model.png" alt="Pouch Model" /><img class="slide-hover" src="images/ode pouch_nobg.png" alt="Pouch Product" /><div class="slide-overlay"><span class="slide-name">Pouch</span></div></div>
-          <div class="swiper-slide summer-slide summer-slide--swap"><img class="slide-main" src="images/coconut blush_model.jpg" alt="Coconut Blush Model" /><img class="slide-hover" src="images/coconut pocket blush 1.png" alt="Coconut Pocket Blush" /><div class="slide-overlay"><span class="slide-name">Coconut Pocket Blush</span></div></div>
-          <div class="swiper-slide summer-slide summer-slide--swap"><img class="slide-main" src="images/ode body mist.jpg" alt="Body Mist" /><img class="slide-hover" src="images/ode body mist 1.png" alt="Body Mist Product" /><div class="slide-overlay"><span class="slide-name">Body Mist</span></div></div>
+          <div class="swiper-slide summer-slide summer-slide--swap" onclick="location.href='product.html?id=5'"><img class="slide-main" src="images/ode spf eye patch.jpg" alt="SPF Eye Patch" /><img class="slide-hover" src="images/ode eye patch_nobg.png" alt="SPF Eye Patch Product" /><div class="slide-overlay"><span class="slide-name">SPF Eye Patch</span></div></div>
+          <div class="swiper-slide summer-slide summer-slide--swap" onclick="location.href='product.html?id=6'"><img class="slide-main" src="images/ode pouch model.png" alt="Pouch Model" /><img class="slide-hover" src="images/ode pouch_nobg.png" alt="Pouch Product" /><div class="slide-overlay"><span class="slide-name">Pouch</span></div></div>
+          <div class="swiper-slide summer-slide summer-slide--swap" onclick="location.href='product.html?id=1&color=1'"><img class="slide-main" src="images/coconut blush_model.jpg" alt="Coconut Blush Model" /><img class="slide-hover" src="images/coconut pocket blush 1.png" alt="Coconut Pocket Blush" /><div class="slide-overlay"><span class="slide-name">Coconut Pocket Blush</span></div></div>
+          <div class="swiper-slide summer-slide summer-slide--swap" onclick="location.href='product.html?id=4'"><img class="slide-main" src="images/ode body mist.jpg" alt="Body Mist" /><img class="slide-hover" src="images/ode body mist 1.png" alt="Body Mist Product" /><div class="slide-overlay"><span class="slide-name">Body Mist</span></div></div>
+          <div class="swiper-slide summer-slide summer-slide--swap" onclick="location.href='product.html?id=5'"><img class="slide-main" src="images/ode spf eye patch.jpg" alt="SPF Eye Patch" /><img class="slide-hover" src="images/ode eye patch_nobg.png" alt="SPF Eye Patch Product" /><div class="slide-overlay"><span class="slide-name">SPF Eye Patch</span></div></div>
+          <div class="swiper-slide summer-slide summer-slide--swap" onclick="location.href='product.html?id=6'"><img class="slide-main" src="images/ode pouch model.png" alt="Pouch Model" /><img class="slide-hover" src="images/ode pouch_nobg.png" alt="Pouch Product" /><div class="slide-overlay"><span class="slide-name">Pouch</span></div></div>
+          <div class="swiper-slide summer-slide summer-slide--swap" onclick="location.href='product.html?id=1&color=1'"><img class="slide-main" src="images/coconut blush_model.jpg" alt="Coconut Blush Model" /><img class="slide-hover" src="images/coconut pocket blush 1.png" alt="Coconut Pocket Blush" /><div class="slide-overlay"><span class="slide-name">Coconut Pocket Blush</span></div></div>
+          <div class="swiper-slide summer-slide summer-slide--swap" onclick="location.href='product.html?id=4'"><img class="slide-main" src="images/ode body mist.jpg" alt="Body Mist" /><img class="slide-hover" src="images/ode body mist 1.png" alt="Body Mist Product" /><div class="slide-overlay"><span class="slide-name">Body Mist</span></div></div>
         </div>
       </div>
     </div>
@@ -249,9 +250,10 @@
   <div class="bag-overlay" id="bag-overlay"></div>
   <aside class="bag-sidebar" id="bag-sidebar">
     <div class="bag-header">
-      <h3>BAG</h3>
+      <span class="bag-header-count">0 ITEMS</span>
       <button class="bag-close" id="bag-close">✕</button>
     </div>
+    <div id="bag-shipping-bar"></div>
     <div class="bag-body" id="bag-body"></div>
     <div class="bag-footer" id="bag-footer"></div>
   </aside>
@@ -268,6 +270,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/CustomEase.min.js"></script>
+  <script src="cart.js"></script>
+  <script src="nav.js"></script>
   <script src="main.js"></script>
 </body>
 </html>

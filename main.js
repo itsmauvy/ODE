@@ -2,99 +2,6 @@ gsap.registerPlugin(ScrollTrigger, CustomEase);
 
 CustomEase.create("expo", "0.16, 1, 0.3, 1");
 
-/* ── MEGA MENU ── */
-const megaProducts = [
-  { id:'1', name:'POCKET BLUSH',        sub:'Soft Balm Blush',      img:'images/ode pocket blush_close.png',    cat:['all','best','face'],                badge:'BEST' },
-  { id:'2', name:'POCKET TINT',         sub:'Dewy Lip Tint',        img:'images/ode lip tint.png',              cat:['all','best','lip'],                 badge:''     },
-  { id:'3', name:'SOLID PERFUME STICK', sub:'Pocket Perfume Stick', img:'images/ode solid perfume stick .png',  cat:['all','fragrance'],                  badge:''     },
-  { id:'4', name:'BODY MIST',           sub:'Coconut Body Mist',    img:'images/ode body mist 1.png',           cat:['all','body','new'],                 badge:'NEW'  },
-  { id:'5', name:'SPF EYE PATCH',       sub:'SPF Eye Patch',        img:'images/ode eye patch_nobg.png',        cat:['all','face','new'],                 badge:'NEW'  },
-  { id:'6', name:'POUCH',               sub:'ODE Pouch',            img:'images/ode pouch_nobg.png',            cat:['all','etc','new'],                  badge:'NEW'  },
-  { id:'7', name:'COCONUT POCKET BLUSH',sub:'Soft Balm Blush',      img:'images/coconut pocket blush 1.png',    cat:['all','face','new'],                 badge:'NEW'  },
-];
-
-const megaMenu     = document.getElementById('mega-menu');
-const megaProdsEl  = document.getElementById('mega-products');
-const megaTabs     = document.querySelectorAll('.mega-tab');
-const navShop      = document.getElementById('nav-shop');
-
-let menuTimer = null;
-
-const collections = [
-  { name:'COCONUT COLLECTION',    img:'images/coconut collection.jpg',    badge:'NEW' },
-  { name:'FIG COLLECTION',        img:'images/fig collection.jpg' },
-  { name:'GUAVA COLLECTION',      img:'images/guava collection.jpg' },
-  { name:'TANGERINE COLLECTION',  img:'images/tangerine collection.jpg' },
-  { name:'CHERRY COLLECTION',     img:'images/cherry collection.jpg' },
-  { name:'WATERMELON COLLECTION', img:'images/watermelon collection.jpg' },
-];
-
-const shopAllLabels = {
-  all:        'SHOP ALL',
-  best:       'SHOP BEST SELLERS',
-  new:        'SHOP NEW ARRIVALS',
-  lip:        'SHOP LIP',
-  face:       'SHOP FACE',
-  fragrance:  'SHOP FRAGRANCE',
-  body:       'SHOP BODY',
-  etc:        'SHOP ETC',
-  collection: 'SHOP ALL COLLECTIONS',
-};
-
-function renderMegaProducts(cat) {
-  const shopAllEl = document.querySelector('.mega-shop-all');
-  if (shopAllEl) shopAllEl.textContent = (shopAllLabels[cat] || 'SHOP ALL') + ' →';
-
-  if (cat === 'collection') {
-    megaProdsEl.innerHTML = `<div class="mega-collection-grid">
-      ${collections.map(c => `
-        <div class="mega-col-card">
-          <img src="${c.img}" alt="${c.name}" />
-          ${c.badge ? `<span class="mega-col-new-badge">${c.badge}</span>` : ''}
-        </div>
-      `).join('')}
-    </div>`;
-    return;
-  }
-  const list = (cat === 'all' ? megaProducts : megaProducts.filter(p => p.cat.includes(cat))).slice(0, 4);
-  if (!list.length) {
-    megaProdsEl.innerHTML = `<p style="color:var(--text-light);font-size:13px;padding-top:16px;">해당 카테고리의 제품이 없습니다.</p>`;
-    return;
-  }
-  megaProdsEl.innerHTML = list.map(p => `
-    <div class="mega-card" data-id="${p.id}">
-      ${p.badge ? `<span class="mega-card-badge ${p.badge==='NEW'?'new-badge':''}">${p.badge}</span>` : '<div style="height:20px;margin-bottom:14px"></div>'}
-      <img class="mega-card-img" src="${p.img}" alt="${p.name}" />
-      <div class="mega-card-name">${p.name}</div>
-      <div class="mega-card-sub">${p.sub}</div>
-    </div>
-  `).join('');
-}
-
-function openMega() {
-  clearTimeout(menuTimer);
-  megaMenu.classList.add('open');
-  renderMegaProducts('all');
-  megaTabs.forEach(t => t.classList.toggle('active', t.dataset.cat === 'all'));
-}
-
-function closeMega() {
-  menuTimer = setTimeout(() => megaMenu.classList.remove('open'), 120);
-}
-
-navShop.addEventListener('mouseenter', openMega);
-navShop.addEventListener('mouseleave', closeMega);
-
-megaMenu.addEventListener('mouseenter', () => clearTimeout(menuTimer));
-megaMenu.addEventListener('mouseleave', closeMega);
-
-megaTabs.forEach(tab => {
-  tab.addEventListener('click', () => {
-    megaTabs.forEach(t => t.classList.remove('active'));
-    tab.classList.add('active');
-    renderMegaProducts(tab.dataset.cat);
-  });
-});
 
 /* ── FILM GRAIN ── */
 (function () {
@@ -246,82 +153,7 @@ ScrollTrigger.create({
 });
 
 /* ── BAG ── */
-const bag = [];
-const bagCountEl  = document.getElementById('bag-count');
-const bagSidebar  = document.getElementById('bag-sidebar');
-const bagOverlay  = document.getElementById('bag-overlay');
-const bagBody     = document.getElementById('bag-body');
-const bagFooter   = document.getElementById('bag-footer');
-const toast       = document.getElementById('toast');
-
-let sidebarOpen = false;
-
-function openBag() {
-  sidebarOpen = true;
-  bagOverlay.classList.add('open');
-  gsap.to(bagSidebar, { x: 0, duration: 0.55, ease: 'expo' });
-  gsap.to(bagOverlay, { backgroundColor: 'rgba(0,0,0,0.28)', duration: 0.4 });
-  renderBag();
-}
-
-function closeBag() {
-  sidebarOpen = false;
-  gsap.to(bagSidebar, {
-    x: '100%', duration: 0.45, ease: 'power3.in',
-    onComplete: () => {
-      bagOverlay.classList.remove('open');
-      gsap.set(bagOverlay, { backgroundColor: 'rgba(0,0,0,0)' });
-    }
-  });
-}
-
-function updateCount() {
-  bagCountEl.textContent = bag.reduce((s, i) => s + i.qty, 0);
-}
-
-function renderBag() {
-  if (!bag.length) {
-    bagBody.innerHTML = '<p class="bag-empty">장바구니가 비어 있습니다.</p>';
-    bagFooter.innerHTML = '';
-    return;
-  }
-  bagBody.innerHTML = bag.map((item, idx) => `
-    <div class="bag-item">
-      <div class="bag-item-left">
-        <span class="bag-item-name">${item.name} × ${item.qty}</span>
-        <span class="bag-item-price">${(item.price * item.qty).toLocaleString()}원</span>
-      </div>
-      <button class="bag-item-remove" data-idx="${idx}">✕</button>
-    </div>
-  `).join('');
-
-  const total = bag.reduce((s, i) => s + i.price * i.qty, 0);
-  bagFooter.innerHTML = `
-    <div class="bag-total">
-      <span>합계</span><span>${total.toLocaleString()}원</span>
-    </div>
-    <button class="bag-checkout" id="checkout-btn">CHECKOUT</button>
-  `;
-
-  bagBody.querySelectorAll('.bag-item-remove').forEach(btn => {
-    btn.addEventListener('click', () => {
-      bag.splice(+btn.dataset.idx, 1);
-      updateCount();
-      renderBag();
-    });
-  });
-
-  document.getElementById('checkout-btn')?.addEventListener('click', () => {
-    alert('결제 페이지로 이동합니다. (데모)');
-  });
-}
-
-function addToBag(id, name, price) {
-  const existing = bag.find(i => i.id === id);
-  existing ? existing.qty++ : bag.push({ id, name, price, qty: 1 });
-  updateCount();
-  showToast(`${name} 담겼습니다.`);
-}
+const toast = document.getElementById('toast');
 
 function showToast(msg) {
   toast.textContent = msg;
@@ -332,78 +164,23 @@ function showToast(msg) {
 document.querySelectorAll('.quick-add').forEach(btn => {
   btn.addEventListener('click', e => {
     e.stopPropagation();
-    const card    = btn.closest('.product-card');
-    const variant = card.querySelector('.product-desc')?.textContent.trim();
-    const name    = `${card.dataset.name}${variant ? ' · ' + variant : ''}`;
-    addToBag(card.dataset.id, name, +card.dataset.price);
+    const card  = btn.closest('.product-card');
+    const pid   = card.dataset.id;
+    const p     = PRODUCT_MAP[pid];
+    if (!p) return;
+    cartAdd({
+      key:   `${pid}_0`,
+      id:    pid,
+      name:  p.name,
+      color: p.defaultColor,
+      price: +card.dataset.price,
+      img:   p.img,
+      qty:   1,
+    });
+    openBag();
   });
 });
 
-document.getElementById('bag-btn').addEventListener('click', e => {
-  e.preventDefault();
-  sidebarOpen ? closeBag() : openBag();
-});
-document.getElementById('bag-close').addEventListener('click', closeBag);
-bagOverlay.addEventListener('click', closeBag);
-
-/* ── SEARCH ── */
-const products = [
-  { id: '1', name: 'POCKET BLUSH',        sub: 'Soft Balm Blush' },
-  { id: '2', name: 'POCKET TINT',         sub: 'Dewy Lip Tint' },
-  { id: '3', name: 'SOLID PERFUME STICK', sub: 'Pocket Perfume Stick' },
-  { id: '4', name: 'BODY MIST',           sub: 'Coconut Body Mist' },
-  { id: '5', name: 'SPF EYE PATCH',       sub: 'SPF Eye Patch' },
-  { id: '6', name: 'POUCH',               sub: 'ODE Pouch' },
-  { id: '7', name: 'COCONUT POCKET BLUSH',sub: 'Soft Balm Blush' },
-];
-
-const navSearch    = document.getElementById('nav-search');
-const navLabel     = document.getElementById('nav-search-label');
-const navInput     = document.getElementById('nav-search-input');
-
-const navResultsEl = document.createElement('div');
-navResultsEl.className = 'nav-search-results';
-navSearch.appendChild(navResultsEl);
-
-function openNavSearch() {
-  navSearch.classList.add('active');
-  setTimeout(() => navInput.focus(), 350);
-}
-function closeNavSearch() {
-  navSearch.classList.remove('active', 'has-text');
-  navInput.value = '';
-  navResultsEl.classList.remove('show');
-  navResultsEl.innerHTML = '';
-}
-
-function runNavSearch(q) {
-  const query = q.trim().toLowerCase();
-  if (!query) { navResultsEl.classList.remove('show'); navResultsEl.innerHTML = ''; return; }
-  const matched = products.filter(p =>
-    p.name.toLowerCase().includes(query) || p.sub.toLowerCase().includes(query)
-  );
-  navResultsEl.classList.add('show');
-  if (!matched.length) {
-    navResultsEl.innerHTML = `<div class="nav-search-no-result">검색 결과가 없습니다.</div>`;
-    return;
-  }
-  navResultsEl.innerHTML = matched.map(p => `
-    <div class="nav-search-result-item">
-      <div class="nav-search-result-name">${p.name}</div>
-      <div class="nav-search-result-sub">${p.sub}</div>
-    </div>
-  `).join('');
-}
-
-navLabel.addEventListener('click', openNavSearch);
-navInput.addEventListener('input', e => {
-  navSearch.classList.toggle('has-text', e.target.value.length > 0);
-  runNavSearch(e.target.value);
-});
-navInput.addEventListener('keydown', e => { if (e.key === 'Escape') closeNavSearch(); });
-document.addEventListener('click', e => {
-  if (!navSearch.contains(e.target)) closeNavSearch();
-});
 
 /* ── SUMMER SWIPER ── */
 new Swiper('.summer-swiper', {
