@@ -2,13 +2,13 @@
 
 /* ── MEGA MENU ── */
 const megaProducts = [
-  { id:'1', name:'POCKET BLUSH',        sub:'Soft Balm Blush',      img:'images/blush_figmousse.png',           cat:['all','best','face'],       badge:'BEST' },
-  { id:'2', name:'POCKET TINT',         sub:'Dewy Lip Tint',        img:'images/ode lip tint.png',              cat:['all','best','lip'],        badge:''     },
-  { id:'3', name:'SOLID PERFUME STICK', sub:'Pocket Perfume Stick', img:'images/ode solid perfume stick .png',  cat:['all','fragrance'],         badge:''     },
-  { id:'4', name:'BODY MIST',           sub:'Coconut Body Mist',    img:'images/ode body mist 1.png',           cat:['all','body','new'],        badge:'NEW'  },
-  { id:'5', name:'SPF EYE PATCH',       sub:'SPF Eye Patch',        img:'images/ode eye patch_nobg.png',        cat:['all','face','new'],        badge:'NEW'  },
-  { id:'6', name:'POUCH',               sub:'ODE Pouch',            img:'images/ode pouch_nobg.png',            cat:['all','etc','new'],         badge:'NEW'  },
-  { id:'7', name:'COCONUT POCKET BLUSH',sub:'Soft Balm Blush',      img:'images/coconut pocket blush 1.png',    cat:['all','face','new'],        badge:'NEW'  },
+  { id:'1', name:'POCKET BLUSH',        sub:'Fig Mousse',           desc:'Soft Balm Blush',      img:'images/ode pocket blush_close.png',    cat:['all','best','face'],       badge:''     },
+  { id:'2', name:'POCKET TINT',         sub:'Pink Guava',           desc:'Dewy Lip Tint',        img:'images/ode lip tint.png',              cat:['all','best','lip'],        badge:''     },
+  { id:'3', name:'SOLID PERFUME STICK', sub:'Pocket Perfume Stick', desc:'Pocket Perfume Stick', img:'images/ode solid perfume stick .png',  cat:['all','fragrance'],         badge:''     },
+  { id:'4', name:'BODY MIST',           sub:'Coconut Body Mist',    desc:'Scented Body Mist',    img:'images/ode body mist 1.png',           cat:['all','body','new'],        badge:''     },
+  { id:'5', name:'SPF EYE PATCH',       sub:'SPF Eye Patch',        desc:'SPF Eye Patch',        img:'images/ode eye patch_nobg.png',        cat:['all','face','new'],        badge:''     },
+  { id:'6', name:'POUCH',               sub:'ODE Pouch',            desc:'ODE Pouch',            img:'images/ode pouch_nobg.png',            cat:['all','etc','new'],         badge:''     },
+  { id:'7', name:'POCKET BLUSH',        sub:'Coconut',              desc:'Soft Balm Blush',      img:'images/coconut pocket blush 1.png',    cat:['all','new'],               badge:''     },
 ];
 
 const collections = [
@@ -54,12 +54,13 @@ document.addEventListener('DOMContentLoaded', () => {
         megaProdsEl.innerHTML = `<p style="color:var(--text-light);font-size:13px;padding-top:16px;">해당 카테고리의 제품이 없습니다.</p>`;
         return;
       }
+      const useColor = cat === 'best' || cat === 'new';
       megaProdsEl.innerHTML = list.map(p => `
         <a class="mega-card" href="product.html?id=${p.id}" data-id="${p.id}">
           ${p.badge ? `<span class="mega-card-badge ${p.badge==='NEW'?'new-badge':''}">${p.badge}</span>` : '<div style="height:20px;margin-bottom:14px"></div>'}
           <img class="mega-card-img" src="${p.img}" alt="${p.name}" />
           <div class="mega-card-name">${p.name}</div>
-          <div class="mega-card-sub">${p.sub}</div>
+          <div class="mega-card-sub">${useColor ? p.sub : p.desc}</div>
         </a>`).join('');
     }
 
