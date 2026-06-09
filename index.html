@@ -43,29 +43,6 @@
       <a href="#about" class="nav-link">ABOUT</a>
       <a href="#stockist" class="nav-link">STOCKIST</a>
     </nav>
-
-    <!-- MEGA DROPDOWN -->
-    <div class="mega-menu" id="mega-menu">
-      <div class="mega-inner">
-        <!-- 서브 카테고리 탭 -->
-        <div class="mega-tabs">
-          <button class="mega-tab active" data-cat="all">ALL</button>
-          <button class="mega-tab" data-cat="best">BEST</button>
-          <button class="mega-tab" data-cat="new">NEW</button>
-          <button class="mega-tab" data-cat="lip">LIP</button>
-          <button class="mega-tab" data-cat="face">FACE</button>
-          <button class="mega-tab" data-cat="fragrance">FRAGRANCE</button>
-          <button class="mega-tab" data-cat="etc">ETC</button>
-          <div class="mega-tab-divider"></div>
-          <button class="mega-tab collection-tab" data-cat="collection">COLLECTION</button>
-        </div>
-        <!-- 제품 그리드 -->
-        <div class="mega-products" id="mega-products">
-          <!-- JS로 채워짐 -->
-        </div>
-        <a href="#shop" class="mega-shop-all">SHOP ALL COLLECTIONS →</a>
-      </div>
-    </div>
     <a href="#" class="logo">
       <img src="images/ode logo.png" alt="ODE" />
     </a>
@@ -74,6 +51,26 @@
       <a href="login.html" class="nav-link" id="login-btn">LOGIN</a>
       <a href="#" class="nav-link" id="bag-btn">BAG (<span id="bag-count">0</span>)</a>
     </nav>
+  </header>
+
+  <!-- MEGA DROPDOWN (header 외부) -->
+  <div class="mega-menu" id="mega-menu">
+    <div class="mega-inner">
+      <div class="mega-tabs">
+        <button class="mega-tab active" data-cat="all">ALL</button>
+        <button class="mega-tab" data-cat="best">BEST</button>
+        <button class="mega-tab" data-cat="new">NEW</button>
+        <button class="mega-tab" data-cat="lip">LIP</button>
+        <button class="mega-tab" data-cat="face">FACE</button>
+        <button class="mega-tab" data-cat="fragrance">FRAGRANCE</button>
+        <button class="mega-tab" data-cat="etc">ETC</button>
+        <div class="mega-tab-divider"></div>
+        <button class="mega-tab collection-tab" data-cat="collection">COLLECTION</button>
+      </div>
+      <div class="mega-products" id="mega-products"></div>
+      <a href="#shop" class="mega-shop-all">SHOP ALL COLLECTIONS →</a>
+    </div>
+  </div>
   </header>
 
   <!-- HERO -->
