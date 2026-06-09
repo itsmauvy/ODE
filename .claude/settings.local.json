@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git init *)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git remote *)",
+      "Bash(git branch *)",
+      "Bash(git push *)",
+      "Bash(git commit -m 'Add image assets *)",
+      "Bash(ls \"C:\\\\Users\\\\Administrator\\\\Downloads\" | grep -i \"fig\\\\|guava\\\\|collection\")",
+      "Bash(cp \"C:\\\\Users\\\\Administrator\\\\Downloads\\\\fig collection.jpg\" \"C:\\\\Users\\\\Administrator\\\\Downloads\\\\ode\\\\fig collection.jpg\")",
+      "Bash(cp \"C:\\\\Users\\\\Administrator\\\\Downloads\\\\guava collection.jpg\" \"C:\\\\Users\\\\Administrator\\\\Downloads\\\\ode\\\\guava collection.jpg\")",
+      "Bash(cp \"C:\\\\Users\\\\Administrator\\\\Downloads\\\\cherry collection.jpg\" \"C:\\\\Users\\\\Administrator\\\\Downloads\\\\ode\\\\cherry collection.jpg\")",
+      "Bash(cp \"C:\\\\Users\\\\Administrator\\\\Downloads\\\\tangerine collection.jpg\" \"C:\\\\Users\\\\Administrator\\\\Downloads\\\\ode\\\\tangerine collection.jpg\")",
+      "Bash(git restore *)"
+    ]
+  }
+}

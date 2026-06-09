@@ -184,6 +184,17 @@ gsap.utils.toArray('.reveal-card').forEach((card, i) => {
   });
 });
 
+/* summer collection */
+gsap.utils.toArray('.summer-reveal').forEach((el, i) => {
+  gsap.to(el, {
+    opacity: 1, y: 0,
+    duration: 0.85,
+    ease: 'expo',
+    delay: (el.style.getPropertyValue('--i') || i) * 0.12,
+    scrollTrigger: { trigger: '.summer-section', start: 'top 78%' }
+  });
+});
+
 /* collection */
 gsap.utils.toArray('.col-reveal').forEach((el, i) => {
   gsap.to(el, {
