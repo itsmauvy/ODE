@@ -654,11 +654,11 @@ body {
   background: #4a3830;
 }
 .summer-left {
-  flex: 0 0 300px;
+  flex: 0 0 390px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 0 44px;
+  padding: 0 52px;
   gap: 14px;
   opacity: 0;
   transform: translateX(-24px);
