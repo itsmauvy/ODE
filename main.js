@@ -17,10 +17,12 @@ const navShop      = document.getElementById('nav-shop');
 let menuTimer = null;
 
 const collections = [
-  { name:'FIG COLLECTION',       img:'images/fig collection.jpg' },
-  { name:'GUAVA COLLECTION',     img:'images/guava collection.jpg' },
-  { name:'TANGERINE COLLECTION', img:'images/tangerine collection.jpg' },
-  { name:'CHERRY COLLECTION',    img:'images/cherry collection.jpg' },
+  { name:'COCONUT COLLECTION',    img:'images/coconut collection.jpg',    badge:'NEW' },
+  { name:'FIG COLLECTION',        img:'images/fig collection.jpg' },
+  { name:'GUAVA COLLECTION',      img:'images/guava collection.jpg' },
+  { name:'TANGERINE COLLECTION',  img:'images/tangerine collection.jpg' },
+  { name:'CHERRY COLLECTION',     img:'images/cherry collection.jpg' },
+  { name:'WATERMELON COLLECTION', img:'images/watermelon collection.jpg' },
 ];
 
 function renderMegaProducts(cat) {
@@ -29,6 +31,7 @@ function renderMegaProducts(cat) {
       ${collections.map(c => `
         <div class="mega-col-card">
           <img src="${c.img}" alt="${c.name}" />
+          ${c.badge ? `<span class="mega-col-new-badge">${c.badge}</span>` : ''}
         </div>
       `).join('')}
     </div>`;
