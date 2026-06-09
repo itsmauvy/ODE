@@ -172,18 +172,20 @@
     <div class="summer-left">
       <p class="summer-eyebrow">'26 SUMMER</p>
       <h2 class="summer-heading">SUMMER ON THE GO<br/>WITH ODE</h2>
-
       <p class="summer-desc">여름의 무드를 담은<br/>ODE의 시즌 컬렉션을 만나보세요.</p>
       <a href="#shop" class="summer-btn">EXPLORE NEW COLLECTIONS</a>
     </div>
     <div class="summer-right">
-      <div class="summer-slider" id="summer-slider">
-        <div class="summer-img-item"><img src="images/ode body mist.jpg" alt="Body Mist" /></div>
-        <div class="summer-img-item"><img src="images/ode spf eye patch.jpg" alt="SPF Eye Patch" /></div>
-        <div class="summer-img-item"><img src="images/ode pouch.jpg" alt="Pouch" /></div>
+      <div class="swiper summer-swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide summer-slide"><img src="images/ode body mist.jpg" alt="Body Mist" /></div>
+          <div class="swiper-slide summer-slide"><img src="images/ode spf eye patch.jpg" alt="SPF Eye Patch" /></div>
+          <div class="swiper-slide summer-slide"><img src="images/ode pouch.jpg" alt="Pouch" /></div>
+          <div class="swiper-slide summer-slide"><img src="images/ode body mist.jpg" alt="Body Mist" /></div>
+          <div class="swiper-slide summer-slide"><img src="images/ode spf eye patch.jpg" alt="SPF Eye Patch" /></div>
+          <div class="swiper-slide summer-slide"><img src="images/ode pouch.jpg" alt="Pouch" /></div>
+        </div>
       </div>
-      <button class="summer-arrow left" id="summer-prev">‹</button>
-      <button class="summer-arrow right" id="summer-next">›</button>
     </div>
   </section>
 
@@ -276,6 +278,10 @@
 
   <!-- TOAST -->
   <div class="toast" id="toast"></div>
+
+  <!-- SWIPER -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
   <!-- GSAP -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>

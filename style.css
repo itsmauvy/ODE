@@ -649,108 +649,80 @@ body {
 /* ── SUMMER BANNER ── */
 .summer-banner {
   display: flex;
-  height: 560px;
+  height: 340px;
   overflow: hidden;
-  background: #3b2e28;
+  background: #4a3830;
 }
 .summer-left {
-  flex: 0 0 400px;
+  flex: 0 0 300px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 0 60px;
-  gap: 18px;
+  padding: 0 44px;
+  gap: 14px;
   opacity: 0;
   transform: translateX(-24px);
+  position: relative;
+  z-index: 2;
 }
 .summer-eyebrow {
   font-size: 10px;
   letter-spacing: 0.22em;
-  color: rgba(255,255,255,0.5);
+  color: rgba(255,255,255,0.45);
+  text-transform: uppercase;
 }
 .summer-heading {
   font-family: 'Jost', sans-serif;
-  font-size: 36px;
+  font-size: 22px;
   font-weight: 400;
-  letter-spacing: 0.04em;
-  line-height: 1.35;
+  letter-spacing: 0.05em;
+  line-height: 1.5;
   color: var(--white);
-  word-break: keep-all;
 }
 .summer-desc {
-  font-size: 14px;
-  line-height: 1.9;
-  color: rgba(255,255,255,0.65);
+  font-size: 12.5px;
+  line-height: 1.85;
+  color: rgba(255,255,255,0.6);
+  margin-top: 2px;
 }
 .summer-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  margin-top: 8px;
-  padding: 14px 26px;
-  border: 1px solid rgba(255,255,255,0.6);
+  display: inline-block;
+  margin-top: 10px;
+  padding: 13px 20px;
+  background: #1a1210;
   color: var(--white);
   text-decoration: none;
   font-size: 10px;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.15em;
   cursor: none;
   width: fit-content;
-  transition: background 0.25s, border-color 0.25s;
+  transition: background 0.22s;
 }
-.summer-btn:hover {
-  background: rgba(255,255,255,0.12);
-  border-color: var(--white);
-}
-/* 우측 슬라이더 */
+.summer-btn:hover { background: #000; }
+
+/* 우측 Swiper */
 .summer-right {
   flex: 1;
-  position: relative;
   overflow: hidden;
   opacity: 0;
+  position: relative;
 }
-.summer-slider {
-  display: flex;
+.summer-swiper {
+  width: 100%;
   height: 100%;
-  gap: 10px;
-  padding: 36px 24px 36px 0;
-  transition: transform 0.5s cubic-bezier(0.16,1,0.3,1);
-  will-change: transform;
 }
-.summer-img-item {
-  flex: 0 0 210px;
-  border-radius: 16px;
+.summer-slide {
   overflow: hidden;
 }
-.summer-img-item img {
+.summer-slide img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
+  object-position: center top;
+  display: block;
   transition: transform 0.6s ease;
 }
-.summer-img-item:hover img { transform: scale(1.05); }
-/* 화살표 */
-.summer-arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(255,255,255,0.15);
-  border: 1px solid rgba(255,255,255,0.3);
-  color: var(--white);
-  width: 40px; height: 40px;
-  border-radius: 50%;
-  font-size: 22px;
-  cursor: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background 0.2s;
-  z-index: 5;
-  line-height: 1;
-}
-.summer-arrow:hover { background: rgba(255,255,255,0.3); }
-.summer-arrow.left  { left: 12px; }
-.summer-arrow.right { right: 12px; }
+.summer-slide:hover img { transform: scale(1.04); }
 
 /* ── COLLECTION ── */
 .collection {
