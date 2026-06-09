@@ -348,64 +348,61 @@ bagOverlay.addEventListener('click', closeBag);
 
 /* ── SEARCH ── */
 const products = [
-  { id: '1', name: 'POCKET BLUSH', sub: 'Soft Balm Blush', desc: '피그 루스', price: 23000 },
-  { id: '2', name: 'POCKET TINT',  sub: 'Dewy Lip Tint',   desc: '핑크 구아바', price: 18000 },
-  { id: '3', name: 'SOLID PERFUME STICK', sub: 'Pocket Perfume Stick', desc: '텐더 터치', price: 25000 },
+  { id: '1', name: 'POCKET BLUSH',        sub: 'Soft Balm Blush' },
+  { id: '2', name: 'POCKET TINT',         sub: 'Dewy Lip Tint' },
+  { id: '3', name: 'SOLID PERFUME STICK', sub: 'Pocket Perfume Stick' },
+  { id: '4', name: 'BODY MIST',           sub: 'Coconut Body Mist' },
+  { id: '5', name: 'SPF EYE PATCH',       sub: 'SPF Eye Patch' },
+  { id: '6', name: 'POUCH',               sub: 'ODE Pouch' },
+  { id: '7', name: 'COCONUT POCKET BLUSH',sub: 'Soft Balm Blush' },
 ];
 
-const searchOverlay = document.getElementById('search-overlay');
-const searchInput   = document.getElementById('search-input');
-const searchResults = document.getElementById('search-results');
+const navSearch    = document.getElementById('nav-search');
+const navLabel     = document.getElementById('nav-search-label');
+const navInput     = document.getElementById('nav-search-input');
 
-function openSearch() {
-  searchOverlay.classList.add('open');
-  setTimeout(() => searchInput.focus(), 200);
+const navResultsEl = document.createElement('div');
+navResultsEl.className = 'nav-search-results';
+navSearch.appendChild(navResultsEl);
+
+function openNavSearch() {
+  navSearch.classList.add('active');
+  setTimeout(() => navInput.focus(), 350);
 }
-function closeSearch() {
-  searchOverlay.classList.remove('open');
-  searchInput.value = '';
-  searchResults.innerHTML = '';
+function closeNavSearch() {
+  navSearch.classList.remove('active', 'has-text');
+  navInput.value = '';
+  navResultsEl.classList.remove('show');
+  navResultsEl.innerHTML = '';
 }
 
-function runSearch(q) {
+function runNavSearch(q) {
   const query = q.trim().toLowerCase();
-  if (!query) { searchResults.innerHTML = ''; return; }
+  if (!query) { navResultsEl.classList.remove('show'); navResultsEl.innerHTML = ''; return; }
   const matched = products.filter(p =>
-    p.name.toLowerCase().includes(query) ||
-    p.sub.toLowerCase().includes(query) ||
-    p.desc.includes(query)
+    p.name.toLowerCase().includes(query) || p.sub.toLowerCase().includes(query)
   );
+  navResultsEl.classList.add('show');
   if (!matched.length) {
-    searchResults.innerHTML = `<p class="search-no-result">"${q}"에 대한 검색 결과가 없습니다.</p>`;
+    navResultsEl.innerHTML = `<div class="nav-search-no-result">검색 결과가 없습니다.</div>`;
     return;
   }
-  searchResults.innerHTML = matched.map(p => `
-    <div class="search-result-item">
-      <div>
-        <div class="search-result-name">${p.name}</div>
-        <div style="font-size:12px;color:var(--text-light);margin-top:3px">${p.sub} · ${p.desc}</div>
-      </div>
-      <span class="search-result-price">${p.price.toLocaleString()}원</span>
+  navResultsEl.innerHTML = matched.map(p => `
+    <div class="nav-search-result-item">
+      <div class="nav-search-result-name">${p.name}</div>
+      <div class="nav-search-result-sub">${p.sub}</div>
     </div>
   `).join('');
 }
 
-document.querySelector('.search-btn').addEventListener('click', e => {
-  e.preventDefault();
-  openSearch();
+navLabel.addEventListener('click', openNavSearch);
+navInput.addEventListener('input', e => {
+  navSearch.classList.toggle('has-text', e.target.value.length > 0);
+  runNavSearch(e.target.value);
 });
-document.getElementById('search-close').addEventListener('click', closeSearch);
-searchInput.addEventListener('input', e => runSearch(e.target.value));
-
-document.querySelectorAll('.suggestion-tag').forEach(btn => {
-  btn.addEventListener('click', () => {
-    searchInput.value = btn.dataset.q;
-    runSearch(btn.dataset.q);
-  });
-});
-
-searchOverlay.addEventListener('keydown', e => {
-  if (e.key === 'Escape') closeSearch();
+navInput.addEventListener('keydown', e => { if (e.key === 'Escape') closeNavSearch(); });
+document.addEventListener('click', e => {
+  if (!navSearch.contains(e.target)) closeNavSearch();
 });
 
 /* ── SUMMER SWIPER ── */

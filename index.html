@@ -47,7 +47,16 @@
       <img src="images/ode logo.png" alt="ODE" />
     </a>
     <nav class="nav-right">
-      <a href="#" class="nav-link search-btn">SEARCH</a>
+      <div class="nav-search" id="nav-search">
+        <span class="nav-search-label" id="nav-search-label">SEARCH</span>
+        <div class="nav-search-field">
+          <svg class="nav-search-icon" width="13" height="13" viewBox="0 0 20 20" fill="none">
+            <circle cx="8.5" cy="8.5" r="5.5" stroke="currentColor" stroke-width="1.4"/>
+            <path d="M13 13l4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+          </svg>
+          <input class="nav-search-input" id="nav-search-input" type="text" autocomplete="off" spellcheck="false" placeholder="포컷블러셔" />
+        </div>
+      </div>
       <a href="login.html" class="nav-link" id="login-btn">LOGIN</a>
       <a href="#" class="nav-link" id="bag-btn">BAG (<span id="bag-count">0</span>)</a>
     </nav>
@@ -171,7 +180,7 @@
   <!-- SUMMER COLLECTION BANNER -->
   <section class="summer-banner" id="summer">
     <div class="summer-left">
-      <p class="summer-eyebrow">'26 SUMMER</p>
+      <p class="summer-eyebrow">'26 SUMMER COLLECTION</p>
       <h2 class="summer-heading">SUMMER ON THE GO<br/>WITH ODE</h2>
 
       <p class="summer-desc">여름의 무드를 담은<br/>ODE의 시즌 컬렉션을 만나보세요.</p>
@@ -245,29 +254,6 @@
     </div>
   </footer>
 
-  <!-- SEARCH OVERLAY -->
-  <div class="search-overlay" id="search-overlay">
-    <button class="search-overlay-close" id="search-close">✕</button>
-    <div class="search-inner">
-      <p class="search-label">SEARCH</p>
-      <div class="search-input-wrap">
-        <input type="text" id="search-input" placeholder="제품명을 입력하세요" autocomplete="off" />
-        <svg class="search-icon-svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-          <circle cx="8.5" cy="8.5" r="5.5" stroke="#2b2420" stroke-width="1.2"/>
-          <path d="M13 13l4 4" stroke="#2b2420" stroke-width="1.2" stroke-linecap="round"/>
-        </svg>
-      </div>
-      <div class="search-results" id="search-results"></div>
-      <div class="search-suggestions">
-        <p class="suggestions-label">추천 검색어</p>
-        <div class="suggestion-tags">
-          <button class="suggestion-tag" data-q="POCKET BLUSH">POCKET BLUSH</button>
-          <button class="suggestion-tag" data-q="POCKET TINT">POCKET TINT</button>
-          <button class="suggestion-tag" data-q="SOLID PERFUME">SOLID PERFUME</button>
-        </div>
-      </div>
-    </div>
-  </div>
 
   <!-- BAG SIDEBAR -->
   <div class="bag-overlay" id="bag-overlay"></div>

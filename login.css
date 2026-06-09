@@ -86,75 +86,51 @@ body {
 
 /* ── MAIN LAYOUT ── */
 .main {
-  display: flex;
   height: 100vh;
   padding-top: 60px;
-}
-
-/* ── LEFT PANEL ── */
-.left-panel {
-  flex: 1;
-  position: relative;
-  overflow: hidden;
-  display: none;
-}
-@media (min-width: 900px) { .left-panel { display: block; } }
-
-.panel-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center top;
-}
-.panel-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.05) 60%);
-  display: flex;
-  align-items: flex-end;
-  padding: 52px 48px;
-}
-.panel-quote {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 26px;
-  font-weight: 300;
-  line-height: 1.5;
-  color: var(--white);
-}
-.panel-quote em { font-style: italic; }
-
-/* ── RIGHT PANEL ── */
-.right-panel {
-  width: 100%;
-  max-width: 520px;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow-y: auto;
+}
+
+/* ── FORM WRAP ── */
+.form-wrap {
+  width: 100%;
+  max-width: 400px;
   padding: 48px 32px;
 }
-@media (min-width: 900px) { .right-panel { border-left: 1px solid var(--beige); } }
-
-.form-wrap { width: 100%; max-width: 400px; }
 
 .form-section { width: 100%; }
 .form-section.hidden { display: none; }
 
-.form-tag {
-  font-size: 11px;
-  letter-spacing: 0.22em;
-  color: var(--text-light);
-  margin-bottom: 10px;
+/* ── BRAND LINE ── */
+.brand-line {
+  margin-bottom: 20px;
 }
+.brand-tag {
+  font-size: 10px;
+  letter-spacing: 0.28em;
+  color: var(--text-light);
+  text-transform: uppercase;
+}
+
+/* ── TITLE ── */
 .form-title {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 40px;
+  font-size: 58px;
   font-weight: 300;
-  margin-bottom: 40px;
+  line-height: 1.1;
+  margin-bottom: 44px;
+  color: var(--text);
+}
+.form-title em {
+  font-style: italic;
+  color: var(--brown);
 }
 
 /* ── FORM ── */
-.form { display: flex; flex-direction: column; gap: 22px; }
+.form { display: flex; flex-direction: column; gap: 24px; }
 
 .field-row {
   display: grid;
@@ -162,11 +138,11 @@ body {
   gap: 16px;
 }
 
-.field-group { display: flex; flex-direction: column; gap: 7px; }
+.field-group { display: flex; flex-direction: column; gap: 8px; }
 
 .field-label {
-  font-size: 11px;
-  letter-spacing: 0.12em;
+  font-size: 10px;
+  letter-spacing: 0.2em;
   color: var(--text-light);
 }
 
@@ -186,7 +162,7 @@ body {
 }
 .field-input:focus { border-color: var(--text); }
 .field-input.error { border-color: var(--error); }
-.field-input::placeholder { color: var(--beige-mid); }
+.field-input::placeholder { color: var(--beige-mid); font-size: 13px; }
 
 .field-error {
   font-size: 11px;
@@ -210,7 +186,7 @@ body {
 
 /* 비밀번호 강도 */
 .pw-strength {
-  height: 3px;
+  height: 2px;
   background: var(--beige);
   border-radius: 2px;
   margin-top: 8px;
@@ -241,7 +217,7 @@ body {
 }
 .checkbox-wrap input[type="checkbox"] { display: none; }
 .checkbox-custom {
-  width: 16px; height: 16px;
+  width: 14px; height: 14px;
   border: 1px solid var(--beige-mid);
   display: flex;
   align-items: center;
@@ -256,16 +232,17 @@ body {
 .checkbox-wrap input:checked + .checkbox-custom::after {
   content: '';
   display: block;
-  width: 8px; height: 5px;
+  width: 7px; height: 4px;
   border-left: 1.5px solid var(--white);
   border-bottom: 1.5px solid var(--white);
   transform: rotate(-45deg) translateY(-1px);
 }
-.checkbox-label { font-size: 13px; color: var(--text); }
-.checkbox-label.bold { font-weight: 400; }
+.checkbox-label { font-size: 12px; color: var(--text-light); }
+.checkbox-label.bold { font-weight: 400; color: var(--text); }
 
 .forgot-link {
-  font-size: 12px;
+  font-size: 11px;
+  letter-spacing: 0.06em;
   color: var(--text-light);
   text-decoration: none;
   cursor: none;
@@ -287,26 +264,26 @@ body {
 /* 제출 버튼 */
 .btn-submit {
   width: 100%;
-  padding: 16px;
+  padding: 15px;
   background: var(--text);
   color: var(--white);
   border: none;
   font-family: 'Jost', sans-serif;
-  font-size: 12px;
-  letter-spacing: 0.18em;
+  font-size: 11px;
+  letter-spacing: 0.22em;
   cursor: none;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
   transition: background 0.25s, transform 0.15s;
-  margin-top: 4px;
+  margin-top: 8px;
 }
 .btn-submit:hover { background: var(--brown); }
 .btn-submit:active { transform: scale(0.98); }
 
 .btn-spinner {
-  width: 16px; height: 16px;
+  width: 14px; height: 14px;
   border: 1.5px solid rgba(255,255,255,0.4);
   border-top-color: var(--white);
   border-radius: 50%;
@@ -320,10 +297,10 @@ body {
   display: flex;
   align-items: center;
   gap: 16px;
-  margin: 28px 0;
+  margin: 24px 0;
   color: var(--text-light);
-  font-size: 11px;
-  letter-spacing: 0.15em;
+  font-size: 10px;
+  letter-spacing: 0.2em;
 }
 .divider::before, .divider::after {
   content: '';
@@ -333,15 +310,15 @@ body {
 }
 
 /* 소셜 로그인 */
-.social-btns { display: flex; flex-direction: column; gap: 10px; }
+.social-btns { display: flex; flex-direction: column; gap: 8px; }
 .social-btn {
   width: 100%;
-  padding: 13px;
+  padding: 12px;
   border: 1px solid var(--beige-mid);
   background: none;
   font-family: 'Jost', sans-serif;
-  font-size: 13px;
-  letter-spacing: 0.06em;
+  font-size: 12px;
+  letter-spacing: 0.08em;
   color: var(--text);
   cursor: none;
   display: flex;
@@ -359,15 +336,16 @@ body {
 /* 전환 텍스트 */
 .switch-text {
   text-align: center;
-  font-size: 13px;
+  font-size: 12px;
   color: var(--text-light);
   margin-top: 28px;
+  letter-spacing: 0.04em;
 }
 .switch-btn {
   background: none;
   border: none;
   font-family: 'Jost', sans-serif;
-  font-size: 13px;
+  font-size: 12px;
   color: var(--text);
   cursor: none;
   text-decoration: underline;
@@ -383,8 +361,8 @@ body {
   background: var(--text);
   color: var(--white);
   padding: 13px 28px;
-  font-size: 13px;
-  letter-spacing: 0.08em;
+  font-size: 12px;
+  letter-spacing: 0.1em;
   opacity: 0;
   pointer-events: none;
   z-index: 500;
