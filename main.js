@@ -184,15 +184,14 @@ gsap.utils.toArray('.reveal-card').forEach((card, i) => {
   });
 });
 
-/* summer collection */
-gsap.utils.toArray('.summer-reveal').forEach((el, i) => {
-  gsap.to(el, {
-    opacity: 1, y: 0,
-    duration: 0.85,
-    ease: 'expo',
-    delay: (el.style.getPropertyValue('--i') || i) * 0.12,
-    scrollTrigger: { trigger: '.summer-section', start: 'top 78%' }
-  });
+/* summer banner */
+ScrollTrigger.create({
+  trigger: '.summer-banner',
+  start: 'top 80%',
+  onEnter: () => {
+    gsap.to('.summer-left', { opacity: 1, x: 0, duration: 0.9, ease: 'expo' });
+    gsap.to('.summer-right', { opacity: 1, duration: 0.9, ease: 'expo', delay: 0.15 });
+  }
 });
 
 /* collection */
