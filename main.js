@@ -389,6 +389,34 @@ searchOverlay.addEventListener('keydown', e => {
   if (e.key === 'Escape') closeSearch();
 });
 
+/* ── SUMMER SLIDER ── */
+(function() {
+  const slider   = document.getElementById('summer-slider');
+  const prevBtn  = document.getElementById('summer-prev');
+  const nextBtn  = document.getElementById('summer-next');
+  if (!slider || !prevBtn || !nextBtn) return;
+
+  const ITEM_W   = 210 + 10; // width + gap
+  const VISIBLE  = 2;
+  const TOTAL    = slider.children.length;
+  let   current  = 0;
+  const MAX      = TOTAL - VISIBLE;
+
+  function update() {
+    gsap.to(slider, {
+      x: -(current * ITEM_W),
+      duration: 0.55,
+      ease: 'power3.inOut'
+    });
+    prevBtn.style.opacity = current <= 0   ? '0.35' : '1';
+    nextBtn.style.opacity = current >= MAX ? '0.35' : '1';
+  }
+
+  prevBtn.addEventListener('click', () => { if (current > 0)   { current--; update(); } });
+  nextBtn.addEventListener('click', () => { if (current < MAX) { current++; update(); } });
+  update();
+})();
+
 /* smooth nav scroll */
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', e => {
