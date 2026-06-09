@@ -4,9 +4,13 @@ CustomEase.create("expo", "0.16, 1, 0.3, 1");
 
 /* ── MEGA MENU ── */
 const megaProducts = [
-  { id:'1', name:'POCKET BLUSH',        sub:'Soft Balm Blush',     img:'images/ode pocket blush_close.png', cat:['all','best','face'],      badge:'BEST' },
-  { id:'2', name:'POCKET TINT',         sub:'Dewy Lip Tint',       img:'images/ode lip tint.png',           cat:['all','best','new','lip'], badge:'NEW'  },
-  { id:'3', name:'SOLID PERFUME STICK', sub:'Pocket Perfume Stick',img:'images/ode solid perfume stick .png', cat:['all','fragrance','etc'], badge:''    },
+  { id:'1', name:'POCKET BLUSH',        sub:'Soft Balm Blush',      img:'images/ode pocket blush_close.png',    cat:['all','best','face'],                badge:'BEST' },
+  { id:'2', name:'POCKET TINT',         sub:'Dewy Lip Tint',        img:'images/ode lip tint.png',              cat:['all','best','lip'],                 badge:''     },
+  { id:'3', name:'SOLID PERFUME STICK', sub:'Pocket Perfume Stick', img:'images/ode solid perfume stick .png',  cat:['all','fragrance'],                  badge:''     },
+  { id:'4', name:'BODY MIST',           sub:'Coconut Body Mist',    img:'images/ode body mist 1.png',           cat:['all','body','new'],                 badge:'NEW'  },
+  { id:'5', name:'SPF EYE PATCH',       sub:'SPF Eye Patch',        img:'images/ode eye patch_nobg.png',        cat:['all','face','new'],                 badge:'NEW'  },
+  { id:'6', name:'POUCH',               sub:'ODE Pouch',            img:'images/ode pouch_nobg.png',            cat:['all','etc','new'],                  badge:'NEW'  },
+  { id:'7', name:'COCONUT POCKET BLUSH',sub:'Soft Balm Blush',      img:'images/coconut pocket blush 1.png',    cat:['all','face','new'],                 badge:'NEW'  },
 ];
 
 const megaMenu     = document.getElementById('mega-menu');
@@ -25,7 +29,22 @@ const collections = [
   { name:'WATERMELON COLLECTION', img:'images/watermelon collection.jpg' },
 ];
 
+const shopAllLabels = {
+  all:        'SHOP ALL',
+  best:       'SHOP BEST SELLERS',
+  new:        'SHOP NEW ARRIVALS',
+  lip:        'SHOP LIP',
+  face:       'SHOP FACE',
+  fragrance:  'SHOP FRAGRANCE',
+  body:       'SHOP BODY',
+  etc:        'SHOP ETC',
+  collection: 'SHOP ALL COLLECTIONS',
+};
+
 function renderMegaProducts(cat) {
+  const shopAllEl = document.querySelector('.mega-shop-all');
+  if (shopAllEl) shopAllEl.textContent = (shopAllLabels[cat] || 'SHOP ALL') + ' →';
+
   if (cat === 'collection') {
     megaProdsEl.innerHTML = `<div class="mega-collection-grid">
       ${collections.map(c => `
@@ -37,7 +56,7 @@ function renderMegaProducts(cat) {
     </div>`;
     return;
   }
-  const list = cat === 'all' ? megaProducts : megaProducts.filter(p => p.cat.includes(cat));
+  const list = (cat === 'all' ? megaProducts : megaProducts.filter(p => p.cat.includes(cat))).slice(0, 4);
   if (!list.length) {
     megaProdsEl.innerHTML = `<p style="color:var(--text-light);font-size:13px;padding-top:16px;">해당 카테고리의 제품이 없습니다.</p>`;
     return;
