@@ -1,16 +1,16 @@
 const productData = {
   '1': {
-    name: 'COCONUT BUTTER',
+    name: 'POCKET BLUSH',
     sub: 'Soft Balm Blush',
     price: 23000,
     reviews: 1284,
     badge: 'BEST',
     desc: '자연스럽게 스며드는 크림 블러셔. 손가락으로 가볍게 두드려 발색하면 생기 있는 혈색을 연출할 수 있어요. 하루 종일 촉촉하게 유지되는 밤 타입 포뮬러.',
     colors: [
-      { label: '피그 무스',     color: '#c47a7a', images: ['images/blush_figmousse.png', 'images/ode pb model.png'] },
+      { label: 'Fig Mousse',     color: '#c47a7a', images: ['images/blush_figmousse.png', 'images/ode pb model.png'] },
       { label: 'Coconut Butter', color: '#e8b4a0', images: ['images/coconut pocket blush 1.png', 'images/coconut blush_model.jpg'] },
-      { label: '체리',          color: '#9e3a3a', images: ['images/cherry collection.jpg'] },
-      { label: '워터멜론',      color: '#e87070', images: ['images/watermelon collection.jpg'] },
+      { label: 'Cherry',         color: '#9e3a3a', images: ['images/cherry collection.jpg'] },
+      { label: 'Watermelon',     color: '#e87070', images: ['images/watermelon collection.jpg'] },
     ]
   },
   '2': {
@@ -21,9 +21,9 @@ const productData = {
     badge: '',
     desc: '물광 입술을 완성하는 듀이 립 틴트. 가볍게 밀착되어 오래도록 선명한 발색이 유지되고, 촉촉한 보습막이 입술을 편안하게 감싸줍니다.',
     colors: [
-      { label: '핑크 구아바', color: '#e8a0b4', images: ['images/ode lip tint.png', 'images/ode pt model.png'] },
-      { label: '탠저린',     color: '#e8904a', badge: 'NEW', images: ['images/tangerine collection.jpg'] },
-      { label: '피그',       color: '#b46870', images: ['images/fig collection.jpg'] },
+      { label: 'Pink Guava', color: '#e8a0b4', images: ['images/ode lip tint.png', 'images/ode pt model.png'] },
+      { label: 'Tangerine',  color: '#e8904a', badge: 'NEW', images: ['images/tangerine collection.jpg'] },
+      { label: 'Fig',        color: '#b46870', images: ['images/fig collection.jpg'] },
     ]
   },
   '4': {
@@ -34,7 +34,7 @@ const productData = {
     badge: 'NEW',
     desc: '코코넛 향이 은은하게 퍼지는 바디 미스트. 가볍게 뿌리면 촉촉한 수분막이 형성되어 하루 종일 부드러운 피부와 향을 유지할 수 있어요.',
     colors: [
-      { label: '코코넛', color: '#d4c4a8', images: ['images/ode body mist.jpg', 'images/ode body mist 1.png'] },
+      { label: 'Coconut', color: '#d4c4a8', images: ['images/ode body mist.jpg', 'images/ode body mist 1.png'] },
     ]
   },
   '5': {
@@ -45,7 +45,7 @@ const productData = {
     badge: 'NEW',
     desc: '눈가를 자외선으로부터 보호하는 SPF 아이 패치. 촉촉한 밀착감으로 눈가 피부를 진정시키고 선케어까지 한 번에 해결해요.',
     colors: [
-      { label: '기본', color: '#e0d8cc', images: ['images/ode spf eye patch.jpg', 'images/ode eye patch_nobg.png'] },
+      { label: 'Original', color: '#e0d8cc', images: ['images/ode spf eye patch.jpg', 'images/ode eye patch_nobg.png'] },
     ]
   },
   '6': {
@@ -56,7 +56,7 @@ const productData = {
     badge: '',
     desc: 'ODE의 제품을 담기 위해 디자인된 투명 파우치. 간편하게 수납하고 어디든 가볍게 들고 다닐 수 있어요.',
     colors: [
-      { label: '클리어', color: '#d8d0c8', images: ['images/ode pouch.jpg', 'images/ode pouch model.png'] },
+      { label: 'Clear', color: '#d8d0c8', images: ['images/ode pouch.jpg', 'images/ode pouch model.png'] },
     ]
   },
   '3': {
@@ -67,9 +67,9 @@ const productData = {
     badge: '',
     desc: '고체 타입의 포켓 퍼퓸 스틱. 언제 어디서나 부담 없이 향을 더할 수 있는 여행 친화적인 퍼퓸. 피부에 살짝 문질러 은은하게 지속되는 향을 즐겨보세요.',
     colors: [
-      { label: '우디 피그', color: '#c8b4a0', images: ['images/ode solid perfume stick .png', 'images/ode sp model new.png'] },
-      { label: '무화과',   color: '#a07060', images: ['images/fig collection.jpg'] },
-      { label: '코코넛',   color: '#e8d8c0', images: ['images/coconut collection.jpg'] },
+      { label: 'Woody Fig',  color: '#c8b4a0', images: ['images/ode solid perfume stick .png', 'images/ode sp model new.png'] },
+      { label: 'Fig',        color: '#a07060', images: ['images/fig collection.jpg'] },
+      { label: 'Coconut',    color: '#e8d8c0', images: ['images/coconut collection.jpg'] },
     ]
   }
 };
