@@ -8,12 +8,13 @@
 .st-hero {
   height: 55vh;
   min-height: 380px;
-  background: #111;
+  background: #1a1a1a;
   display: flex;
   align-items: flex-end;
   margin-top: 64px;
   position: relative;
   overflow: hidden;
+  clip-path: inset(0);
 }
 .st-hero__bg {
   position: absolute; inset: 0;
@@ -56,6 +57,61 @@
   pointer-events: none; opacity: 0.06;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='256' height='256'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.78' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='256' height='256' filter='url(%23n)'/%3E%3C/svg%3E");
   background-size: 256px;
+}
+
+/* ── EXPERIENCE ── */
+.st-experience {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 60vh;
+}
+.st-experience__img {
+  overflow: hidden;
+  position: relative;
+}
+.st-experience__img img {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center;
+  display: block;
+  transition: transform 0.7s ease;
+}
+.st-experience__text {
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 80px 80px 80px 72px;
+}
+.st-experience__tag {
+  font-family: 'Jost', sans-serif;
+  font-size: 10px; font-weight: 400;
+  letter-spacing: 0.28em;
+  color: #8D775F;
+  display: block;
+  margin-bottom: 32px;
+}
+.st-experience__title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(36px, 3.8vw, 52px);
+  font-weight: 300; line-height: 1.12;
+  color: #111; margin: 0 0 32px;
+}
+.st-experience__title em { font-style: italic; }
+.st-experience__divider {
+  width: 36px; height: 1px;
+  background: #8D775F; margin-bottom: 32px;
+}
+.st-experience__sub {
+  font-family: 'Jost', sans-serif;
+  font-size: 14px; font-weight: 300;
+  letter-spacing: 0.04em;
+  color: #888; margin-bottom: 28px;
+  font-style: italic;
+}
+.st-experience__body {
+  font-family: 'Jost', sans-serif;
+  font-size: 14px; font-weight: 300;
+  line-height: 2.2; color: #666;
 }
 
 /* ── INTRO ── */
