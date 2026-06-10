@@ -822,6 +822,42 @@ body {
 }
 .btn-pill:hover { background: var(--brown); }
 
+/* ── SNS ── */
+.sns-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  padding: 80px 48px;
+  background: var(--beige-light);
+  text-align: center;
+}
+.sns-eyebrow {
+  font-size: 10px;
+  letter-spacing: 0.28em;
+  color: var(--text-light);
+}
+.sns-handle {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Jost', sans-serif;
+  font-size: 28px;
+  font-weight: 300;
+  letter-spacing: 0.06em;
+  color: var(--text);
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+.sns-handle:hover { opacity: 0.55; }
+.sns-icon { flex-shrink: 0; }
+.sns-desc {
+  font-size: 13px;
+  color: var(--text-light);
+  letter-spacing: 0.04em;
+}
+
 /* ── ABOUT ── */
 .about {
   padding: 100px 48px;
