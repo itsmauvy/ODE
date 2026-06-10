@@ -98,19 +98,6 @@
   overflow: hidden;
   background: #e8e0d8;
 }
-.st-card__map iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
-  display: block;
-  filter: grayscale(20%) contrast(0.95);
-}
-.st-card__map-overlay {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background: rgba(245,241,237,0.08);
-}
 
 .st-card__info {
   padding: 64px 72px;
