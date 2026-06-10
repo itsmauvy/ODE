@@ -10,103 +10,245 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="about.css" />
 </head>
-<body>
+<body class="about-page">
 
-  <!-- CURSOR -->
   <div class="cursor" id="cursor"></div>
   <div class="cursor-follower" id="cursor-follower"></div>
 
   <!-- HEADER -->
-  <header class="header" id="header" style="opacity:1">
+  <header class="header" id="header" style="opacity:1; --header-color:#111; --header-bg:transparent;">
     <nav class="nav-left">
       <div class="nav-item" id="nav-shop">
-        <a href="index.html#shop" class="nav-link">SHOP</a>
+        <a href="shop.html" class="nav-link">SHOP</a>
       </div>
       <a href="about.html" class="nav-link">ABOUT</a>
-      <a href="#stockist" class="nav-link">STOCKIST</a>
+      <a href="#" class="nav-link">STOCKIST</a>
     </nav>
     <a href="index.html" class="logo">
       <img src="images/ode logo.png" alt="ODE" />
     </a>
     <nav class="nav-right">
-      <a href="index.html" class="nav-link">SEARCH</a>
+      <a href="#" class="nav-link">SEARCH</a>
       <a href="login.html" class="nav-link">LOGIN</a>
-      <a href="index.html" class="nav-link">BAG (0)</a>
+      <a href="#" class="nav-link">BAG (0)</a>
     </nav>
   </header>
 
-  <!-- HERO -->
-  <section class="about-hero">
-    <img src="images/ode hero1.png" alt="ODE" class="about-hero-img" />
-    <div class="about-hero-overlay"></div>
-    <div class="about-hero-text">
-      <p class="about-hero-eyebrow">ABOUT ODE</p>
-      <h1 class="about-hero-title">자연이 남긴<br/><em>감각을</em></h1>
+  <!-- ══════════════════════════════════════
+       01. HERO — 풀스크린 타이포 히어로
+  ══════════════════════════════════════ -->
+  <section class="ab-hero">
+    <div class="ab-hero__bg">
+      <img src="images/fig mousse_hover.png" alt="" />
+    </div>
+    <div class="ab-hero__overlay"></div>
+    <div class="ab-hero__grain"></div>
+
+    <div class="ab-hero__inner">
+      <p class="ab-hero__eyebrow">ODE · Brand Story</p>
+      <h1 class="ab-hero__title">
+        <em>Good Things</em><br>Worth Carrying.
+      </h1>
+      <p class="ab-hero__desc">자연이 남긴 감각을, 가장 가까운 곳에.</p>
+    </div>
+
+    <div class="ab-hero__footer">
+      <span class="ab-hero__scroll-label">SCROLL</span>
+      <div class="ab-hero__scroll-track"><div class="ab-hero__scroll-bar"></div></div>
     </div>
   </section>
 
-  <!-- INTRO -->
-  <section class="about-intro">
-    <div class="about-intro-inner">
-      <h2 class="about-intro-heading">
-        가장 가까운 곳에
-      </h2>
-      <p class="about-intro-body">
-        잘 익은 과일의 색과 향,<br/>
-        손끝에 남는 부드러운 감촉.<br/>
-        <br/>
-        ODE는 자연에서 발견한 영감을<br/>
-        일상 속 작은 순간들에 담아냅니다.<br/>
-        <br/>
+  <!-- ══════════════════════════════════════
+       MARQUEE — 브랜드 키워드 흐름
+  ══════════════════════════════════════ -->
+  <div class="ab-marquee" aria-hidden="true">
+    <div class="ab-marquee__track">
+      <span>POCKET BEAUTY</span><span class="ab-marquee__dot">·</span>
+      <span>NATURE INSPIRED</span><span class="ab-marquee__dot">·</span>
+      <span>SENSORY BEAUTY</span><span class="ab-marquee__dot">·</span>
+      <span>GOOD THINGS WORTH CARRYING</span><span class="ab-marquee__dot">·</span>
+      <span>EVERYDAY MOMENTS</span><span class="ab-marquee__dot">·</span>
+      <span>SOFT TEXTURE</span><span class="ab-marquee__dot">·</span>
+      <span>POCKET BEAUTY</span><span class="ab-marquee__dot">·</span>
+      <span>NATURE INSPIRED</span><span class="ab-marquee__dot">·</span>
+      <span>SENSORY BEAUTY</span><span class="ab-marquee__dot">·</span>
+      <span>GOOD THINGS WORTH CARRYING</span><span class="ab-marquee__dot">·</span>
+      <span>EVERYDAY MOMENTS</span><span class="ab-marquee__dot">·</span>
+      <span>SOFT TEXTURE</span><span class="ab-marquee__dot">·</span>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════
+       02. STATEMENT — 브랜드 선언
+  ══════════════════════════════════════ -->
+  <section class="ab-statement">
+    <div class="ab-statement__inner">
+      <p class="ab-tag">ABOUT ODE</p>
+      <p class="ab-statement__quote">
+        잘 익은 과일의 색과 향,<br>손끝에 남는 부드러운 감촉.
+      </p>
+      <div class="ab-statement__divider"></div>
+      <p class="ab-statement__body">
+        ODE는 자연에서 발견한 영감을 일상 속 작은 순간들에 담아냅니다.<br>
         좋은 것은 늘 가까이에 있어야 하니까.
       </p>
     </div>
   </section>
 
-  <!-- VALUES -->
-  <section class="about-values">
-    <div class="about-values-inner">
-      <div class="value-item">
-        <p class="value-num">01</p>
-        <h3 class="value-title">Natural Origin</h3>
-        <p class="value-body">자연에서 온 성분만을 사용합니다. 피부에 부담을 주지 않는 순한 포뮬러로 매일 편안하게 사용할 수 있어요.</p>
+  <!-- ══════════════════════════════════════
+       03. EDITORIAL SPREAD — 이미지 + 철학
+  ══════════════════════════════════════ -->
+  <section class="ab-spread">
+    <div class="ab-spread__img ab-spread__img--full">
+      <img src="images/ode body mist.jpg" alt="" />
+      <div class="ab-spread__img-caption">
+        <span class="ab-tag">01 — NATURE INSPIRED</span>
+        <p>자연이 남긴 것들에서<br>우리는 시작합니다.</p>
       </div>
-      <div class="value-item">
-        <p class="value-num">02</p>
-        <h3 class="value-title">Sensory Design</h3>
-        <p class="value-body">보고, 만지고, 향기를 느끼는 모든 감각이 즐거운 제품을 만듭니다. 사용하는 순간이 하나의 경험이 되도록.</p>
+    </div>
+    <div class="ab-spread__text">
+      <h2 class="ab-spread__title">
+        자연이 남긴<br><em>감각을</em>
+      </h2>
+      <p class="ab-spread__body">
+        우리는 자연이 남기는 색과 향, 그리고 감각에서 영감을 받습니다.<br><br>
+        잘 익은 무화과의 깊은 색, 구아바의 생기,<br>
+        코코넛이 떠오르는 여름의 공기.<br><br>
+        그 순간들을 컬러와 텍스처, 향으로 다시 표현합니다.
+      </p>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       04. NATURE — 풀블리드 컬렉션 비주얼
+  ══════════════════════════════════════ -->
+  <section class="ab-nature">
+    <div class="ab-nature__header">
+      <p class="ab-tag">INSPIRED BY NATURE</p>
+      <h2 class="ab-nature__title">컬렉션의 시작,<br><em>자연에서.</em></h2>
+    </div>
+
+    <div class="ab-nature__grid">
+      <div class="ab-nature__item ab-nature__item--a">
+        <img src="images/fig collection.jpg" alt="Fig" />
+        <div class="ab-nature__label">
+          <p class="ab-nature__num">Fig</p>
+          <p class="ab-nature__desc-sm">무화과의 깊고 성숙한 색감</p>
+        </div>
       </div>
-      <div class="value-item">
-        <p class="value-num">03</p>
-        <h3 class="value-title">Everyday Luxury</h3>
-        <p class="value-body">특별한 날만을 위한 뷰티가 아닌, 매일의 루틴 속에 자연스럽게 녹아드는 작은 사치를 선물합니다.</p>
+      <div class="ab-nature__item ab-nature__item--b">
+        <img src="images/guava collection.jpg" alt="Guava" />
+        <div class="ab-nature__label">
+          <p class="ab-nature__num">Guava</p>
+          <p class="ab-nature__desc-sm">생기 넘치는 핑크의 싱그러움</p>
+        </div>
+      </div>
+      <div class="ab-nature__item ab-nature__item--c">
+        <img src="images/coconut collection.jpg" alt="Coconut" />
+        <div class="ab-nature__label">
+          <p class="ab-nature__num">Coconut</p>
+          <p class="ab-nature__desc-sm">여름의 포근하고 따뜻한 무드</p>
+        </div>
+      </div>
+      <div class="ab-nature__item ab-nature__item--d">
+        <img src="images/tangerine collection.jpg" alt="Tangerine" />
+        <div class="ab-nature__label">
+          <p class="ab-nature__num">Tangerine</p>
+          <p class="ab-nature__desc-sm">시트러스의 밝고 에너제틱한 빛</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- FULL IMAGE -->
-  <section class="about-fullimg">
-    <img src="images/ode body mist.jpg" alt="ODE" />
-    <div class="about-fullimg-caption">
-      <em>"Good things should always be close."</em>
+  <!-- ══════════════════════════════════════
+       05. VALUES — 3가지 브랜드 가치
+  ══════════════════════════════════════ -->
+  <section class="ab-values">
+    <div class="ab-values__inner">
+      <p class="ab-tag ab-values__tag">OUR VALUES</p>
+      <div class="ab-values__grid">
+        <div class="ab-values__item">
+          <span class="ab-values__num">01</span>
+          <h3 class="ab-values__name">Natural Origin</h3>
+          <p class="ab-values__body">자연에서 온 성분만을 사용합니다. 피부에 부담을 주지 않는 순한 포뮬러로 매일 편안하게.</p>
+        </div>
+        <div class="ab-values__item">
+          <span class="ab-values__num">02</span>
+          <h3 class="ab-values__name">Sensory Design</h3>
+          <p class="ab-values__body">보고, 만지고, 향기를 느끼는 모든 감각이 즐거운 제품. 사용하는 순간이 하나의 경험.</p>
+        </div>
+        <div class="ab-values__item">
+          <span class="ab-values__num">03</span>
+          <h3 class="ab-values__name">Pocket Beauty</h3>
+          <p class="ab-values__body">작지만 충분한 것들. 언제 어디서나 꺼낼 수 있는 편리함 속에 정성을 담았습니다.</p>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- BRAND DETAIL -->
-  <section class="about-detail">
-    <div class="about-detail-inner">
-      <div class="about-detail-left">
-        <p class="section-tag">OUR STORY</p>
-        <h2 class="about-detail-heading">
-          일상 속에<br/>스며드는<br/><em>아름다움</em>
-        </h2>
+  <!-- ══════════════════════════════════════
+       06. PRODUCTS — 제품 쇼케이스
+  ══════════════════════════════════════ -->
+  <section class="ab-products">
+    <div class="ab-products__inner">
+      <div class="ab-products__header">
+        <p class="ab-tag">GOOD THINGS WORTH CARRYING</p>
+        <h2 class="ab-products__title">언제든 곁에 두고<br><em>싶은 것들.</em></h2>
+        <p class="ab-products__sub">작지만, 하루를 바꿀 만큼 충분한 것들.</p>
       </div>
-      <div class="about-detail-right">
-        <p>ODE는 '일상에 바치는 찬가'라는 의미에서 시작됐습니다. 거창한 변신이 아닌, 오늘의 나를 조금 더 좋아하게 만드는 것. 그것이 ODE가 추구하는 뷰티입니다.</p>
-        <p>과일에서 영감받은 컬러와 향, 손 안에 쏙 들어오는 작은 크기. 어디서든 꺼내 쓸 수 있는 편리함 속에 정성을 담았습니다.</p>
-        <p>모든 ODE 제품은 피부과 테스트를 거쳤으며, 민감한 피부도 안심하고 사용할 수 있도록 설계되었습니다.</p>
-        <a href="index.html#shop" class="about-cta">SHOP THE COLLECTION →</a>
+      <div class="ab-products__row">
+        <a class="ab-pcard" href="product.html?id=1">
+          <div class="ab-pcard__img">
+            <img src="images/ode pocket blush_close.png" alt="Pocket Blush" />
+          </div>
+          <div class="ab-pcard__info">
+            <p class="ab-pcard__name">POCKET BLUSH</p>
+            <p class="ab-pcard__sub">Soft Balm Blush</p>
+            <p class="ab-pcard__price">23,000원</p>
+          </div>
+        </a>
+        <a class="ab-pcard" href="product.html?id=2">
+          <div class="ab-pcard__img">
+            <img src="images/tint_pinkguava.png" alt="Pocket Tint" />
+          </div>
+          <div class="ab-pcard__info">
+            <p class="ab-pcard__name">POCKET TINT</p>
+            <p class="ab-pcard__sub">Dewy Lip Tint</p>
+            <p class="ab-pcard__price">18,000원</p>
+          </div>
+        </a>
+        <a class="ab-pcard" href="product.html?id=3">
+          <div class="ab-pcard__img">
+            <img src="images/ode solid perfume stick .png" alt="Solid Perfume" />
+          </div>
+          <div class="ab-pcard__info">
+            <p class="ab-pcard__name">SOLID PERFUME</p>
+            <p class="ab-pcard__sub">Pocket Perfume Stick</p>
+            <p class="ab-pcard__price">25,000원</p>
+          </div>
+        </a>
       </div>
+      <div class="ab-products__cta">
+        <a href="shop.html" class="ab-btn">SHOP ALL PRODUCTS →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       07. CLOSING — 마지막 슬로건
+  ══════════════════════════════════════ -->
+  <section class="ab-closing">
+    <div class="ab-closing__bg">
+      <img src="images/ode sp model new.png" alt="" />
+    </div>
+    <div class="ab-closing__overlay"></div>
+    <div class="ab-closing__grain"></div>
+    <div class="ab-closing__inner">
+      <h2 class="ab-closing__title">
+        좋은 것은<br><em>늘 가까이에</em><br>있어야 하니까.
+      </h2>
+      <p class="ab-closing__en">Good Things Worth Carrying</p>
+      <p class="ab-closing__brand">ODE</p>
     </div>
   </section>
 
@@ -118,7 +260,7 @@
         <a href="#">이용약관</a>
         <a href="#">개인정보처리방침</a>
         <a href="#">고객센터</a>
-        <a href="#">브랜드 소개</a>
+        <a href="about.html">브랜드 소개</a>
       </div>
     </div>
     <div class="footer-bottom">
@@ -131,17 +273,62 @@
   </footer>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script>
+    gsap.registerPlugin(ScrollTrigger);
+
     /* cursor */
-    const cursor = document.getElementById('cursor');
+    const cursor   = document.getElementById('cursor');
     const follower = document.getElementById('cursor-follower');
     let mx=0,my=0,fx=0,fy=0;
     window.addEventListener('mousemove', e => { mx=e.clientX; my=e.clientY; gsap.set(cursor,{x:mx,y:my}); });
     (function loop(){ fx+=(mx-fx)*0.15; fy+=(my-fy)*0.15; gsap.set(follower,{x:fx,y:fy}); requestAnimationFrame(loop); })();
 
-    /* entrance */
-    gsap.from('.about-hero-eyebrow', { opacity:0, y:16, duration:0.8, delay:0.3 });
-    gsap.from('.about-hero-title',   { opacity:0, y:24, duration:1,   delay:0.5 });
+    /* ── hero ── */
+    const heroTl = gsap.timeline({ delay: 0.3 });
+    heroTl
+      .from('.ab-hero__eyebrow', { opacity:0, y:12, duration:0.7 })
+      .from('.ab-hero__title',   { opacity:0, y:48, duration:1.1, ease:'power3.out' }, '-=0.2')
+      .from('.ab-hero__desc',    { opacity:0, y:16, duration:0.8 }, '-=0.4')
+      .from('.ab-hero__footer',  { opacity:0,        duration:0.8 }, '-=0.3');
+
+    gsap.to('.ab-hero__bg img', {
+      yPercent: 22, ease:'none',
+      scrollTrigger:{ trigger:'.ab-hero', start:'top top', end:'bottom top', scrub:true }
+    });
+
+    /* ── marquee ── */
+    const track = document.querySelector('.ab-marquee__track');
+    const clone = track.cloneNode(true);
+    document.querySelector('.ab-marquee').appendChild(clone);
+
+    /* ── generic fade-up ── */
+    document.querySelectorAll(
+      '.ab-statement__quote, .ab-statement__body, .ab-spread__title, .ab-spread__body, .ab-nature__header, .ab-values__item, .ab-products__header, .ab-pcard, .ab-closing__title, .ab-closing__en, .ab-closing__brand'
+    ).forEach((el, i) => {
+      gsap.from(el, {
+        opacity:0, y:40, duration:0.9, ease:'power2.out',
+        scrollTrigger:{ trigger:el, start:'top 88%', once:true }
+      });
+    });
+
+    /* ── spread image parallax ── */
+    gsap.to('.ab-spread__img img', {
+      yPercent: 10, ease:'none',
+      scrollTrigger:{ trigger:'.ab-spread', start:'top bottom', end:'bottom top', scrub:true }
+    });
+
+    /* ── nature grid stagger ── */
+    gsap.from('.ab-nature__item', {
+      opacity:0, y:50, duration:0.85, stagger:0.1, ease:'power2.out',
+      scrollTrigger:{ trigger:'.ab-nature__grid', start:'top 82%', once:true }
+    });
+
+    /* ── closing parallax ── */
+    gsap.to('.ab-closing__bg img', {
+      yPercent:12, ease:'none',
+      scrollTrigger:{ trigger:'.ab-closing', start:'top bottom', end:'bottom top', scrub:true }
+    });
   </script>
 </body>
 </html>
