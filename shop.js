@@ -12,11 +12,10 @@ const shopProducts = [
     hoverImg: 'images/fig mousse_hover.png',
     contain: true,
     colors: [
-      { label: 'Fig Mousse',       color: '#c47a7a' },
-      { label: 'Coconut Butter',   color: '#d4a882' },
-      { label: 'Bare Plum',        color: '#9e6878' },
-      { label: 'Cherry Kiss',      color: '#8b2a2a' },
-      { label: 'Watermelon Crush', color: '#e05a5a' },
+      { label: 'Fig Mousse',   color: '#c47a7a' },
+      { label: 'Coconut Butter', color: '#d4a882' },
+      { label: 'Bare Plum',    color: '#9e6878' },
+      { label: 'Cherry Kiss',  color: '#8b2a2a' },
     ],
   },
   {
@@ -29,10 +28,11 @@ const shopProducts = [
     img: 'images/tint_pinkguava.png',
     hoverImg: 'images/ode pt model.png',
     contain: true,
+    imgPadding: '100px 115px',
     colors: [
       { label: 'Pink Guava',       color: '#e8a0b4' },
       { label: 'Tangerine Pop', color: '#e8904a' },
-      { label: 'Bare Plum',        color: '#b46870' },
+      { label: 'Fig Jam',        color: '#b46870' },
     ],
   },
   {
@@ -45,6 +45,7 @@ const shopProducts = [
     img: 'images/ode solid perfume stick .png',
     hoverImg: 'images/ode sp model new.png',
     contain: true,
+    imgPadding: '52px 44px',
     colors: [
       { label: 'Woody Fig', color: '#c8b4a0' },
       { label: 'Fig',       color: '#a07060' },
@@ -84,6 +85,18 @@ const shopProducts = [
     cat: ['all', 'etc'],
     img: 'images/ode pouch_nobg.png',
     hoverImg: 'images/ode pouch model.png',
+    contain: true,
+    colors: [],
+  },
+  {
+    id: '7',
+    name: 'MIRROR',
+    sub: '',
+    price: 5000,
+    badge: '',
+    cat: ['all', 'etc'],
+    img: 'images/ode image.png',
+    hoverImg: 'images/ode mirror.png',
     contain: true,
     colors: [],
   },
@@ -134,7 +147,7 @@ function renderGrid() {
     return `
       <a class="shop-card" href="product.html?id=${p.id}">
         <div class="shop-card-img-wrap">
-          <img src="${p.img}" alt="${p.name}" loading="lazy" class="card-main-img${p.contain ? ' contain' : ''}" />
+          <img src="${p.img}" alt="${p.name}" loading="lazy" class="card-main-img${p.contain ? ' contain' : ''}"${p.imgPadding ? ` style="padding:${p.imgPadding}"` : ''} />
           ${p.hoverImg ? `<img src="${p.hoverImg}" alt="${p.name}" loading="lazy" class="card-hover-img${p.hoverContain ? ' contain' : ''}" />` : ''}
           ${badgeHtml}
         </div>

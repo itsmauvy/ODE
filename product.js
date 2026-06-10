@@ -10,8 +10,7 @@ const productData = {
       { label: 'Fig Mousse',     color: '#c47a7a', images: ['images/blush_figmousse.png',    'images/ode pb model.png'] },
       { label: 'Coconut Butter', color: '#d4a882', images: ['images/blush_coconutbutter.png', 'images/coconut blush_model.jpg'] },
       { label: 'Bare Plum',      color: '#9e6878', images: ['images/blush_bareplum.png'] },
-      { label: 'Cherry Kiss',     color: '#8b2a2a', images: ['images/blush_cherry.png'] },
-      { label: 'Watermelon Crush', color: '#e05a5a', images: ['images/blush_watermelon.png'] },
+      { label: 'Cherry Kiss',    color: '#8b2a2a', images: ['images/blush_cherry.png'] },
     ]
   },
   '2': {
@@ -24,7 +23,7 @@ const productData = {
     colors: [
       { label: 'Pink Guava',       color: '#e8a0b4', images: ['images/tint_pinkguava.png', 'images/ode pt model.png'] },
       { label: 'Tangerine Pop', color: '#e8904a', badge: 'NEW', images: ['images/tint_tangerine.png'] },
-      { label: 'Bare Plum',        color: '#b46870', images: ['images/tint_bareplum.png'] },
+      { label: 'Fig Jam',        color: '#b46870', images: ['images/tint_bareplum.png'] },
     ]
   },
   '4': {
@@ -60,6 +59,17 @@ const productData = {
       { label: 'Clear', color: '#d8d0c8', images: ['images/ode pouch.jpg', 'images/ode pouch model.png'] },
     ]
   },
+  '7': {
+    name: 'MIRROR',
+    sub: '',
+    price: 5000,
+    reviews: 0,
+    badge: '',
+    desc: '',
+    colors: [
+      { label: 'Default', color: '#d8d0c8', images: ['images/ode image.png', 'images/ode mirror.png'] },
+    ]
+  },
   '3': {
     name: 'SOLID PERFUME STICK',
     sub: 'Pocket Perfume Stick',
@@ -68,9 +78,9 @@ const productData = {
     badge: '',
     desc: '고체 타입의 포켓 퍼퓸 스틱. 언제 어디서나 부담 없이 향을 더할 수 있는 여행 친화적인 퍼퓸. 피부에 살짝 문질러 은은하게 지속되는 향을 즐겨보세요.',
     colors: [
-      { label: 'Woody Fig',  color: '#c8b4a0', images: ['images/ode solid perfume stick .png', 'images/ode sp model new.png'] },
-      { label: 'Fig',        color: '#a07060', images: ['images/fig collection.jpg'] },
-      { label: 'Coconut',    color: '#e8d8c0', images: ['images/coconut collection.jpg'] },
+      { label: 'Woody Fig',       color: '#c8b4a0', images: ['images/ode solid perfume stick .png', 'images/ode solid perfume stick open.png', 'images/ode sp model text.png'] },
+      { label: 'Tangerine Splash', color: '#a07060', images: ['images/ode solid perfume stick .png', 'images/ode solid perfume stick open.png'] },
+      { label: 'Coconut Breeze',   color: '#e8d8c0', images: ['images/ode solid perfume stick .png', 'images/ode solid perfume stick open.png'] },
     ]
   }
 };
@@ -124,8 +134,11 @@ function loadColorImages(colorIdx) {
     thumb.addEventListener('click', () => { setImage(i); resetAuto(); });
     thumbsEl.appendChild(thumb);
   });
-  mainImg.src = images[0];
-  mainImg.style.opacity = '1';
+  mainImg.style.opacity = '0';
+  setTimeout(() => {
+    mainImg.src = images[0];
+    mainImg.style.opacity = '1';
+  }, 200);
   resetAuto();
 }
 
@@ -211,10 +224,10 @@ if (initBadgeEl) {
 /* ── 스와치 ── */
 const optEl = document.getElementById('detail-options');
 
-if (!isSingleColor) {
+if (!isSingleColor && !isFragrance) {
   const swatchLabel = document.createElement('p');
   swatchLabel.className = 'option-label';
-  swatchLabel.textContent = isFragrance ? 'Scent' : 'Color';
+  swatchLabel.textContent = 'Color';
   optEl.appendChild(swatchLabel);
 
   const swatchWrap = document.createElement('div');

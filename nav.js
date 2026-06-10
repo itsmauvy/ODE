@@ -9,6 +9,7 @@ const megaProducts = [
   { id:'5', name:'SPF EYE PATCH',       sub:'SPF Eye Patch',        desc:'SPF Eye Patch',        img:'images/ode eye patch_nobg.png',        cat:['all','face','new'],   badge:'', ko:'스킨케어 아이패치 눈 선케어 자외선 패치'                                       },
   { id:'6', name:'POUCH',               sub:'ODE Pouch',            desc:'ODE Pouch',            img:'images/ode pouch_nobg.png',            cat:['all','etc','new'],    badge:'', ko:'파우치 케이스 가방 수납'                                                        },
   { id:'7', name:'COCONUT BUTTER',      sub:'Coconut',              desc:'Soft Balm Blush',      img:'images/blush_coconutbutter.png',       cat:['all','new'],          badge:'', ko:'코코넛버터 블러셔 볼터치'                                                       },
+  { id:'7', name:'MIRROR',              sub:'',                     desc:'',                     img:'images/ode image.png',                 cat:['all','etc'],          badge:'', ko:'미러 거울'                                                                        },
 ];
 
 const collections = [
