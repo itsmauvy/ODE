@@ -27,7 +27,7 @@ const productData = {
     ]
   },
   '4': {
-    name: 'BODY MIST',
+    name: 'COCONUT BREEZE',
     sub: 'Coconut Body Mist',
     price: 22000,
     reviews: 318,

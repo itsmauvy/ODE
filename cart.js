@@ -5,7 +5,7 @@ const PRODUCT_MAP = {
   '1': { name:'POCKET BLUSH',        img:'images/ode pocket blush_close.png',   price:23000, defaultColor:'피그 무스'    },
   '2': { name:'POCKET TINT',         img:'images/ode lip tint.png',             price:18000, defaultColor:'핑크 구아바'  },
   '3': { name:'SOLID PERFUME STICK', img:'images/ode solid perfume stick .png', price:25000, defaultColor:'텐더 터치'    },
-  '4': { name:'BODY MIST',           img:'images/ode body mist 1.png',          price:22000, defaultColor:'코코넛'       },
+  '4': { name:'COCONUT BREEZE',           img:'images/ode body mist 1.png',          price:22000, defaultColor:'코코넛'       },
   '5': { name:'SPF EYE PATCH',       img:'images/ode eye patch_nobg.png',       price:19000, defaultColor:'기본'         },
   '6': { name:'POUCH',               img:'images/ode pouch_nobg.png',           price:28000, defaultColor:'클리어'       },
 };
