@@ -2,22 +2,20 @@
 
 /* ── MEGA MENU ── */
 const megaProducts = [
-  { id:'1', name:'POCKET BLUSH',        sub:'Fig Mousse',           desc:'Soft Balm Blush',      img:'images/ode pocket blush_close.png',    cat:['all','best','face'],       badge:''     },
-  { id:'2', name:'POCKET TINT',         sub:'Pink Guava',           desc:'Dewy Lip Tint',        img:'images/ode lip tint.png',              cat:['all','best','lip'],        badge:''     },
-  { id:'3', name:'SOLID PERFUME STICK', sub:'Pocket Perfume Stick', desc:'Pocket Perfume Stick', img:'images/ode solid perfume stick .png',  cat:['all','fragrance'],         badge:''     },
-  { id:'4', name:'COCONUT BREEZE',      sub:'Coconut Body Mist',    desc:'Scented Body Mist',    img:'images/ode body mist 1.png',           cat:['all','body','new'],        badge:''     },
-  { id:'5', name:'SPF EYE PATCH',       sub:'SPF Eye Patch',        desc:'SPF Eye Patch',        img:'images/ode eye patch_nobg.png',        cat:['all','face','new'],        badge:''     },
-  { id:'6', name:'POUCH',               sub:'ODE Pouch',            desc:'ODE Pouch',            img:'images/ode pouch_nobg.png',            cat:['all','etc','new'],         badge:''     },
-  { id:'7', name:'COCONUT BUTTER',      sub:'Coconut',              desc:'Soft Balm Blush',      img:'images/blush_coconutbutter.png',       cat:['all','new'],               badge:''     },
+  { id:'1', name:'POCKET BLUSH',        sub:'Fig Mousse',           desc:'Soft Balm Blush',      img:'images/ode pocket blush_close.png',    cat:['all','best','face'],  badge:'', ko:'포켓 블러셔 블러시 크림 볼터치 피그무스 코코넛버터 베어플럼 체리키스 워터멜론' },
+  { id:'2', name:'POCKET TINT',         sub:'Pink Guava',           desc:'Dewy Lip Tint',        img:'images/ode lip tint.png',              cat:['all','best','lip'],   badge:'', ko:'포켓 틴트 립틴트 입술 핑크구아바 탠저린 베어플럼'                             },
+  { id:'3', name:'SOLID PERFUME STICK', sub:'Pocket Perfume Stick', desc:'Pocket Perfume Stick', img:'images/ode solid perfume stick .png',  cat:['all','fragrance'],    badge:'', ko:'솔리드 퍼퓸 스틱 고체향수 향수 우디피그 코코넛 피그'                          },
+  { id:'4', name:'COCONUT BREEZE',      sub:'Coconut Body Mist',    desc:'Scented Body Mist',    img:'images/ode body mist 1.png',           cat:['all','body','new'],   badge:'', ko:'코코넛 브리즈 바디미스트 미스트 바디'                                          },
+  { id:'5', name:'SPF EYE PATCH',       sub:'SPF Eye Patch',        desc:'SPF Eye Patch',        img:'images/ode eye patch_nobg.png',        cat:['all','face','new'],   badge:'', ko:'스킨케어 아이패치 눈 선케어 자외선 패치'                                       },
+  { id:'6', name:'POUCH',               sub:'ODE Pouch',            desc:'ODE Pouch',            img:'images/ode pouch_nobg.png',            cat:['all','etc','new'],    badge:'', ko:'파우치 케이스 가방 수납'                                                        },
+  { id:'7', name:'COCONUT BUTTER',      sub:'Coconut',              desc:'Soft Balm Blush',      img:'images/blush_coconutbutter.png',       cat:['all','new'],          badge:'', ko:'코코넛버터 블러셔 볼터치'                                                       },
 ];
 
 const collections = [
-  { name:'COCONUT COLLECTION',    img:'images/coconut collection.jpg',    badge:'NEW' },
-  { name:'FIG COLLECTION',        img:'images/fig collection.jpg' },
-  { name:'GUAVA COLLECTION',      img:'images/guava collection.jpg' },
-  { name:'TANGERINE COLLECTION',  img:'images/tangerine collection.jpg' },
-  { name:'CHERRY COLLECTION',     img:'images/cherry collection.jpg' },
-  { name:'WATERMELON COLLECTION', img:'images/watermelon collection.jpg' },
+  { name:'COCONUT COLLECTION',   img:'images/coconut collection.jpg',   badge:'NEW' },
+  { name:'CHERRY COLLECTION',    img:'images/cherry collection.jpg' },
+  { name:'TANGERINE COLLECTION', img:'images/tangerine collection.jpg' },
+  { name:'FIG COLLECTION',       img:'images/fig collection.jpg' },
 ];
 
 const shopAllLabels = {
@@ -112,7 +110,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const query = q.trim().toLowerCase();
     if (!query) { navResultsEl.classList.remove('show'); navResultsEl.innerHTML = ''; return; }
     const matched = megaProducts.filter(p =>
-      p.name.toLowerCase().includes(query) || p.sub.toLowerCase().includes(query)
+      p.name.toLowerCase().includes(query) ||
+      p.sub.toLowerCase().includes(query) ||
+      (p.ko && p.ko.includes(query))
     );
     navResultsEl.classList.add('show');
     if (!matched.length) {

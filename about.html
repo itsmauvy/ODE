@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="cart.css" />
   <link rel="stylesheet" href="about.css" />
 </head>
 <body class="about-page">
@@ -30,9 +31,21 @@
     <nav class="nav-right">
       <a href="#" class="nav-link">SEARCH</a>
       <a href="login.html" class="nav-link">LOGIN</a>
-      <a href="#" class="nav-link">BAG (0)</a>
+      <a href="#" class="nav-link" id="bag-btn">BAG (<span class="bag-count-el">0</span>)</a>
     </nav>
   </header>
+
+  <!-- BAG SIDEBAR -->
+  <div class="bag-overlay" id="bag-overlay"></div>
+  <aside class="bag-sidebar" id="bag-sidebar">
+    <div class="bag-header">
+      <span class="bag-header-count">0 ITEMS</span>
+      <button class="bag-close" id="bag-close">✕</button>
+    </div>
+    <div id="bag-shipping-bar"></div>
+    <div class="bag-body" id="bag-body"></div>
+    <div class="bag-footer" id="bag-footer"></div>
+  </aside>
 
   <!-- ══════════════════════════════════════
        01. HERO — 풀스크린 타이포 히어로
@@ -111,10 +124,12 @@
         자연이 남긴<br><em>감각을</em>
       </h2>
       <p class="ab-spread__body">
-        우리는 자연이 남기는 색과 향, 그리고 감각에서 영감을 받습니다.<br><br>
-        잘 익은 무화과의 깊은 색, 구아바의 생기,<br>
-        코코넛이 떠오르는 여름의 공기.<br><br>
-        그 순간들을 컬러와 텍스처, 향으로 다시 표현합니다.
+        우리는 자연이 가진 색과 향,<br>
+        그리고 손끝에 남는 감각에서 영감을 받습니다.<br><br>
+        잘 익은 과일의 생기와<br>
+        계절이 남긴 순간들을 담아<br><br>
+        언제든 곁에 둘 수 있는<br>
+        작은 뷰티 오브제를 만듭니다.
       </p>
     </div>
   </section>
@@ -130,61 +145,36 @@
 
     <div class="ab-nature__grid">
       <div class="ab-nature__item ab-nature__item--a">
-        <img src="images/fig collection.jpg" alt="Fig" />
+        <img src="images/fig collection.jpg" alt="Late Summer" />
         <div class="ab-nature__label">
-          <p class="ab-nature__num">Fig</p>
-          <p class="ab-nature__desc-sm">무화과의 깊고 성숙한 색감</p>
+          <p class="ab-nature__num">LATE SUMMER</p>
+          <p class="ab-nature__desc-sm">Inspired by Fig</p>
         </div>
       </div>
       <div class="ab-nature__item ab-nature__item--b">
-        <img src="images/guava collection.jpg" alt="Guava" />
+        <img src="images/cherry collection.jpg" alt="Velvet Dusk" />
         <div class="ab-nature__label">
-          <p class="ab-nature__num">Guava</p>
-          <p class="ab-nature__desc-sm">생기 넘치는 핑크의 싱그러움</p>
+          <p class="ab-nature__num">VELVET DUSK</p>
+          <p class="ab-nature__desc-sm">Inspired by Cherry</p>
         </div>
       </div>
       <div class="ab-nature__item ab-nature__item--c">
-        <img src="images/coconut collection.jpg" alt="Coconut" />
+        <img src="images/coconut collection.jpg" alt="Sea Breeze" />
         <div class="ab-nature__label">
-          <p class="ab-nature__num">Coconut</p>
-          <p class="ab-nature__desc-sm">여름의 포근하고 따뜻한 무드</p>
+          <p class="ab-nature__num">SEA BREEZE</p>
+          <p class="ab-nature__desc-sm">Inspired by Coconut</p>
         </div>
       </div>
       <div class="ab-nature__item ab-nature__item--d">
-        <img src="images/tangerine collection.jpg" alt="Tangerine" />
+        <img src="images/tangerine collection.jpg" alt="Golden Hour" />
         <div class="ab-nature__label">
-          <p class="ab-nature__num">Tangerine</p>
-          <p class="ab-nature__desc-sm">시트러스의 밝고 에너제틱한 빛</p>
+          <p class="ab-nature__num">GOLDEN HOUR</p>
+          <p class="ab-nature__desc-sm">Inspired by Tangerine</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ══════════════════════════════════════
-       05. VALUES — 3가지 브랜드 가치
-  ══════════════════════════════════════ -->
-  <section class="ab-values">
-    <div class="ab-values__inner">
-      <p class="ab-tag ab-values__tag">OUR VALUES</p>
-      <div class="ab-values__grid">
-        <div class="ab-values__item">
-          <span class="ab-values__num">01</span>
-          <h3 class="ab-values__name">Natural Origin</h3>
-          <p class="ab-values__body">자연에서 온 성분만을 사용합니다. 피부에 부담을 주지 않는 순한 포뮬러로 매일 편안하게.</p>
-        </div>
-        <div class="ab-values__item">
-          <span class="ab-values__num">02</span>
-          <h3 class="ab-values__name">Sensory Design</h3>
-          <p class="ab-values__body">보고, 만지고, 향기를 느끼는 모든 감각이 즐거운 제품. 사용하는 순간이 하나의 경험.</p>
-        </div>
-        <div class="ab-values__item">
-          <span class="ab-values__num">03</span>
-          <h3 class="ab-values__name">Pocket Beauty</h3>
-          <p class="ab-values__body">작지만 충분한 것들. 언제 어디서나 꺼낼 수 있는 편리함 속에 정성을 담았습니다.</p>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- ══════════════════════════════════════
        06. PRODUCTS — 제품 쇼케이스
@@ -272,6 +262,8 @@
     </div>
   </footer>
 
+  <script src="cart.js"></script>
+  <script src="nav.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script>

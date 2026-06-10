@@ -259,9 +259,9 @@ body {
 .mega-collection-grid {
   display: flex;
   gap: 16px;
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%);
+  justify-content: center;
+  width: 100%;
+  grid-column: 1 / -1;
 }
 .mega-col-card {
   flex: 0 0 180px;
@@ -1078,9 +1078,11 @@ body {
 }
 .nav-search-results.show { display: block; }
 .nav-search-result-item {
-  padding: 10px 0;
+  display: block;
+  text-decoration: none;
+  color: var(--text);
   border-bottom: 1px solid var(--beige-light);
-  cursor: auto;
+  cursor: pointer;
   transition: background 0.15s;
   margin: 0 -16px;
   padding: 10px 16px;
