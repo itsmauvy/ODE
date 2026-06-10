@@ -1,0 +1,229 @@
+/* ── SHOP PAGE ── */
+
+/* Hero */
+.shop-hero {
+  position: relative;
+  height: 72vh;
+  min-height: 480px;
+  overflow: hidden;
+  margin-top: 64px;
+}
+.shop-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+  display: block;
+}
+.shop-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(20,14,10,0.08) 0%, rgba(20,14,10,0.45) 100%);
+}
+.shop-hero-text {
+  position: absolute;
+  bottom: 72px;
+  left: 80px;
+  color: #fff;
+}
+.shop-hero-eyebrow {
+  font-family: 'Jost', sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.22em;
+  color: rgba(255,255,255,0.65);
+  margin-bottom: 14px;
+}
+.shop-hero-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 64px;
+  font-weight: 300;
+  line-height: 1.1;
+  color: #fff;
+  margin: 0;
+}
+.shop-hero-title em {
+  font-style: italic;
+  font-weight: 300;
+}
+
+/* Filter Bar */
+.shop-filter-bar {
+  position: sticky;
+  top: 64px;
+  z-index: 100;
+  background: var(--white);
+  border-bottom: 1px solid var(--beige-mid);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 48px;
+  gap: 24px;
+  height: 52px;
+}
+.shop-filter-pills {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+.filter-pill {
+  background: transparent;
+  border: none;
+  font-family: 'Jost', sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  color: var(--text-light);
+  padding: 6px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.filter-pill:hover {
+  color: var(--text);
+  background: var(--beige-light);
+}
+.filter-pill.active {
+  background: var(--text);
+  color: var(--white);
+}
+.shop-filter-right {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-shrink: 0;
+}
+.shop-count {
+  font-family: 'Jost', sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--text-light);
+  letter-spacing: 0.06em;
+}
+.shop-sort {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Jost', sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--text-light);
+}
+.shop-sort select {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--beige-mid);
+  font-family: 'Jost', sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--text);
+  letter-spacing: 0.04em;
+  padding: 2px 4px;
+  cursor: pointer;
+  outline: none;
+  appearance: none;
+}
+
+/* Grid */
+.shop-grid-section {
+  padding: 48px 48px 100px;
+}
+.shop-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px 24px;
+}
+
+/* Card */
+.shop-card {
+  display: block;
+  text-decoration: none;
+  color: var(--text);
+  cursor: pointer;
+}
+.shop-card-img-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3/4;
+  background: var(--beige-light);
+  overflow: hidden;
+  margin-bottom: 14px;
+}
+.shop-card-img-wrap img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: opacity 0.4s ease, transform 0.5s ease;
+}
+.shop-card-img-wrap img.contain {
+  object-fit: contain;
+  padding: 16px;
+}
+.card-main-img { opacity: 1; }
+.card-hover-img { opacity: 0; }
+.shop-card:hover .card-main-img { opacity: 0; }
+.shop-card:hover .card-hover-img { opacity: 1; }
+.shop-card:hover .shop-card-img-wrap img {
+  transform: scale(1.04);
+}
+.shop-card-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  font-family: 'Jost', sans-serif;
+  font-size: 9px;
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  padding: 4px 8px;
+  background: var(--text);
+  color: var(--white);
+}
+.shop-card-badge.new-badge {
+  background: #8b6955;
+}
+.shop-card-name {
+  font-family: 'Jost', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  color: var(--text);
+  margin-bottom: 5px;
+}
+.shop-card-sub {
+  font-family: 'Jost', sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--text-light);
+  margin-bottom: 7px;
+}
+.shop-card-price {
+  font-family: 'Jost', sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--text);
+}
+.shop-card-swatches {
+  display: flex;
+  gap: 5px;
+  margin-top: 8px;
+}
+.shop-card-swatch {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 1px solid rgba(43,36,32,0.15);
+}
+
+/* Empty state */
+.shop-empty {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 80px 0;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 24px;
+  font-weight: 300;
+  color: var(--text-light);
+}

@@ -933,15 +933,20 @@ body {
 }
 .about-link {
   display: inline-block;
-  font-size: 12px;
-  letter-spacing: 0.18em;
+  margin-top: 10px;
+  padding: 13px 20px;
+  background: transparent;
   color: var(--text);
   text-decoration: none;
-  border-bottom: 1px solid var(--text);
-  padding-bottom: 3px;
-  transition: opacity 0.2s;
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  border: 1px solid rgba(43,36,32,0.45);
+  transition: background 0.25s, border-color 0.25s;
 }
-.about-link:hover { opacity: 0.5; }
+.about-link:hover {
+  background: rgba(43,36,32,0.06);
+  border-color: var(--text);
+}
 .about-stats {
   display: flex;
   gap: 60px;

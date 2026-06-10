@@ -22,9 +22,9 @@ const productData = {
     badge: '',
     desc: '물광 입술을 완성하는 듀이 립 틴트. 가볍게 밀착되어 오래도록 선명한 발색이 유지되고, 촉촉한 보습막이 입술을 편안하게 감싸줍니다.',
     colors: [
-      { label: 'Pink Guava', color: '#e8a0b4', images: ['images/ode lip tint.png', 'images/ode pt model.png'] },
-      { label: 'Tangerine',  color: '#e8904a', badge: 'NEW', images: ['images/tangerine collection.jpg'] },
-      { label: 'Fig',        color: '#b46870', images: ['images/fig collection.jpg'] },
+      { label: 'Pink Guava',       color: '#e8a0b4', images: ['images/tint_pinkguava.png', 'images/ode pt model.png'] },
+      { label: 'Tangerine Pop', color: '#e8904a', badge: 'NEW', images: ['images/tint_tangerine.png'] },
+      { label: 'Bare Plum',        color: '#b46870', images: ['images/tint_bareplum.png'] },
     ]
   },
   '4': {

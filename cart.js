@@ -3,7 +3,7 @@ const FREE_SHIPPING_THRESHOLD = 50000;
 
 const PRODUCT_MAP = {
   '1': { name:'POCKET BLUSH',         img:'images/blush_figmousse.png',          price:23000, defaultColor:'Fig Mousse'   },
-  '2': { name:'POCKET TINT',         img:'images/ode lip tint.png',             price:18000, defaultColor:'Pink Guava'   },
+  '2': { name:'POCKET TINT',         img:'images/tint_pinkguava.png',           price:18000, defaultColor:'Pink Guava'   },
   '3': { name:'SOLID PERFUME STICK', img:'images/ode solid perfume stick .png', price:25000, defaultColor:'Woody Fig'    },
   '4': { name:'COCONUT BREEZE',      img:'images/ode body mist 1.png',          price:22000, defaultColor:'Coconut'      },
   '5': { name:'SPF EYE PATCH',       img:'images/ode eye patch_nobg.png',       price:19000, defaultColor:'Original'     },
