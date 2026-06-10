@@ -852,14 +852,12 @@ body {
 .odeu-ig {
   display: inline-flex;
   align-items: center;
-  gap: 7px;
-  font-size: 11px;
-  letter-spacing: 0.14em;
+  gap: 9px;
+  font-size: 15px;
+  letter-spacing: 0.1em;
   color: var(--text-light);
-  text-decoration: none;
-  transition: color 0.2s;
 }
-.odeu-ig:hover { color: var(--text); }
+.odeu-ig svg { width: 18px; height: 18px; }
 
 /* 콜라주 그리드 */
 .odeu-grid {
