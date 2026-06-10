@@ -8,7 +8,7 @@ const megaProducts = [
   { id:'4', name:'COCONUT BREEZE',      sub:'Coconut Body Mist',    desc:'Scented Body Mist',    img:'images/ode body mist 1.png',           cat:['all','body','new'],        badge:''     },
   { id:'5', name:'SPF EYE PATCH',       sub:'SPF Eye Patch',        desc:'SPF Eye Patch',        img:'images/ode eye patch_nobg.png',        cat:['all','face','new'],        badge:''     },
   { id:'6', name:'POUCH',               sub:'ODE Pouch',            desc:'ODE Pouch',            img:'images/ode pouch_nobg.png',            cat:['all','etc','new'],         badge:''     },
-  { id:'7', name:'COCONUT BUTTER',      sub:'Coconut',              desc:'Soft Balm Blush',      img:'images/coconut pocket blush 1.png',    cat:['all','new'],               badge:''     },
+  { id:'7', name:'COCONUT BUTTER',      sub:'Coconut',              desc:'Soft Balm Blush',      img:'images/blush_coconutbutter.png',       cat:['all','new'],               badge:''     },
 ];
 
 const collections = [
