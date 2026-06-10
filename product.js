@@ -162,8 +162,20 @@ function selectColor(idx) {
 }
 
 /* ── 컬러 드롭다운 ── */
-const dropdownBtn  = document.getElementById('color-dropdown-btn');
-const dropdownList = document.getElementById('color-dropdown-list');
+const isSingleColor   = product.colors.length === 1;
+const isFragrance     = product.colors.some(c => ['Woody Fig','Fig','Coconut'].includes(c.label) && productId === '3');
+const colorLabelText  = isFragrance ? 'Scent:' : 'Color:';
+
+const colorDropdownWrap = document.getElementById('color-dropdown-wrap');
+const dropdownBtn       = document.getElementById('color-dropdown-btn');
+const dropdownList      = document.getElementById('color-dropdown-list');
+
+/* 옵션이 하나면 드롭다운 숨김 */
+if (isSingleColor) {
+  colorDropdownWrap.style.display = 'none';
+} else {
+  document.querySelector('.color-dropdown-label').textContent = colorLabelText + ' ';
+}
 
 const dropdownItemEls = [];
 product.colors.forEach((c, i) => {
@@ -194,36 +206,39 @@ if (initBadgeEl) {
 
 /* ── 스와치 ── */
 const optEl = document.getElementById('detail-options');
-const swatchLabel = document.createElement('p');
-swatchLabel.className = 'option-label';
-swatchLabel.textContent = '컬러';
-optEl.appendChild(swatchLabel);
-
-const swatchWrap = document.createElement('div');
-swatchWrap.className = 'option-swatches';
 const swatchEls = [];
-product.colors.forEach((c, i) => {
-  const wrap = document.createElement('div');
-  wrap.className = 'swatch-wrap';
 
-  const s = document.createElement('div');
-  s.className = 'swatch' + (i === activeColorIdx ? ' active' : '');
-  s.style.background = c.color;
-  s.title = c.label;
-  s.addEventListener('click', () => selectColor(i));
-  wrap.appendChild(s);
-  swatchEls.push(s);
+if (!isSingleColor) {
+  const swatchLabel = document.createElement('p');
+  swatchLabel.className = 'option-label';
+  swatchLabel.textContent = isFragrance ? 'Scent' : 'Color';
+  optEl.appendChild(swatchLabel);
 
-  if (c.badge) {
-    const b = document.createElement('span');
-    b.className = 'swatch-badge';
-    b.textContent = c.badge;
-    wrap.appendChild(b);
-  }
+  const swatchWrap = document.createElement('div');
+  swatchWrap.className = 'option-swatches';
+  product.colors.forEach((c, i) => {
+    const wrap = document.createElement('div');
+    wrap.className = 'swatch-wrap';
 
-  swatchWrap.appendChild(wrap);
-});
-optEl.appendChild(swatchWrap);
+    const s = document.createElement('div');
+    s.className = 'swatch' + (i === activeColorIdx ? ' active' : '');
+    s.style.background = c.color;
+    s.title = c.label;
+    s.addEventListener('click', () => selectColor(i));
+    wrap.appendChild(s);
+    swatchEls.push(s);
+
+    if (c.badge) {
+      const b = document.createElement('span');
+      b.className = 'swatch-badge';
+      b.textContent = c.badge;
+      wrap.appendChild(b);
+    }
+
+    swatchWrap.appendChild(wrap);
+  });
+  optEl.appendChild(swatchWrap);
+}
 
 /* 초기 이미지 로드 */
 loadColorImages(activeColorIdx);
