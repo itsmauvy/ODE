@@ -7,7 +7,7 @@ const productData = {
     badge: 'BEST',
     desc: '자연스럽게 스며드는 크림 블러셔. 손가락으로 가볍게 두드려 발색하면 생기 있는 혈색을 연출할 수 있어요. 하루 종일 촉촉하게 유지되는 밤 타입 포뮬러.',
     colors: [
-      { label: '피그 무스',     color: '#c47a7a', images: ['images/ode pocket blush_close.png', 'images/ode pb model.png'] },
+      { label: '피그 무스',     color: '#c47a7a', images: ['images/blush_figmousse.png', 'images/ode pb model.png'] },
       { label: 'Coconut Butter', color: '#e8b4a0', images: ['images/coconut pocket blush 1.png', 'images/coconut blush_model.jpg'] },
       { label: '체리',          color: '#9e3a3a', images: ['images/cherry collection.jpg'] },
       { label: '워터멜론',      color: '#e87070', images: ['images/watermelon collection.jpg'] },
