@@ -182,6 +182,27 @@
     window.addEventListener('mousemove', e => { mx=e.clientX; my=e.clientY; gsap.set(cursor,{x:mx,y:my}); });
     (function loop(){ fx+=(mx-fx)*0.15; fy+=(my-fy)*0.15; gsap.set(follower,{x:fx,y:fy}); requestAnimationFrame(loop); })();
 
+    /* experience section */
+    gsap.from('.st-experience__tag', {
+      opacity:0, y:20, duration:0.7, ease:'power2.out',
+      scrollTrigger:{ trigger:'.st-experience__text', start:'top 80%', once:true }
+    });
+    gsap.from('.st-experience__title', {
+      opacity:0, y:40, duration:1, ease:'power3.out',
+      scrollTrigger:{ trigger:'.st-experience__text', start:'top 80%', once:true },
+      delay: 0.15
+    });
+    gsap.from('.st-experience__divider', {
+      scaleX:0, transformOrigin:'left center', duration:0.7, ease:'power2.out',
+      scrollTrigger:{ trigger:'.st-experience__text', start:'top 80%', once:true },
+      delay: 0.35
+    });
+    gsap.from('.st-experience__body', {
+      opacity:0, y:30, duration:0.9, ease:'power2.out',
+      scrollTrigger:{ trigger:'.st-experience__text', start:'top 80%', once:true },
+      delay: 0.5
+    });
+
     /* fade-in on scroll */
     gsap.from('.st-intro__text', {
       opacity:0, y:36, duration:1, ease:'power2.out',
