@@ -139,6 +139,12 @@ function resetAuto() {
 
 
 /* ── 컬러 선택 공통 함수 ── */
+const swatchEls = [];
+
+const isSingleColor  = product.colors.length === 1;
+const isFragrance    = id === '3';
+const colorLabelText = isFragrance ? 'Scent:' : 'Color:';
+
 function selectColor(idx) {
   activeColorIdx = idx;
   const c = product.colors[idx];
@@ -162,9 +168,6 @@ function selectColor(idx) {
 }
 
 /* ── 컬러 드롭다운 ── */
-const isSingleColor   = product.colors.length === 1;
-const isFragrance     = product.colors.some(c => ['Woody Fig','Fig','Coconut'].includes(c.label) && productId === '3');
-const colorLabelText  = isFragrance ? 'Scent:' : 'Color:';
 
 const colorDropdownWrap = document.getElementById('color-dropdown-wrap');
 const dropdownBtn       = document.getElementById('color-dropdown-btn');
@@ -206,7 +209,6 @@ if (initBadgeEl) {
 
 /* ── 스와치 ── */
 const optEl = document.getElementById('detail-options');
-const swatchEls = [];
 
 if (!isSingleColor) {
   const swatchLabel = document.createElement('p');
