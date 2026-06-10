@@ -26,7 +26,7 @@
 .st-hero__overlay {
   position: absolute; inset: 0;
   background:
-    linear-gradient(180deg, rgba(17,17,17,0.7) 0%, rgba(17,17,17,0.7) 100%);
+    linear-gradient(180deg, rgba(17,17,17,0.1) 0%, rgba(17,17,17,0.6) 100%);
 }
 .st-hero__inner {
   padding: 0 80px 64px;
