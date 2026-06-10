@@ -367,7 +367,7 @@
 .ab-closing__title em { font-style: italic; }
 .ab-closing__en {
   font-family: 'Jost', sans-serif;
-  font-size: 11px; font-weight: 300;
+  font-size: 16px; font-weight: 300;
   letter-spacing: 0.3em;
   color: rgba(255,255,255,0.5);
   margin-bottom: 16px;
