@@ -20,9 +20,9 @@
 }
 .st-hero__bg img {
   width: 100%; height: 120%;
-  object-fit: cover; object-position: center;
+  object-fit: cover; object-position: center top;
   display: block;
-  margin-top: -10%;
+  margin-top: 0;
 }
 .st-hero__overlay {
   position: absolute; inset: 0;
