@@ -110,8 +110,9 @@
 }
 .st-experience__body {
   font-family: 'Jost', sans-serif;
-  font-size: 14px; font-weight: 300;
-  line-height: 2.2; color: #666;
+  font-size: 17px; font-weight: 300;
+  line-height: 2.2; color: #555;
+  letter-spacing: 0.02em;
 }
 
 /* ── INTRO ── */
