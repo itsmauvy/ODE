@@ -2,7 +2,7 @@
 const FREE_SHIPPING_THRESHOLD = 50000;
 
 const PRODUCT_MAP = {
-  '1': { name:'POCKET BLUSH',        img:'images/ode pocket blush_close.png',   price:23000, defaultColor:'피그 무스'    },
+  '1': { name:'COCONUT BUTTER',       img:'images/ode pocket blush_close.png',   price:23000, defaultColor:'피그 무스'    },
   '2': { name:'POCKET TINT',         img:'images/ode lip tint.png',             price:18000, defaultColor:'핑크 구아바'  },
   '3': { name:'SOLID PERFUME STICK', img:'images/ode solid perfume stick .png', price:25000, defaultColor:'텐더 터치'    },
   '4': { name:'COCONUT BREEZE',           img:'images/ode body mist 1.png',          price:22000, defaultColor:'코코넛'       },
