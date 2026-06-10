@@ -926,11 +926,22 @@ body {
   margin: 16px 0 24px;
 }
 .about-body {
-  font-size: 18px;
-  line-height: 2.1;
+  font-size: 16px;
+  line-height: 2.2;
   color: var(--text-light);
-  margin-bottom: 48px;
+  margin-bottom: 36px;
 }
+.about-link {
+  display: inline-block;
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  color: var(--text);
+  text-decoration: none;
+  border-bottom: 1px solid var(--text);
+  padding-bottom: 3px;
+  transition: opacity 0.2s;
+}
+.about-link:hover { opacity: 0.5; }
 .about-stats {
   display: flex;
   gap: 60px;
