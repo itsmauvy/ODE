@@ -6,14 +6,27 @@
 
 /* ── HERO ── */
 .st-hero {
-  height: 52vh;
-  min-height: 360px;
+  height: 72vh;
+  min-height: 480px;
   background: #111;
   display: flex;
   align-items: flex-end;
   margin-top: 64px;
   position: relative;
   overflow: hidden;
+}
+.st-hero__bg {
+  position: absolute; inset: 0;
+}
+.st-hero__bg img {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center;
+  display: block;
+}
+.st-hero__overlay {
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(180deg, rgba(17,17,17,0.1) 0%, rgba(17,17,17,0.6) 100%);
 }
 .st-hero__inner {
   padding: 0 80px 64px;
@@ -97,6 +110,14 @@
   min-height: 480px;
   overflow: hidden;
   background: #e8e0d8;
+}
+.st-card__map iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+  position: absolute;
+  inset: 0;
 }
 
 .st-card__info {
