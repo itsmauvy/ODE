@@ -10,8 +10,8 @@ const productData = {
       { label: 'Fig Mousse',     color: '#c47a7a', images: ['images/blush_figmousse.png',    'images/ode pb model.png'] },
       { label: 'Coconut Butter', color: '#d4a882', images: ['images/blush_coconutbutter.png', 'images/coconut blush_model.jpg'] },
       { label: 'Bare Plum',      color: '#9e6878', images: ['images/blush_bareplum.png'] },
-      { label: 'Cherry',         color: '#8b2a2a', images: ['images/blush_cherry.png'] },
-      { label: 'Watermelon',     color: '#e05a5a', images: ['images/blush_watermelon.png'] },
+      { label: 'Cherry Kiss',     color: '#8b2a2a', images: ['images/blush_cherry.png'] },
+      { label: 'Watermelon Crush', color: '#e05a5a', images: ['images/blush_watermelon.png'] },
     ]
   },
   '2': {
