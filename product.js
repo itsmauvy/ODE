@@ -67,7 +67,7 @@ const productData = {
     badge: '',
     desc: '고체 타입의 포켓 퍼퓸 스틱. 언제 어디서나 부담 없이 향을 더할 수 있는 여행 친화적인 퍼퓸. 피부에 살짝 문질러 은은하게 지속되는 향을 즐겨보세요.',
     colors: [
-      { label: '텐더 터치', color: '#c8b4a0', images: ['images/ode solid perfume stick .png', 'images/ode sp model new.png'] },
+      { label: '우디 피그', color: '#c8b4a0', images: ['images/ode solid perfume stick .png', 'images/ode sp model new.png'] },
       { label: '무화과',   color: '#a07060', images: ['images/fig collection.jpg'] },
       { label: '코코넛',   color: '#e8d8c0', images: ['images/coconut collection.jpg'] },
     ]
