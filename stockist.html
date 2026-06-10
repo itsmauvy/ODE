@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>STOCKIST — ODE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="cart.css" />
+  <link rel="stylesheet" href="stockist.css" />
+</head>
+<body class="stockist-page">
+
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursor-follower"></div>
+
+  <!-- HEADER -->
+  <header class="header" id="header" style="opacity:1; --header-color:#fff; --header-bg:transparent;">
+    <nav class="nav-left">
+      <div class="nav-item" id="nav-shop">
+        <a href="shop.html" class="nav-link">SHOP</a>
+      </div>
+      <a href="about.html" class="nav-link">ABOUT</a>
+      <a href="stockist.html" class="nav-link">STOCKIST</a>
+    </nav>
+    <a href="index.html" class="logo">
+      <img src="images/ode logo.png" alt="ODE" />
+    </a>
+    <nav class="nav-right">
+      <a href="#" class="nav-link">SEARCH</a>
+      <a href="login.html" class="nav-link">LOGIN</a>
+      <a href="#" class="nav-link" id="bag-btn">BAG (<span class="bag-count-el">0</span>)</a>
+    </nav>
+  </header>
+
+  <!-- BAG SIDEBAR -->
+  <div class="bag-overlay" id="bag-overlay"></div>
+  <aside class="bag-sidebar" id="bag-sidebar">
+    <div class="bag-header">
+      <span class="bag-header-count">0 ITEMS</span>
+      <button class="bag-close" id="bag-close">✕</button>
+    </div>
+    <div id="bag-shipping-bar"></div>
+    <div class="bag-body" id="bag-body"></div>
+    <div class="bag-footer" id="bag-footer"></div>
+  </aside>
+
+  <!-- ── HERO ── -->
+  <section class="st-hero">
+    <div class="st-hero__grain"></div>
+    <div class="st-hero__inner">
+      <p class="st-hero__eyebrow">ODE · OFFLINE STORE</p>
+      <h1 class="st-hero__title">
+        Find <em>ODE</em><br>Near You.
+      </h1>
+    </div>
+  </section>
+
+  <!-- ── INTRO ── -->
+  <div class="st-intro">
+    <span class="st-intro__tag">STOCKIST</span>
+    <p class="st-intro__text">
+      직접 보고, 향을 맡고, 손에 얹어 보세요.<br>
+      ODE를 만날 수 있는 오프라인 공간을 소개합니다.
+    </p>
+  </div>
+
+  <!-- ── STORES ── -->
+  <section class="st-stores">
+    <span class="st-stores__label">SEOUL — 01 LOCATION</span>
+
+    <div class="st-card">
+      <!-- MAP -->
+      <div class="st-card__map">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3163.4234085878!2d126.9204398!3d37.5560927!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357c98f55574e46b%3A0x7a9d3a10cf3ad1c6!2z7Yed7ZuE65Ok7J207YyF7ZWZ!5e0!3m2!1sko!2skr!4v1700000000000!5m2!1sko!2skr"
+          allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="ODE Mapo Store Map">
+        </iframe>
+        <div class="st-card__map-overlay"></div>
+      </div>
+
+      <!-- INFO -->
+      <div class="st-card__info">
+        <p class="st-card__eyebrow">FLAGSHIP STORE</p>
+        <h2 class="st-card__name">ODE<br><em>Mapo Studio</em></h2>
+        <div class="st-card__divider"></div>
+
+        <div class="st-card__details">
+          <div class="st-detail">
+            <span class="st-detail__label">ADDRESS</span>
+            <span class="st-detail__value">
+              서울특별시 마포구 와우산로 68<br>
+              1층 ODE STUDIO
+            </span>
+          </div>
+          <div class="st-detail">
+            <span class="st-detail__label">HOURS</span>
+            <span class="st-detail__value">
+              <strong>화–금</strong> &nbsp;12:00 – 19:30<br>
+              <strong>토–일</strong> &nbsp;12:00 – 20:00<br>
+              <strong>월</strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;휴무
+            </span>
+          </div>
+          <div class="st-detail">
+            <span class="st-detail__label">PHONE</span>
+            <span class="st-detail__value">02-334-0628</span>
+          </div>
+          <div class="st-detail">
+            <span class="st-detail__label">SUBWAY</span>
+            <span class="st-detail__value">
+              홍대입구역 2호선 9번 출구 도보 8분
+            </span>
+          </div>
+        </div>
+
+        <div class="st-card__note">
+          방문 전 인스타그램 DM 또는 전화로 재고를 미리 확인하시면 편리합니다.<br>
+          주차 공간이 협소하오니 대중교통을 이용하시길 권장드립니다.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA ── -->
+  <div class="st-cta">
+    <p class="st-cta__text">
+      온라인에서도<br>만나보세요.
+    </p>
+    <a href="shop.html" class="st-cta__btn">SHOP ONLINE →</a>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-logo">ODE</div>
+      <div class="footer-links">
+        <a href="#">이용약관</a>
+        <a href="#">개인정보처리방침</a>
+        <a href="#">고객센터</a>
+        <a href="about.html">브랜드 소개</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 ODE. All rights reserved.</p>
+      <div class="footer-sns">
+        <a href="#">INSTAGRAM</a>
+        <a href="#">NAVER</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="cart.js"></script>
+  <script src="nav.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script>
+    gsap.registerPlugin(ScrollTrigger);
+
+    /* cursor */
+    const cursor   = document.getElementById('cursor');
+    const follower = document.getElementById('cursor-follower');
+    let mx=0,my=0,fx=0,fy=0;
+    window.addEventListener('mousemove', e => { mx=e.clientX; my=e.clientY; gsap.set(cursor,{x:mx,y:my}); });
+    (function loop(){ fx+=(mx-fx)*0.15; fy+=(my-fy)*0.15; gsap.set(follower,{x:fx,y:fy}); requestAnimationFrame(loop); })();
+
+    /* fade-in on scroll */
+    gsap.from('.st-intro__text', {
+      opacity:0, y:36, duration:1, ease:'power2.out',
+      scrollTrigger:{ trigger:'.st-intro', start:'top 85%', once:true }
+    });
+    gsap.from('.st-card', {
+      opacity:0, y:48, duration:1, ease:'power2.out',
+      scrollTrigger:{ trigger:'.st-card', start:'top 80%', once:true }
+    });
+    gsap.from('.st-cta__text, .st-cta__btn', {
+      opacity:0, y:28, duration:0.8, stagger:0.15, ease:'power2.out',
+      scrollTrigger:{ trigger:'.st-cta', start:'top 85%', once:true }
+    });
+
+    /* hero text */
+    gsap.from('.st-hero__inner', { opacity:0, y:36, duration:1, delay:0.2, ease:'power3.out' });
+  </script>
+</body>
+</html>

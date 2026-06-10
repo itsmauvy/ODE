@@ -1,0 +1,226 @@
+/* ══════════════════════════════════════
+   STOCKIST PAGE
+══════════════════════════════════════ */
+
+.stockist-page { background: #f5f1ed; }
+
+/* ── HERO ── */
+.st-hero {
+  height: 52vh;
+  min-height: 360px;
+  background: #111;
+  display: flex;
+  align-items: flex-end;
+  margin-top: 64px;
+  position: relative;
+  overflow: hidden;
+}
+.st-hero__inner {
+  padding: 0 80px 64px;
+  color: #fff;
+  position: relative;
+  z-index: 1;
+}
+.st-hero__eyebrow {
+  font-family: 'Jost', sans-serif;
+  font-size: 10px;
+  font-weight: 300;
+  letter-spacing: 0.3em;
+  color: rgba(255,255,255,0.45);
+  margin-bottom: 20px;
+}
+.st-hero__title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(52px, 7vw, 88px);
+  font-weight: 300;
+  line-height: 1.05;
+  color: #fff;
+  margin: 0;
+}
+.st-hero__title em { font-style: italic; }
+.st-hero__grain {
+  position: absolute; inset: 0;
+  pointer-events: none; opacity: 0.06;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='256' height='256'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.78' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='256' height='256' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 256px;
+}
+
+/* ── INTRO ── */
+.st-intro {
+  background: #fff;
+  padding: 80px 80px 72px;
+  border-bottom: 1px solid #e8e0d8;
+}
+.st-intro__tag {
+  font-family: 'Jost', sans-serif;
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.28em;
+  color: #8D775F;
+  display: block;
+  margin-bottom: 28px;
+}
+.st-intro__text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(26px, 2.8vw, 36px);
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.55;
+  color: #111;
+  max-width: 740px;
+}
+
+/* ── STORE SECTION ── */
+.st-stores {
+  padding: 80px 80px 120px;
+}
+.st-stores__label {
+  font-family: 'Jost', sans-serif;
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.28em;
+  color: #8D775F;
+  display: block;
+  margin-bottom: 48px;
+}
+
+/* ── STORE CARD ── */
+.st-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: #fff;
+  border: 1px solid #e8e0d8;
+  overflow: hidden;
+}
+.st-card__map {
+  position: relative;
+  min-height: 480px;
+  overflow: hidden;
+  background: #e8e0d8;
+}
+.st-card__map iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+  filter: grayscale(20%) contrast(0.95);
+}
+.st-card__map-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: rgba(245,241,237,0.08);
+}
+
+.st-card__info {
+  padding: 64px 72px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.st-card__eyebrow {
+  font-family: 'Jost', sans-serif;
+  font-size: 10px;
+  font-weight: 300;
+  letter-spacing: 0.26em;
+  color: #8D775F;
+  margin-bottom: 18px;
+}
+
+.st-card__name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(34px, 3.2vw, 46px);
+  font-weight: 300;
+  line-height: 1.15;
+  color: #111;
+  margin: 0 0 10px;
+}
+.st-card__name em { font-style: italic; }
+
+.st-card__divider {
+  width: 36px;
+  height: 1px;
+  background: #8D775F;
+  margin: 28px 0 36px;
+}
+
+.st-card__details {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.st-detail {
+  display: flex;
+  gap: 20px;
+}
+.st-detail__label {
+  font-family: 'Jost', sans-serif;
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.22em;
+  color: #8D775F;
+  min-width: 72px;
+  padding-top: 2px;
+}
+.st-detail__value {
+  font-family: 'Jost', sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.8;
+  color: #444;
+}
+.st-detail__value strong {
+  font-weight: 400;
+  color: #111;
+}
+
+.st-card__note {
+  margin-top: 36px;
+  padding: 18px 20px;
+  background: #f5f1ed;
+  border-left: 2px solid #c9b89e;
+  font-family: 'Jost', sans-serif;
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 1.85;
+  color: #777;
+}
+
+/* ── BOTTOM CTA ── */
+.st-cta {
+  background: #111;
+  padding: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+.st-cta__text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(28px, 3vw, 40px);
+  font-weight: 300;
+  font-style: italic;
+  color: #fff;
+  line-height: 1.35;
+}
+.st-cta__btn {
+  display: inline-block;
+  padding: 16px 36px;
+  font-family: 'Jost', sans-serif;
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  color: #111;
+  background: #f5f1ed;
+  text-decoration: none;
+  border: 1px solid transparent;
+  transition: background 0.25s, color 0.25s;
+  white-space: nowrap;
+}
+.st-cta__btn:hover {
+  background: transparent;
+  color: rgba(255,255,255,0.7);
+  border-color: rgba(255,255,255,0.25);
+}
