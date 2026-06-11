@@ -29,7 +29,6 @@ const shopProducts = [
     hoverImg: 'images/ode pt model.png',
     contain: true,
     imgPadding: '100px 115px',
-    cardBg: '#dedad6',
     colors: [
       { label: 'Pink Guava',       color: '#e8a0b4' },
       { label: 'Tangerine Pop', color: '#e8904a' },
