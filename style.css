@@ -1397,6 +1397,7 @@ body {
   .hero-content { left: 20px; bottom: 40px; }
   .hero-title { font-size: 36px; margin-left: 0; overflow: visible; }
   .hero-title .line { overflow: visible; }
+  .hero-title .italic { margin-left: 0; }
   .hero-sub { font-size: 13px; margin-bottom: 20px; }
   .hero-scroll-hint { display: none; }
   /* best seller */
