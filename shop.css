@@ -232,7 +232,7 @@
 /* Mobile */
 @media (max-width: 767px) {
   .shop-hero { height: 52vh; min-height: 300px; margin-top: 60px; }
-  .shop-hero-img { object-position: 30% 20%; }
+  .shop-hero-img { object-position: 55% 25%; }
   .shop-hero-text { left: 20px; bottom: 32px; }
   .shop-hero-title { font-size: 34px; }
   .shop-filter-bar { padding: 0 16px; height: auto; min-height: 52px; flex-wrap: nowrap; overflow-x: auto; }
