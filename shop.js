@@ -60,7 +60,7 @@ const shopProducts = [
     badge: 'NEW',
     cat: ['all', 'new', 'body'],
     img: 'images/ode body mist 1.png',
-    hoverImg: 'images/ode body mist.jpg',
+    hoverImg: 'images/ode body mist 2.jpg',
     contain: true,
     colors: [],
   },
