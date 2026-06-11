@@ -6,9 +6,9 @@
 
 /* ── HERO ── */
 .st-hero {
-  height: 55vh;
-  min-height: 380px;
-  background: #fff;
+  height: 100vh;
+  min-height: 680px;
+  background: #111;
   display: flex;
   align-items: flex-end;
   margin-top: 64px;
@@ -30,28 +30,35 @@
   background: linear-gradient(180deg, rgba(17,17,17,0.1) 0%, rgba(17,17,17,0.7) 100%);
 }
 .st-hero__inner {
-  padding: 0 80px 64px;
+  padding: 0 80px 72px;
   color: #fff;
   position: relative;
-  z-index: 1;
+  z-index: 3;
 }
 .st-hero__eyebrow {
   font-family: 'Jost', sans-serif;
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 300;
   letter-spacing: 0.3em;
   color: rgba(255,255,255,0.45);
-  margin-bottom: 20px;
+  margin-bottom: 22px;
 }
 .st-hero__title {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(52px, 7vw, 88px);
+  font-family: 'Gowun Batang', 'Cormorant Garamond', serif;
+  font-size: clamp(60px, 8.5vw, 108px);
   font-weight: 300;
-  line-height: 1.05;
+  line-height: 1.0;
   color: #fff;
-  margin: 0;
+  margin: 0 0 28px;
 }
-.st-hero__title em { font-style: italic; }
+.st-hero__title em { font-style: normal; }
+.st-hero__desc {
+  font-family: 'Jost', sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  letter-spacing: 0.04em;
+  color: rgba(255,255,255,0.65);
+}
 .st-hero__grain {
   position: absolute; inset: 0;
   pointer-events: none; opacity: 0.06;
@@ -142,46 +149,58 @@
 
 /* ── STORE SECTION ── */
 .st-stores {
-  padding: 80px 80px 120px;
-}
-.st-stores__label {
-  font-family: 'Jost', sans-serif;
-  font-size: 10px;
-  font-weight: 400;
-  letter-spacing: 0.28em;
-  color: #8D775F;
-  display: block;
-  margin-bottom: 48px;
+  padding: 0;
 }
 
 /* ── STORE CARD ── */
 .st-card {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
   background: #fff;
-  border: 1px solid #e8e0d8;
+  border-top: 1px solid #e8e0d8;
+  border-bottom: 1px solid #e8e0d8;
   overflow: hidden;
 }
-.st-card__map {
-  position: relative;
+.st-card__map-cta {
+  background: #1a1210;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   min-height: 480px;
-  overflow: hidden;
-  background: #e8e0d8;
 }
-.st-card__map iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
-  display: block;
-  position: absolute;
-  inset: 0;
+.st-card__map-inner {
+  text-align: center;
+}
+.st-card__map-addr {
+  font-family: 'Jost', sans-serif;
+  font-size: 12px;
+  font-weight: 300;
+  letter-spacing: 0.12em;
+  color: rgba(255,255,255,0.35);
+  margin-bottom: 28px;
+}
+.st-card__map-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Jost', sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  color: #fff;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255,255,255,0.3);
+  padding-bottom: 4px;
+  transition: border-color 0.2s, color 0.2s;
+}
+.st-card__map-btn:hover {
+  color: rgba(255,255,255,0.6);
+  border-color: rgba(255,255,255,0.15);
 }
 
 .st-card__info {
-  padding: 64px 72px;
+  padding: 72px 80px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  max-width: 680px;
 }
 
 .st-card__eyebrow {
@@ -201,7 +220,7 @@
   color: #111;
   margin: 0 0 10px;
 }
-.st-card__name em { font-style: italic; }
+.st-card__name em { font-style: normal; }
 
 .st-card__divider {
   width: 36px;
@@ -240,6 +259,25 @@
   font-weight: 400;
   color: #111;
 }
+
+.st-card__map-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 32px;
+  font-family: 'Jost', sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  color: #1a1210;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+.st-card__map-link span {
+  border-bottom: 1px solid #c9b89e;
+  padding-bottom: 3px;
+}
+.st-card__map-link:hover { opacity: 0.5; }
 
 .st-card__note {
   margin-top: 36px;

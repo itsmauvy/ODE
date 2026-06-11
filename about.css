@@ -276,7 +276,7 @@ html, body { overflow-x: hidden; }
   font-weight: 300; line-height: 1.2;
   color: #111; margin: 0;
 }
-.ab-nature__title em { font-style: italic; }
+.ab-nature__title em { font-style: normal; }
 
 .ab-nature__grid {
   display: grid;
@@ -394,7 +394,7 @@ html, body { overflow-x: hidden; }
   font-weight: 300; line-height: 1.15;
   color: #111; margin-bottom: 16px;
 }
-.ab-products__title em { font-style: italic; }
+.ab-products__title em { font-style: normal; }
 .ab-products__sub {
   font-family: 'Jost', sans-serif;
   font-size: 13px; font-weight: 300;
