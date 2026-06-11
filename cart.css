@@ -331,3 +331,21 @@
   transition: background 0.2s;
 }
 .bag-checkout:hover { background: #5c4f45; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 480px) {
+  .bag-sidebar { width: 100vw; }
+  .bag-header { padding: 20px 20px; }
+  .bag-select-header { padding: 10px 20px; }
+  .bag-item { padding: 16px 20px; gap: 10px; }
+  .bag-item-img { width: 60px; height: 60px; }
+  .bag-item-name { font-size: 14px; }
+  .bag-item-color { font-size: 13px; }
+  .bag-item-price { font-size: 14px; }
+  .bag-footer { padding: 16px 20px 28px; }
+  .bag-subtotal-label { font-size: 14px; }
+  .bag-subtotal-amt { font-size: 16px; }
+  .bag-checkout { font-size: 14px; padding: 16px; }
+  .shipping-msg { padding: 8px 20px 12px; font-size: 13px; }
+}
+

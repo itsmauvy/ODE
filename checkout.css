@@ -461,4 +461,15 @@ body { background: #f0ece8; font-family: 'Jost', sans-serif; color: var(--co-tex
   .co-pay-options { grid-template-columns: 1fr 1fr; }
   .co-row { grid-template-columns: 1fr; }
   .co-steps { display: none; }
+  .co-main { padding: 24px 16px 60px; gap: 16px; }
+  .co-block { padding: 20px 16px; border-radius: 10px; }
+  .co-summary-inner { padding: 16px; border-radius: 10px; }
+  .co-sel-header { padding-bottom: 10px; }
+  .co-summary-item { gap: 10px; }
+  .co-summary-img { width: 56px; height: 56px; }
+  .co-summary-name { font-size: 12px; }
+  .co-summary-color { font-size: 11px; }
+  .co-summary-price { font-size: 12px; }
+  .co-submit { font-size: 13px; padding: 17px; margin-top: 20px; }
+  .co-header { padding: 0 16px; }
 }

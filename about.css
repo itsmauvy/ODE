@@ -410,6 +410,7 @@
   .ab-closing__bg img { object-position: 15% 70%; margin-top: 0; }
   .ab-closing__overlay { background: rgba(17,14,10,0.28); }
   .ab-closing__inner { padding: 0 20px; }
+  .ab-hero__center-text p { font-size: clamp(15px, 4.2vw, 20px); line-height: 1.8; }
 }
 
 /* ── 07. CLOSING ── */
