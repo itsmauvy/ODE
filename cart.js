@@ -187,4 +187,20 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   document.getElementById('bag-close')?.addEventListener('click', closeBag);
   document.getElementById('bag-overlay')?.addEventListener('click', closeBag);
+
+  /* hamburger */
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobile-menu');
+  if (hamburger && mobileMenu) {
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      mobileMenu.classList.toggle('open');
+    });
+    mobileMenu.querySelectorAll('.mobile-menu-link').forEach(a => {
+      a.addEventListener('click', () => {
+        hamburger.classList.remove('open');
+        mobileMenu.classList.remove('open');
+      });
+    });
+  }
 });
