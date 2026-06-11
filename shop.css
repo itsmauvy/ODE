@@ -244,7 +244,7 @@
   .shop-card-name { font-size: 13px; }
   .shop-card-sub { font-size: 12px; }
   .shop-card-price { font-size: 12px; }
-  .shop-card-img-wrap img.contain { padding: 40px 36px !important; }
+  .shop-card-img-wrap img.contain { padding: 56px 48px !important; }
 }
 
 /* Empty state */
