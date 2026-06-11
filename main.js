@@ -64,7 +64,7 @@ function startHeroAnim() {
 
   const tl = gsap.timeline({ defaults: { ease: 'expo' } });
   tl.to('#hero-tag',  { opacity: 1, y: 0, duration: 0.8 }, 0.1)
-    .to('.hero-title .line', { y: '0%', duration: 1, stagger: 0.12 }, 0.2)
+    .to('.hero-title .line', { opacity: 1, y: 0, duration: 1, stagger: 0.12 }, 0.2)
     .to('#hero-sub',  { opacity: 1, duration: 0.8 }, 0.55)
     .to('#hero-cta',  { opacity: 1, duration: 0.7 }, 0.7)
     .to('#hero-scroll', { opacity: 1, duration: 0.7 }, 0.9);

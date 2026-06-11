@@ -397,9 +397,9 @@ body {
 }
 .hero-title .line {
   display: block;
-  overflow: hidden;
   padding-bottom: 8px;
-  transform: translateY(100%);
+  opacity: 0;
+  transform: translateY(32px);
 }
 .hero-title .italic { font-style: italic; margin-left: -22px; }
 .hero-sub {
