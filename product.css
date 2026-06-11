@@ -394,29 +394,10 @@ body {
 }
 
 /* iPad */
-@media (max-width: 1023px) {
-  .main { flex-direction: column; min-height: auto; }
-  .gallery {
-    position: relative;
-    top: 0;
-    width: 100%;
-    height: auto;
-    min-height: 60vw;
-    padding: 20px 20px 16px;
-  }
-  .gallery-main { height: 54vw; min-height: 320px; flex: none; }
-  .detail {
-    width: 100%;
-    padding: 32px 28px 48px;
-    overflow-y: visible;
-  }
-  .detail-name { font-size: 40px; }
-  .bag-sidebar { width: 360px; }
-}
-
 /* Mobile */
 @media (max-width: 767px) {
-  .main { padding-top: 60px; }
+  .main { flex-direction: column; min-height: auto; padding-top: 60px; }
+  .gallery { position: relative; top: 0; width: 100%; height: auto; }
   .gallery {
     min-height: auto;
     padding: 16px 16px 12px;
