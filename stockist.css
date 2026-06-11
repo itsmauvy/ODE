@@ -304,7 +304,7 @@
 
   /* intro */
   .st-intro { padding: 40px 20px; }
-  .st-intro__text { font-size: clamp(16px, 4.5vw, 20px); }
+  .st-intro__text { font-size: 15px; }
 
   /* store list */
   .st-stores { padding: 40px 20px 64px; }
