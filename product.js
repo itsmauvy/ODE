@@ -34,7 +34,7 @@ const productData = {
     badge: 'NEW',
     desc: '코코넛 향이 은은하게 퍼지는 바디 미스트. 가볍게 뿌리면 촉촉한 수분막이 형성되어 하루 종일 부드러운 피부와 향을 유지할 수 있어요.',
     colors: [
-      { label: 'Coconut', color: '#d4c4a8', images: ['images/ode body mist.jpg', 'images/ode body mist 1.png'] },
+      { label: 'Coconut', color: '#d4c4a8', images: ['images/ode body mist 1.png', 'images/ode body mist.jpg'] },
     ]
   },
   '5': {
@@ -56,7 +56,7 @@ const productData = {
     badge: '',
     desc: 'ODE의 제품을 담기 위해 디자인된 투명 파우치. 간편하게 수납하고 어디든 가볍게 들고 다닐 수 있어요.',
     colors: [
-      { label: 'Clear', color: '#d8d0c8', images: ['images/ode pouch.jpg', 'images/ode pouch model.png'] },
+      { label: 'Clear', color: '#d8d0c8', images: ['images/ode pouch_nobg.png', 'images/ode pouch model.png'] },
     ]
   },
   '7': {
