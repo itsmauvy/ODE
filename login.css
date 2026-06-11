@@ -188,11 +188,7 @@ body {
 
 /* 비밀번호 강도 */
 .pw-strength {
-  height: 2px;
-  background: var(--beige);
-  border-radius: 2px;
-  margin-top: 8px;
-  overflow: hidden;
+  display: none;
 }
 .strength-bar {
   height: 100%;

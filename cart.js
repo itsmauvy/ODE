@@ -14,8 +14,10 @@ const PRODUCT_MAP = {
 function loadBag()  { try { return JSON.parse(localStorage.getItem('ode_bag') || '[]'); } catch { return []; } }
 function saveBag(b) { localStorage.setItem('ode_bag', JSON.stringify(b)); }
 
+function getSelected(b) { return b.filter(i => i.selected !== false); }
 function getBagTotal() { return loadBag().reduce((s,i) => s + i.price * i.qty, 0); }
 function getBagCount() { return loadBag().reduce((s,i) => s + i.qty, 0); }
+function getSelectedTotal(b) { return getSelected(b).reduce((s,i) => s + i.price * i.qty, 0); }
 
 function updateAllCounts() {
   document.querySelectorAll('.bag-count-el').forEach(el => el.textContent = getBagCount());
@@ -64,8 +66,26 @@ function renderBag() {
     return;
   }
 
-  bagBody.innerHTML = b.map((item, idx) => `
+  const selected = getSelected(b);
+
+  bagBody.innerHTML = `
+    <div class="bag-select-header">
+      <label class="bag-check-label">
+        <input type="checkbox" class="bag-check" id="bag-check-all" ${selected.length === b.length ? 'checked' : ''} />
+        <span class="bag-check-box"></span>
+        <span class="bag-check-text">전체 선택 (${selected.length}/${b.length})</span>
+      </label>
+      <button class="bag-clear-btn" id="bag-clear-btn">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><polyline points="3 6 5 6 21 6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><path d="M19 6l-1 14H6L5 6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 11v6M14 11v6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><path d="M9 6V4h6v2" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        CLEAR BAG
+      </button>
+    </div>
+    ${b.map((item, idx) => `
     <div class="bag-item">
+      <label class="bag-check-label bag-item-check-wrap">
+        <input type="checkbox" class="bag-check bag-item-check" data-idx="${idx}" ${item.selected !== false ? 'checked' : ''} />
+        <span class="bag-check-box"></span>
+      </label>
       <a href="product.html?id=${item.id}" class="bag-item-img-wrap">
         <img class="bag-item-img" src="${item.img || ''}" alt="${item.name}" />
       </a>
@@ -82,7 +102,33 @@ function renderBag() {
         <span class="bag-item-price">${(item.price * item.qty).toLocaleString()}원</span>
         <button class="bag-item-remove" data-idx="${idx}">✕</button>
       </div>
-    </div>`).join('');
+    </div>`).join('')}`;
+
+  /* 전체 선택 */
+  bagBody.querySelector('#bag-check-all')?.addEventListener('change', e => {
+    const b2 = loadBag();
+    b2.forEach(item => item.selected = e.target.checked);
+    saveBag(b2);
+    renderBag();
+  });
+
+  /* 개별 선택 */
+  bagBody.querySelectorAll('.bag-item-check').forEach(cb => {
+    cb.addEventListener('change', () => {
+      const b2 = loadBag();
+      b2[+cb.dataset.idx].selected = cb.checked;
+      saveBag(b2);
+      renderBag();
+    });
+  });
+
+  /* CLEAR BAG */
+  bagBody.querySelector('#bag-clear-btn')?.addEventListener('click', () => {
+    if (!confirm('장바구니를 비울까요?')) return;
+    saveBag([]);
+    updateAllCounts();
+    renderBag();
+  });
 
   bagBody.querySelectorAll('.bag-qty-btn').forEach(btn => {
     btn.addEventListener('click', () => {
@@ -109,13 +155,15 @@ function renderBag() {
 
   appendRecommend(bagBody, b);
 
+  const selTotal = getSelectedTotal(b);
+  const selCount = getSelected(b).reduce((s,i) => s + i.qty, 0);
   bagFooter.innerHTML = `
     <div class="bag-subtotal-row">
-      <span class="bag-subtotal-label">subtotal</span>
-      <span class="bag-subtotal-amt">${total.toLocaleString()}원</span>
+      <span class="bag-subtotal-label">subtotal <span style="font-size:12px;color:#b0a8a2">(${selCount}개 선택)</span></span>
+      <span class="bag-subtotal-amt">${selTotal.toLocaleString()}원</span>
     </div>
     <p class="bag-note">*배송비 및 할인은 결제 시 적용됩니다.</p>
-    <button class="bag-checkout">CHECKOUT</button>`;
+    <button class="bag-checkout" onclick="location.href='checkout.html'" ${selCount === 0 ? 'disabled style="opacity:0.4;cursor:not-allowed"' : ''}>CHECKOUT</button>`;
 }
 
 function appendRecommend(bagBody, currentBag) {
