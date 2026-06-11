@@ -90,80 +90,47 @@
 
 
   <!-- ══════════════════════════════════════
-       02. SCROLL STORY
+       02. SCROLL STORY — horizontal
   ══════════════════════════════════════ -->
   <section class="ab-story">
+    <div class="ab-story__track">
 
-    <div class="ab-story__scene">
-      <div class="ab-story__img">
-        <img src="images/brand story section1_1.png" alt="" />
+      <div class="ab-story__scene">
+        <div class="ab-story__text">
+          <p>하루를 시작하기 전,<br>가장 먼저 손이 가는 것.</p>
+        </div>
+        <div class="ab-story__img">
+          <img src="images/brand story section1_1.png" alt="" />
+        </div>
       </div>
-      <div class="ab-story__text ab-story__text--left">
-        <p>하루를 시작하기 전,<br>가장 먼저 손이 가는 것.</p>
-      </div>
-    </div>
 
-    <div class="ab-story__scene">
-      <div class="ab-story__img">
-        <img src="images/inspired by nature.png" alt="" />
+      <div class="ab-story__scene">
+        <div class="ab-story__text">
+          <p>작은 것들이<br>하루의 분위기를<br>바꾸기도 하니까.</p>
+        </div>
+        <div class="ab-story__img">
+          <img src="images/brand story section1_2.jpg" alt="" />
+        </div>
       </div>
-      <div class="ab-story__text ab-story__text--right">
-        <p>작은 것들이<br>하루의 분위기를<br>바꾸기도 하니까.</p>
-      </div>
-    </div>
 
-    <div class="ab-story__scene">
-      <div class="ab-story__img">
-        <img src="images/brand story section1_3.png" alt="" />
+      <div class="ab-story__scene">
+        <div class="ab-story__text">
+          <p>가볍게 들고 다니고,<br>자주 손이 가고,<br>오래 곁에 두고 싶은 것들.</p>
+        </div>
+        <div class="ab-story__img">
+          <img src="images/brand story section1_3.png" alt="" />
+        </div>
       </div>
-      <div class="ab-story__text ab-story__text--left">
-        <p>가볍게 들고 다니고,<br>자주 손이 가고,<br>오래 곁에 두고 싶은 것들.</p>
-      </div>
-    </div>
 
-    <div class="ab-story__scene ab-story__scene--final">
-      <div class="ab-story__img">
-        <img src="images/brand story last hero.png" alt="" />
-      </div>
-      <div class="ab-story__text ab-story__text--center">
-        <p class="ab-story__final-text">Good things<br><em>worth carrying.</em></p>
-      </div>
-    </div>
-
-  </section>
-
-  <!-- ══════════════════════════════════════
-       03. EDITORIAL SPREAD — 이미지 + 철학
-  ══════════════════════════════════════ -->
-  <section class="ab-spread">
-    <div class="ab-spread__img ab-spread__img--full">
-      <img src="images/inspired by nature.png" alt="" />
-      <div class="ab-spread__img-caption">
-        <span class="ab-tag">01 — INSPIRED BY NATURE</span>
-        <p>자연이 남긴 것들에서<br>우리는 시작합니다.</p>
-      </div>
-    </div>
-    <div class="ab-spread__text">
-      <h2 class="ab-spread__title">
-        자연이 남긴<br><em>감각을</em>
-      </h2>
-      <p class="ab-spread__body">
-        우리는 자연이 가진 색과 향,<br>
-        그리고 손끝에 남는 감각에서 영감을 받습니다.<br><br>
-        잘 익은 과일의 생기와<br>
-        계절이 남긴 순간들을 담아<br><br>
-        언제든 곁에 둘 수 있는<br>
-        작은 뷰티 오브제를 만듭니다.
-      </p>
     </div>
   </section>
+
 
   <!-- ══════════════════════════════════════
        04. NATURE — 풀블리드 컬렉션 비주얼
   ══════════════════════════════════════ -->
   <section class="ab-nature">
     <div class="ab-nature__header">
-      <p class="ab-tag">02 — COLLECTION STORY</p>
       <h2 class="ab-nature__title">계절의 공기,<br><em>과일의 색,</em><br>그리고 그 순간의 무드.</h2>
     </div>
 
@@ -259,7 +226,7 @@
     <div class="ab-closing__grain"></div>
     <div class="ab-closing__inner">
       <h2 class="ab-closing__title">
-        좋은 것은<br><em>늘 가까이에</em><br>있어야 하니까.
+        좋은 것은<br><em>가까이 두고</em><br>싶으니까.
       </h2>
       <p class="ab-closing__en">Good Things Worth Carrying</p>
       <p class="ab-closing__brand">ODE</p>
@@ -303,60 +270,63 @@
     (function loop(){ fx+=(mx-fx)*0.15; fy+=(my-fy)*0.15; gsap.set(follower,{x:fx,y:fy}); requestAnimationFrame(loop); })();
 
     /* ── hero ── */
-    const heroTl = gsap.timeline({ delay: 0.3 });
-    heroTl
-      .from('.ab-hero__eyebrow', { opacity:0, y:12, duration:0.7 })
-      .from('.ab-hero__title',   { opacity:0, y:48, duration:1.1, ease:'power3.out' }, '-=0.2')
-      .from('.ab-hero__desc',    { opacity:0, y:16, duration:0.8 }, '-=0.4')
-      .from('.ab-hero__footer',  { opacity:0,        duration:0.8 }, '-=0.3');
+    gsap.from('.ab-hero__center-text', { opacity:0, y:20, duration:1.2, delay:0.4, ease:'power3.out' });
 
     gsap.to('.ab-hero__bg img', {
       yPercent: 22, ease:'none',
       scrollTrigger:{ trigger:'.ab-hero', start:'top top', end:'bottom top', scrub:true }
     });
 
-    /* ── scroll story ── */
-    document.querySelectorAll('.ab-story__scene').forEach((scene) => {
-      const img  = scene.querySelector('.ab-story__img img');
-      const text = scene.querySelector('.ab-story__text');
+    /* ── scroll story — horizontal ── */
+    const track  = document.querySelector('.ab-story__track');
+    const storySection = document.querySelector('.ab-story');
 
-      // pin each scene for scroll-driven effect
-      ScrollTrigger.create({
-        trigger: scene,
-        start: 'top top',
-        end: '+=80%',
-        pin: true,
-        pinSpacing: true,
+    // Only run horizontal scroll on non-mobile
+    if (window.innerWidth > 767) {
+      // set each scene to exact section width to avoid sub-pixel gaps
+      document.querySelectorAll('.ab-story__scene').forEach(s => {
+        s.style.width = storySection.offsetWidth + 'px';
       });
+      const totalSlide = track.scrollWidth - storySection.offsetWidth;
 
-      // image: scale in slightly as scene enters, parallax while pinned
-      gsap.fromTo(img,
-        { scale: 1.12, yPercent: -4 },
-        { scale: 1.0,  yPercent: 4, ease: 'none',
-          scrollTrigger: { trigger: scene, start: 'top bottom', end: 'bottom top', scrub: 1.2 }
-        }
-      );
-
-      // text: scrub-driven — slides in from bottom, stays, then fades out top
-      const tl = gsap.timeline({
+      const storyScroll = gsap.to(track, {
+        x: -totalSlide,
+        ease: 'none',
         scrollTrigger: {
-          trigger: scene,
+          trigger: storySection,
           start: 'top top',
-          end: '+=80%',
+          end: () => '+=' + totalSlide,
+          pin: true,
           scrub: 1,
+          anticipatePin: 1,
+          invalidateOnRefresh: true,
+          onRefresh: () => {
+            document.querySelectorAll('.ab-story__scene').forEach(s => {
+              s.style.width = storySection.offsetWidth + 'px';
+            });
+          }
         }
       });
-      tl.fromTo(text,
-        { opacity: 0, y: 60 },
-        { opacity: 1, y: 0,  ease: 'power2.out', duration: 0.4 }
-      )
-      .to(text,
-        { opacity: 1, y: 0, duration: 0.3 }
-      )
-      .to(text,
-        { opacity: 0, y: -40, ease: 'power2.in', duration: 0.3 }
-      );
-    });
+
+      // Per-scene: text fade-in only (parallax removed to prevent overflow)
+      document.querySelectorAll('.ab-story__scene').forEach((scene) => {
+
+        // text fades in as scene enters from right
+        const text = scene.querySelector('.ab-story__text');
+        gsap.fromTo(text,
+          { opacity: 0, x: 30 },
+          { opacity: 1, x: 0, ease: 'power2.out',
+            scrollTrigger: {
+              trigger: scene,
+              containerAnimation: storyScroll,
+              start: 'left 90%',
+              end: 'left 30%',
+              scrub: true,
+            }
+          }
+        );
+      });
+    }
 
     /* ── generic fade-up ── */
     document.querySelectorAll(

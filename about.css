@@ -2,6 +2,7 @@
    ABOUT PAGE
 ══════════════════════════════════════ */
 
+html, body { overflow-x: hidden; }
 .about-page { background: #f5f1ed; }
 .mobile-br { display: none; }
 @media (max-width: 767px) {
@@ -128,75 +129,91 @@
   to   { transform: translateX(-50%); }
 }
 
-/* ── 02. SCROLL STORY ── */
-.ab-story { }
+/* ── 02. SCROLL STORY — horizontal ── */
+.ab-story {
+  overflow: hidden;
+  height: 100vh;
+  position: relative;
+  background: #f5f1ed;
+}
+
+.ab-story__track {
+  display: flex;
+  height: 100%;
+  gap: 0;
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
 
 .ab-story__scene {
-  position: relative;
-  height: 100vh;
-  overflow: hidden;
-}
-
-.ab-story__img {
-  position: absolute;
-  inset: 0;
-}
-.ab-story__img img {
-  width: 100%; height: 115%;
-  object-fit: cover;
-  object-position: center;
-  display: block;
-  will-change: transform;
+  display: flex;
+  flex-shrink: 0;
+  width: 100vw;
+  height: 100%;
+  background: #f5f1ed;
 }
 
 .ab-story__text {
-  position: absolute;
-  z-index: 2;
-  top: 50%;
-  transform: translateY(-50%);
-  opacity: 0;
-}
-.ab-story__text--left  { left: 8vw; }
-.ab-story__text--right { right: 8vw; text-align: right; }
-.ab-story__text--center {
-  left: 50%; top: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  width: 90%;
+  flex-shrink: 0;
+  width: 40%;
+  display: flex;
+  align-items: center;
+  padding: 0 6vw 0 8vw;
+  background: #f5f1ed;
 }
 
 .ab-story__text p {
   font-family: 'Gowun Batang', 'Cormorant Garamond', serif;
-  font-size: clamp(28px, 3.6vw, 52px);
+  font-size: clamp(18px, 1.7vw, 26px);
   font-weight: 300;
-  line-height: 1.5;
-  color: #fff;
-  text-shadow: 0 2px 24px rgba(0,0,0,0.18);
+  line-height: 1.9;
+  color: #1a1210;
+  letter-spacing: 0.02em;
 }
 
+.ab-story__img {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+}
+.ab-story__img::after {
+  content: '';
+  position: absolute; inset: 0;
+  pointer-events: none; z-index: 1;
+  background-color: rgba(18, 10, 4, 0.10);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='256' height='256'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.78' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='256' height='256' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 256px;
+  opacity: 0.20;
+  mix-blend-mode: multiply;
+}
+
+.ab-story__img img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  will-change: transform;
+  filter: sepia(15%) brightness(0.93) contrast(1.03) saturate(0.9);
+}
+
+/* final scene */
+.ab-story__scene--final .ab-story__text { background: #f5f1ed; }
 .ab-story__final-text {
-  font-size: clamp(36px, 5vw, 72px) !important;
-  line-height: 1.2 !important;
+  font-size: clamp(22px, 2.2vw, 34px) !important;
+  line-height: 1.5 !important;
+  font-style: normal;
 }
 .ab-story__final-text em { font-style: italic; }
 
-/* dark overlay per scene */
-.ab-story__scene::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.22);
-  z-index: 1;
-}
-.ab-story__scene--final::after {
-  background: rgba(0,0,0,0.32);
-}
-
-/* mobile */
+/* mobile — stacked vertical */
 @media (max-width: 767px) {
-  .ab-story__scene { height: 90vh; }
-  .ab-story__text--left  { left: 6vw; }
-  .ab-story__text--right { right: 6vw; }
+  .ab-story { height: auto; overflow: visible; }
+  .ab-story__track { flex-direction: column; transform: none !important; }
+  .ab-story__scene { flex-direction: column; width: 100%; height: auto; }
+  .ab-story__text { width: 100%; padding: 48px 7vw; }
+  .ab-story__img { width: 100%; height: 70vw; }
+  .ab-story__text p { font-size: clamp(20px, 5vw, 28px); }
 }
 
 /* ── 03. SPREAD ── */
@@ -246,8 +263,8 @@
 
 /* ── 04. NATURE ── */
 .ab-nature {
-  padding: 120px 80px 0;
-  background: #fff;
+  padding: 80px 80px 0;
+  background: #f5f1ed;
 }
 .ab-nature__header {
   display: flex; align-items: baseline; gap: 32px;
@@ -281,26 +298,48 @@
   width: 100%; height: 100%;
   object-fit: cover; object-position: center;
   display: block;
-  transition: transform 0.7s ease;
+  filter: grayscale(100%) brightness(0.8);
+  transition: transform 0.7s ease, filter 0.5s ease;
 }
-.ab-nature__item:hover img { transform: scale(1.06); }
+.ab-nature__item:hover img {
+  transform: scale(1.05);
+  filter: grayscale(0%) brightness(0.55);
+}
+.ab-nature__grid:hover .ab-nature__item:not(:hover) img {
+  filter: grayscale(100%) brightness(0.65);
+}
 
 .ab-nature__label {
-  position: absolute; top: 0; left: 0; right: 0;
-  padding: 24px 28px 36px;
-  background: linear-gradient(to bottom, rgba(17,17,17,0.52) 0%, transparent 100%);
-  opacity: 0; transition: opacity 0.35s ease;
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
 }
-.ab-nature__item:hover .ab-nature__label { opacity: 1; }
+.ab-nature__item:hover .ab-nature__label {
+  opacity: 1;
+  transform: translateY(0);
+}
 .ab-nature__num {
   font-family: 'Gowun Batang', 'Cormorant Garamond', serif;
-  font-size: 28px; font-weight: 400; font-style: italic;
-  color: #fff; margin-bottom: 6px;
+  font-size: clamp(20px, 1.8vw, 28px);
+  font-weight: 400; font-style: italic;
+  color: #fff;
+  letter-spacing: 0.04em;
+  text-align: center;
 }
 .ab-nature__desc-sm {
   font-family: 'Jost', sans-serif;
-  font-size: 13px; font-weight: 300;
-  letter-spacing: 0.1em; color: rgba(255,255,255,0.7);
+  font-size: 12px; font-weight: 300;
+  letter-spacing: 0.14em;
+  color: rgba(255,255,255,0.72);
+  text-transform: uppercase;
+  text-align: center;
 }
 
 /* ── 05. VALUES ── */
