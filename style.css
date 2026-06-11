@@ -101,7 +101,7 @@ body {
   letter-spacing: 0.1em;
   font-weight: 400;
   position: relative;
-  cursor: auto;
+  cursor: pointer;
 }
 .nav-link::after {
   content: '';
