@@ -1392,27 +1392,40 @@ body {
   .nav-right { gap: 14px; justify-self: end; }
   .nav-search, .nav-right a[href="login.html"], .nav-right a[href="#"]:not(#bag-btn) { display: none; }
   .mobile-search-btn { display: flex; }
+  /* hero */
   .hero-content { left: 24px; bottom: 40px; }
-  .hero-title { font-size: 40px; }
-  .hero-sub { font-size: 14px; margin-bottom: 24px; }
+  .hero-title { font-size: 36px; }
+  .hero-sub { font-size: 13px; margin-bottom: 20px; }
   .hero-scroll-hint { display: none; }
-  .favorites { padding: 52px 16px; }
+  /* best seller */
+  .favorites { padding: 48px 16px; }
+  .favorites-eyebrow { font-size: 12px; }
+  .favorites-title { font-size: 13px; }
   .product-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
-  .main-img { padding: 28px; }
+  .main-img { padding: 24px; }
   .product-info { padding: 12px 12px 16px; }
   .product-top { flex-direction: column; gap: 2px; }
   .product-name { font-size: 12px; }
   .product-sub { font-size: 12px; }
-  .product-price { font-size: 13px; }
+  .product-price { font-size: 12px; }
+  .product-desc { font-size: 12px; }
+  /* summer */
   .summer-banner { flex-direction: column; height: auto; }
-  .summer-left { flex: none; width: 100%; padding: 36px 20px 32px; }
-  .summer-heading { font-size: 22px; white-space: normal; }
-  .summer-right { height: 280px; opacity: 1; }
-  .summer-slide { height: 280px; }
-  .collection { padding: 56px 20px; }
-  .collection-title { font-size: 32px; }
-  .odeu-section { padding: 52px 16px; }
-  .odeu-title { font-size: 36px; }
+  .summer-left { flex: none; width: 100%; padding: 32px 20px 28px; }
+  .summer-eyebrow { font-size: 12px; }
+  .summer-heading { font-size: 20px; white-space: normal; }
+  .summer-body { font-size: 13px; }
+  .summer-right { height: 260px; opacity: 1; }
+  .summer-slide { height: 260px; }
+  /* collection */
+  .collection { padding: 48px 20px; }
+  .collection-eyebrow { font-size: 12px; }
+  .collection-title { font-size: 28px; }
+  /* ode & u */
+  .odeu-section { padding: 48px 16px; }
+  .sns-eyebrow { font-size: 12px; }
+  .odeu-title { font-size: 28px; }
+  .odeu-ig { font-size: 13px; }
   .odeu-grid {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: auto;
@@ -1420,14 +1433,28 @@ body {
   }
   .odeu-item.odeu-tall { grid-row: span 1; }
   .odeu-item.odeu-wide { grid-column: span 2; }
-  .odeu-grid > .odeu-item { height: 200px; }
-  .about { padding: 52px 20px; }
-  .about-title { font-size: 32px; }
-  .about-body { font-size: 14px; }
-  .about-stats { gap: 24px; flex-wrap: wrap; }
-  .footer { padding: 40px 20px 28px; }
-  .footer-top { flex-direction: column; gap: 24px; }
-  .footer-links { flex-wrap: wrap; gap: 16px; }
+  .odeu-grid > .odeu-item { height: 180px; }
+  /* about */
+  .about { padding: 48px 20px; }
+  .about-slogan { font-size: 32px; }
+  .about-eyebrow { font-size: 12px; }
+  .about-title { font-size: 28px; }
+  .about-body { font-size: 13px; line-height: 2; }
+  .about-link { font-size: 12px; }
+  .about-stats { gap: 20px; flex-wrap: wrap; }
+  .stat strong { font-size: 24px; }
+  .stat span { font-size: 12px; }
+  /* footer */
+  .footer { padding: 36px 20px 24px; }
+  .footer-top { flex-direction: column; gap: 20px; }
+  .footer-logo { font-size: 24px; }
+  .footer-links { flex-wrap: wrap; gap: 12px; }
+  .footer-links a { font-size: 12px; }
+  .footer-bottom p { font-size: 12px; }
+  .footer-sns a { font-size: 12px; }
+  /* nav */
+  .nav-right a#bag-btn { font-size: 13px; }
+  /* misc */
   .bag-sidebar { width: 100%; }
   .mega-menu { display: none; }
 }
