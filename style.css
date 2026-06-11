@@ -395,6 +395,7 @@ body {
   margin-bottom: 10px;
   margin-left: 6px;
   overflow: hidden;
+  padding-bottom: 10px;
 }
 .hero-title .line {
   display: block;
