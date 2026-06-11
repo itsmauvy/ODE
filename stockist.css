@@ -61,7 +61,9 @@
 
 /* ── EXPERIENCE ── */
 .st-experience {
-  display: block;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 60vh;
 }
 .st-experience__img {
   overflow: hidden;
@@ -297,7 +299,7 @@
 
   /* experience */
   .st-experience { grid-template-columns: 1fr; min-height: auto; }
-  .st-experience__img { height: 56vw; min-height: 220px; }
+  .st-experience__img { display: none; }
   .st-experience__text { padding: 40px 20px; }
   .st-experience__title { font-size: clamp(28px, 8vw, 40px); }
   .st-experience__body { font-size: 14px; line-height: 2; }
