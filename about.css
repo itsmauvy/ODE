@@ -3,6 +3,11 @@
 ══════════════════════════════════════ */
 
 .about-page { background: #f5f1ed; }
+.mobile-br { display: none; }
+@media (max-width: 767px) {
+  .mobile-br { display: inline; }
+  .pc-space { display: none; }
+}
 
 /* shared tag */
 .ab-tag {
