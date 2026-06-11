@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Gowun+Batang:wght@400;700&family=Jost:wght@200;300;400;500&display=swap');
 
-html { scroll-behavior: smooth; }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 a, button { cursor: pointer; }
 
@@ -13,8 +12,6 @@ a, button { cursor: pointer; }
   --text-light: #7a6e69;
   --white: #faf8f6;
 }
-
-html { scroll-behavior: smooth; }
 
 body {
   font-family: 'Jost', sans-serif;
