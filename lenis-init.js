@@ -1,21 +1,14 @@
-/* ── LENIS SMOOTH SCROLL ── */
 const lenis = new Lenis({
-  duration: 1.2,
-  easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+  lerp: 0.08,
   smoothTouch: false,
-  prevent: (node) =>
-    node.hasAttribute('data-lenis-prevent') ||
-    node.classList.contains('ab-products__list') ||
-    node.classList.contains('shop-filter-pills') ||
-    node.tagName === 'SELECT',
 });
 
-if (typeof ScrollTrigger !== 'undefined') {
-  lenis.on('scroll', () => ScrollTrigger.update());
-}
+lenis.on('scroll', () => {
+  if (typeof ScrollTrigger !== 'undefined') ScrollTrigger.update();
+});
 
-function raf(time) {
-  lenis.raf(time);
-  requestAnimationFrame(raf);
-}
-requestAnimationFrame(raf);
+gsap.ticker.add((time) => {
+  lenis.raf(time * 1000);
+});
+
+gsap.ticker.lagSmoothing(0);
