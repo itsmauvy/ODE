@@ -303,15 +303,19 @@
   .st-experience__body { font-size: 14px; line-height: 2; }
 
   /* intro */
-  .st-intro { padding: 48px 20px; }
-  .st-intro__text { font-size: clamp(20px, 6vw, 28px); }
+  .st-intro { padding: 40px 20px; }
+  .st-intro__text { font-size: clamp(16px, 4.5vw, 20px); }
 
   /* store list */
   .st-stores { padding: 40px 20px 64px; }
+  .st-stores__label { white-space: nowrap; }
   .st-card { grid-template-columns: 1fr; }
   .st-card__map { min-height: 260px; }
   .st-card__info { padding: 36px 20px; }
   .st-card__name { font-size: clamp(28px, 8vw, 40px); }
+  .st-detail { flex-direction: column; gap: 4px; }
+  .st-detail__label { min-width: auto; }
+  .st-detail__value { font-size: 13px; }
 
   /* cta */
   .st-cta { flex-direction: column; align-items: flex-start; padding: 48px 20px; gap: 24px; }
