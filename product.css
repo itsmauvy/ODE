@@ -121,7 +121,7 @@ body {
 }
 .detail-name-badge { flex-shrink: 0; align-self: center; }
 .detail-name {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Gowun Batang', 'Cormorant Garamond', serif;
   font-size: 52px;
   font-weight: 300;
   line-height: 1.1;
