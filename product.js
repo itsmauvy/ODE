@@ -19,6 +19,7 @@ const productData = {
     price: 18000,
     reviews: 876,
     badge: '',
+    galBg: '#dedad6',
     desc: '물광 입술을 완성하는 듀이 립 틴트. 가볍게 밀착되어 오래도록 선명한 발색이 유지되고, 촉촉한 보습막이 입술을 편안하게 감싸줍니다.',
     colors: [
       { label: 'Pink Guava',       color: '#e8a0b4', images: ['images/tint_pinkguava.png', 'images/ode pt model.png'] },
@@ -104,6 +105,10 @@ if (product.badge) {
   b.className = 'detail-badge' + (product.badge === 'NEW' ? ' new' : '');
   b.textContent = product.badge;
   document.getElementById('detail-badges').appendChild(b);
+}
+
+if (product.galBg) {
+  document.getElementById('gallery-main').style.background = product.galBg;
 }
 
 /* ── 이미지 갤러리 ── */

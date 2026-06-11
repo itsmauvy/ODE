@@ -29,6 +29,7 @@ const shopProducts = [
     hoverImg: 'images/ode pt model.png',
     contain: true,
     imgPadding: '100px 115px',
+    cardBg: '#dedad6',
     colors: [
       { label: 'Pink Guava',       color: '#e8a0b4' },
       { label: 'Tangerine Pop', color: '#e8904a' },
@@ -157,7 +158,7 @@ function renderGrid() {
       : '';
     return `
       <a class="shop-card" href="product.html?id=${p.id}">
-        <div class="shop-card-img-wrap">
+        <div class="shop-card-img-wrap"${p.cardBg ? ` style="background:${p.cardBg}"` : ''}>
           <img src="${p.img}" alt="${p.name}" loading="lazy" class="card-main-img${p.contain ? ' contain' : ''}"${p.imgPadding ? ` style="padding:${p.imgPadding}"` : ''} />
           ${p.hoverImg ? `<img src="${p.hoverImg}" alt="${p.name}" loading="lazy" class="card-hover-img${p.hoverContain ? ' contain' : ''}" />` : ''}
           ${badgeHtml}

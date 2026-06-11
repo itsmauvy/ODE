@@ -51,6 +51,7 @@ body {
   overflow: hidden;
   border-radius: 2px;
   position: relative;
+  background: #dedad6;
 }
 .gallery-main-img {
   width: 100%;
