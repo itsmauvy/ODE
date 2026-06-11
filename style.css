@@ -872,7 +872,7 @@ body {
   position: relative;
   overflow: hidden;
   border-radius: 4px;
-  cursor: none;
+  cursor: pointer;
 }
 .odeu-item.odeu-tall  { grid-row: span 2; }
 .odeu-item.odeu-tall3 { grid-row: span 3; }

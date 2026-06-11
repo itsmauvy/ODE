@@ -45,7 +45,7 @@ const productData = {
     badge: 'NEW',
     desc: '눈가를 자외선으로부터 보호하는 SPF 아이 패치. 촉촉한 밀착감으로 눈가 피부를 진정시키고 선케어까지 한 번에 해결해요.',
     colors: [
-      { label: 'Original', color: '#e0d8cc', images: ['images/ode spf eye patch.jpg', 'images/ode eye patch_nobg.png'] },
+      { label: 'Original', color: '#e0d8cc', images: ['images/ode eye patch_nobg.png', 'images/ode spf eye patch.jpg'] },
     ]
   },
   '6': {
