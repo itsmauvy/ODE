@@ -358,12 +358,12 @@
   .ab-values__grid { grid-template-columns: 1fr; gap: 40px; }
   .ab-values__item { border-right: none; border-bottom: 1px solid #e8e0d8; padding: 0 0 40px; margin-right: 0; }
   .ab-values__item:last-child { border-bottom: none; padding-bottom: 0; }
-  .ab-hero__title { font-size: clamp(44px, 12vw, 64px); }
+  .ab-hero__title { font-size: clamp(36px, 10vw, 52px); }
   .ab-statement { padding: 60px 20px 72px; }
-  .ab-statement__quote { font-size: clamp(28px, 7vw, 40px); }
+  .ab-statement__quote { font-size: clamp(26px, 7vw, 36px); }
   .ab-spread__img { height: 72vw; }
   .ab-spread__text { padding: 44px 20px; }
-  .ab-spread__title { font-size: clamp(36px, 9vw, 52px); }
+  .ab-spread__title { font-size: clamp(28px, 8vw, 40px); }
   .ab-nature { padding: 56px 20px 0; }
   .ab-nature__grid { grid-template-columns: 1fr 1fr; grid-template-rows: 200px 200px; gap: 0; }
   .ab-nature__item { height: 200px; grid-column: auto !important; grid-row: auto !important; }
@@ -381,7 +381,14 @@
   }
   .ab-products__row::-webkit-scrollbar { display: none; }
   .ab-pcard { flex: 0 0 68%; scroll-snap-align: start; }
+  .ab-nature__title { font-size: clamp(24px, 6.5vw, 32px); }
+  .ab-values__title { font-size: 20px; }
+  .ab-values__desc { font-size: 13px; }
+  .ab-products__title { font-size: clamp(28px, 8vw, 40px); }
+  .ab-products__sub { font-size: 13px; }
   .ab-closing { height: 75vh; min-height: 460px; }
+  .ab-closing__title { font-size: clamp(28px, 8vw, 40px); }
+  .ab-closing__en { font-size: 13px; }
   .ab-closing__bg img { object-position: 15% 70%; margin-top: 0; }
   .ab-closing__overlay { background: rgba(17,14,10,0.28); }
   .ab-closing__inner { padding: 0 20px; }
