@@ -202,5 +202,15 @@ document.addEventListener('DOMContentLoaded', () => {
         mobileMenu.classList.remove('open');
       });
     });
+
+    const mobileSearchInput = document.getElementById('mobile-search-input');
+    if (mobileSearchInput) {
+      mobileSearchInput.addEventListener('keydown', e => {
+        if (e.key === 'Enter') {
+          const q = mobileSearchInput.value.trim();
+          if (q) location.href = `shop.html?search=${encodeURIComponent(q)}`;
+        }
+      });
+    }
   }
 });

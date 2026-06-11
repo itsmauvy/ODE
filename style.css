@@ -1275,6 +1275,28 @@ body {
   opacity: 1;
   pointer-events: auto;
 }
+.mobile-search-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 24px 12px;
+  border-bottom: 1px solid var(--beige-mid);
+  margin-bottom: 4px;
+}
+.mobile-search-wrap svg { flex-shrink: 0; color: var(--text-light); }
+.mobile-search-input {
+  flex: 1;
+  background: none;
+  border: none;
+  outline: none;
+  font-family: 'Jost', sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  letter-spacing: 0.08em;
+  color: var(--text);
+}
+.mobile-search-input::placeholder { color: var(--text-light); }
+
 .mobile-menu-link {
   padding: 14px 24px;
   font-family: 'Jost', sans-serif;

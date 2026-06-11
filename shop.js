@@ -110,15 +110,25 @@ const gridEl   = document.getElementById('shop-grid');
 const countEl  = document.getElementById('shop-count');
 const sortEl   = document.getElementById('shop-sort-select');
 
-/* read ?filter= from URL */
+/* read ?filter= and ?search= from URL */
 const urlParams = new URLSearchParams(location.search);
 const urlFilter = urlParams.get('filter');
 if (urlFilter) activeFilter = urlFilter;
+let activeSearch = urlParams.get('search') || '';
 
 function getFiltered() {
   let list = activeFilter === 'all'
     ? shopProducts
     : shopProducts.filter(p => p.cat.includes(activeFilter));
+
+  if (activeSearch) {
+    const q = activeSearch.toLowerCase();
+    list = list.filter(p =>
+      p.name.toLowerCase().includes(q) ||
+      p.sub.toLowerCase().includes(q) ||
+      (p.colors || []).some(c => c.label.toLowerCase().includes(q))
+    );
+  }
 
   if (activeSort === 'price-asc')  list = [...list].sort((a,b) => a.price - b.price);
   if (activeSort === 'price-desc') list = [...list].sort((a,b) => b.price - a.price);
