@@ -394,11 +394,11 @@ body {
   line-height: 1.15;
   margin-bottom: 10px;
   margin-left: 6px;
-  overflow: hidden;
-  padding-bottom: 10px;
 }
 .hero-title .line {
   display: block;
+  overflow: hidden;
+  padding-bottom: 8px;
   transform: translateY(100%);
 }
 .hero-title .italic { font-style: italic; margin-left: -22px; }
