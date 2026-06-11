@@ -90,27 +90,46 @@
 
 
   <!-- ══════════════════════════════════════
-       02. STATEMENT — 브랜드 선언
+       02. SCROLL STORY
   ══════════════════════════════════════ -->
-  <section class="ab-statement">
-    <div class="ab-statement__grid">
-      <div class="ab-statement__left">
-        <p class="ab-statement__quote">
-          오늘은 어떤 순간이<br>가장 오래 기억에<br>남았나요?
-        </p>
+  <section class="ab-story">
+
+    <div class="ab-story__scene">
+      <div class="ab-story__img">
+        <img src="images/ode hero1.png" alt="" />
       </div>
-      <div class="ab-statement__right">
-        <div class="ab-statement__img-wrap">
-          <img src="images/inspired by nature.png" alt="" />
-        </div>
-        <div class="ab-statement__body-wrap">
-          <div class="ab-statement__divider"></div>
-          <p class="ab-statement__body">
-            잘 익은 과일의 색과 향,<br>손끝에 남는 부드러운 감촉.<br><br>자연이 남긴 것들에서 영감을 받아<br>언제든 곁에 둘 수 있는<br>작은 뷰티 오브제를 만듭니다.
-          </p>
-        </div>
+      <div class="ab-story__text ab-story__text--left">
+        <p>하루를 시작하기 전,<br>가장 먼저 손이 가는 것.</p>
       </div>
     </div>
+
+    <div class="ab-story__scene">
+      <div class="ab-story__img">
+        <img src="images/inspired by nature.png" alt="" />
+      </div>
+      <div class="ab-story__text ab-story__text--right">
+        <p>작은 것들이<br>하루의 분위기를<br>바꾸기도 하니까.</p>
+      </div>
+    </div>
+
+    <div class="ab-story__scene">
+      <div class="ab-story__img">
+        <img src="images/brand story hero.png" alt="" />
+      </div>
+      <div class="ab-story__text ab-story__text--left">
+        <p>가볍게 들고 다니고,<br>자주 손이 가고,<br>오래 곁에 두고 싶은 것들.</p>
+      </div>
+    </div>
+
+    <div class="ab-story__scene ab-story__scene--final">
+      <div class="ab-story__img">
+        <img src="images/brand story last hero.png" alt="" />
+      </div>
+      <div class="ab-story__text ab-story__text--center">
+        <p class="ab-story__final-text">Good things<br><em>worth carrying.</em></p>
+      </div>
+    </div>
+
   </section>
 
   <!-- ══════════════════════════════════════
@@ -296,14 +315,30 @@
       scrollTrigger:{ trigger:'.ab-hero', start:'top top', end:'bottom top', scrub:true }
     });
 
-    /* ── marquee ── */
-    const track = document.querySelector('.ab-marquee__track');
-    const clone = track.cloneNode(true);
-    document.querySelector('.ab-marquee').appendChild(clone);
+    /* ── scroll story ── */
+    document.querySelectorAll('.ab-story__scene').forEach((scene) => {
+      const img  = scene.querySelector('.ab-story__img img');
+      const text = scene.querySelector('.ab-story__text');
+
+      // parallax on image
+      gsap.fromTo(img,
+        { yPercent: -8 },
+        { yPercent: 8, ease: 'none',
+          scrollTrigger: { trigger: scene, start: 'top bottom', end: 'bottom top', scrub: true }
+        }
+      );
+
+      // text fade in + slight rise
+      gsap.to(text, {
+        opacity: 1, y: 0, duration: 1, ease: 'power2.out',
+        scrollTrigger: { trigger: scene, start: 'top 60%', once: true }
+      });
+      gsap.set(text, { y: 30 });
+    });
 
     /* ── generic fade-up ── */
     document.querySelectorAll(
-      '.ab-statement__quote, .ab-statement__body, .ab-spread__title, .ab-spread__body, .ab-nature__header, .ab-values__item, .ab-products__header, .ab-pcard, .ab-closing__title, .ab-closing__en, .ab-closing__brand'
+      '.ab-spread__title, .ab-spread__body, .ab-nature__header, .ab-values__item, .ab-products__header, .ab-pcard, .ab-closing__title, .ab-closing__en, .ab-closing__brand'
     ).forEach((el, i) => {
       gsap.from(el, {
         opacity:0, y:40, duration:0.9, ease:'power2.out',
