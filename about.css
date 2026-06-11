@@ -365,7 +365,7 @@
   .ab-spread__text { padding: 44px 20px; }
   .ab-spread__title { font-size: clamp(36px, 9vw, 52px); }
   .ab-nature { padding: 56px 20px 0; }
-  .ab-nature__grid { grid-template-columns: 1fr 1fr; gap: 3px; }
+  .ab-nature__grid { grid-template-columns: 1fr 1fr; gap: 0; }
   .ab-nature__item { height: 200px; grid-column: auto !important; grid-row: auto !important; }
   .ab-nature__item--a { height: 240px; }
   .ab-nature__item--d { height: 240px; }
