@@ -203,14 +203,40 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
 
-    const mobileSearchInput = document.getElementById('mobile-search-input');
-    if (mobileSearchInput) {
-      mobileSearchInput.addEventListener('keydown', e => {
-        if (e.key === 'Enter') {
-          const q = mobileSearchInput.value.trim();
-          if (q) location.href = `shop.html?search=${encodeURIComponent(q)}`;
-        }
-      });
+  /* mobile search overlay */
+  const mobileSearchBtn = document.getElementById('mobile-search-btn');
+  if (mobileSearchBtn) {
+    /* create overlay */
+    const overlay = document.createElement('div');
+    overlay.className = 'mobile-search-overlay';
+    overlay.id = 'mobile-search-overlay';
+    overlay.innerHTML = `
+      <svg width="15" height="15" viewBox="0 0 20 20" fill="none"><circle cx="8.5" cy="8.5" r="5.5" stroke="currentColor" stroke-width="1.4"/><path d="M13 13l4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+      <input class="mobile-search-input" id="mobile-search-input" type="text" placeholder="제품 검색" autocomplete="off" />
+      <button class="mobile-search-close" id="mobile-search-close">✕</button>`;
+    document.body.appendChild(overlay);
+
+    const input = overlay.querySelector('#mobile-search-input');
+    const closeBtn = overlay.querySelector('#mobile-search-close');
+
+    function openSearchOverlay() {
+      overlay.classList.add('open');
+      setTimeout(() => input.focus(), 260);
     }
+    function closeSearchOverlay() {
+      overlay.classList.remove('open');
+      input.value = '';
+    }
+
+    mobileSearchBtn.addEventListener('click', openSearchOverlay);
+    closeBtn.addEventListener('click', closeSearchOverlay);
+    input.addEventListener('keydown', e => {
+      if (e.key === 'Enter') {
+        const q = input.value.trim();
+        if (q) location.href = `shop.html?search=${encodeURIComponent(q)}`;
+      }
+      if (e.key === 'Escape') closeSearchOverlay();
+    });
   }
+}
 });
