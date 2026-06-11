@@ -98,6 +98,7 @@ const shopProducts = [
     img: 'images/ode image.png',
     hoverImg: 'images/ode mirror.png',
     contain: true,
+    hoverContain: true,
     colors: [],
   },
 ];
