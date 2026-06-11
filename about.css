@@ -383,8 +383,9 @@
   }
   .ab-products__row::-webkit-scrollbar { display: none; }
   .ab-pcard { flex: 0 0 68%; scroll-snap-align: start; }
-  .ab-closing { height: 60vh; min-height: 360px; }
+  .ab-closing { height: 75vh; min-height: 460px; }
   .ab-closing__bg img { object-position: 15% 70%; margin-top: 0; }
+  .ab-closing__overlay { background: rgba(17,14,10,0.28); }
   .ab-closing__inner { padding: 0 20px; }
 }
 
