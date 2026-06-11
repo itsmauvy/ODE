@@ -1394,7 +1394,7 @@ body {
   .mobile-search-btn { display: flex; }
   /* hero */
   .hero-img { object-position: 70% top; }
-  .hero-content { left: 20px; bottom: 40px; }
+  .hero-content { left: 12px; bottom: 40px; }
   .hero-title { font-size: 36px; margin-left: 0; overflow: visible; }
   .hero-title .line { overflow: visible; }
   .hero-title .italic { margin-left: 0; }
