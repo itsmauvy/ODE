@@ -532,7 +532,7 @@ body {
 .main-img {
   object-fit: contain;
   object-position: center center;
-  padding: 36px;
+  padding: 48px;
 }
 .hover-img {
   object-fit: cover;
