@@ -320,20 +320,42 @@
       const img  = scene.querySelector('.ab-story__img img');
       const text = scene.querySelector('.ab-story__text');
 
-      // parallax on image
+      // pin each scene for scroll-driven effect
+      ScrollTrigger.create({
+        trigger: scene,
+        start: 'top top',
+        end: '+=80%',
+        pin: true,
+        pinSpacing: true,
+      });
+
+      // image: scale in slightly as scene enters, parallax while pinned
       gsap.fromTo(img,
-        { yPercent: -8 },
-        { yPercent: 8, ease: 'none',
-          scrollTrigger: { trigger: scene, start: 'top bottom', end: 'bottom top', scrub: true }
+        { scale: 1.12, yPercent: -4 },
+        { scale: 1.0,  yPercent: 4, ease: 'none',
+          scrollTrigger: { trigger: scene, start: 'top bottom', end: 'bottom top', scrub: 1.2 }
         }
       );
 
-      // text fade in + slight rise
-      gsap.to(text, {
-        opacity: 1, y: 0, duration: 1, ease: 'power2.out',
-        scrollTrigger: { trigger: scene, start: 'top 60%', once: true }
+      // text: scrub-driven — slides in from bottom, stays, then fades out top
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: scene,
+          start: 'top top',
+          end: '+=80%',
+          scrub: 1,
+        }
       });
-      gsap.set(text, { y: 30 });
+      tl.fromTo(text,
+        { opacity: 0, y: 60 },
+        { opacity: 1, y: 0,  ease: 'power2.out', duration: 0.4 }
+      )
+      .to(text,
+        { opacity: 1, y: 0, duration: 0.3 }
+      )
+      .to(text,
+        { opacity: 0, y: -40, ease: 'power2.in', duration: 0.3 }
+      );
     });
 
     /* ── generic fade-up ── */
