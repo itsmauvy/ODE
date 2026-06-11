@@ -328,6 +328,65 @@
 }
 .ab-products__cta { text-align: center; }
 
+/* ── RESPONSIVE ── */
+
+/* Laptop */
+@media (max-width: 1199px) {
+  .ab-hero__inner { padding: 0 60px 60px; }
+  .ab-statement { padding: 100px 60px 110px; }
+  .ab-spread__text { padding: 60px 60px 60px 52px; }
+  .ab-nature { padding: 90px 60px 0; }
+  .ab-values { padding: 80px 60px 100px; }
+  .ab-products { padding: 100px 60px; }
+}
+
+/* iPad */
+@media (max-width: 1023px) {
+  .ab-hero { min-height: 580px; }
+  .ab-hero__inner { padding: 0 40px 52px; }
+  .ab-statement { padding: 80px 40px 90px; }
+  .ab-spread { grid-template-columns: 1fr; min-height: auto; }
+  .ab-spread__img { height: 56vw; min-height: 300px; }
+  .ab-spread__text { padding: 56px 40px; }
+  .ab-nature { padding: 72px 40px 0; }
+  .ab-nature__header { flex-direction: column; gap: 16px; }
+  .ab-nature__grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    height: auto;
+  }
+  .ab-nature__item--a { grid-row: span 1; }
+  .ab-nature__item--d { grid-column: span 1; }
+  .ab-nature__item { height: 260px; }
+  .ab-values { padding: 72px 40px 90px; }
+  .ab-values__grid { grid-template-columns: 1fr; gap: 48px; }
+  .ab-values__item { border-right: none; border-bottom: 1px solid #e8e0d8; padding: 0 0 48px; margin-right: 0; }
+  .ab-values__item:last-child { border-bottom: none; padding-bottom: 0; }
+  .ab-products { padding: 80px 40px; }
+  .ab-products__row { grid-template-columns: repeat(2, 1fr); }
+  .ab-closing { height: 72vh; }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .ab-hero { min-height: 480px; margin-top: 60px; }
+  .ab-hero__inner { padding: 0 20px 44px; }
+  .ab-hero__title { font-size: clamp(44px, 12vw, 64px); }
+  .ab-statement { padding: 60px 20px 72px; }
+  .ab-statement__quote { font-size: clamp(28px, 7vw, 40px); }
+  .ab-spread__img { height: 72vw; }
+  .ab-spread__text { padding: 44px 20px; }
+  .ab-spread__title { font-size: clamp(36px, 9vw, 52px); }
+  .ab-nature { padding: 56px 20px 0; }
+  .ab-nature__grid { grid-template-columns: 1fr 1fr; gap: 3px; }
+  .ab-nature__item { height: 200px; }
+  .ab-values { padding: 56px 20px 72px; }
+  .ab-products { padding: 56px 20px; }
+  .ab-products__row { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+  .ab-closing { height: 60vh; min-height: 360px; }
+  .ab-closing__inner { padding: 0 20px; }
+}
+
 /* ── 07. CLOSING ── */
 .ab-closing {
   position: relative;

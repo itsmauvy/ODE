@@ -384,6 +384,55 @@ body {
   transform: translateX(-50%) translateY(0);
 }
 
+/* ── RESPONSIVE ── */
+
+/* Laptop */
+@media (max-width: 1199px) {
+  .gallery { padding: 28px 20px 28px 36px; }
+  .detail { padding: 40px 36px 40px 32px; }
+  .detail-name { font-size: 44px; }
+}
+
+/* iPad */
+@media (max-width: 1023px) {
+  .main { flex-direction: column; min-height: auto; }
+  .gallery {
+    position: relative;
+    top: 0;
+    width: 100%;
+    height: auto;
+    min-height: 60vw;
+    padding: 20px 20px 16px;
+  }
+  .gallery-main { height: 54vw; min-height: 320px; flex: none; }
+  .detail {
+    width: 100%;
+    padding: 32px 28px 48px;
+    overflow-y: visible;
+  }
+  .detail-name { font-size: 40px; }
+  .bag-sidebar { width: 360px; }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .main { padding-top: 60px; }
+  .gallery {
+    min-height: auto;
+    padding: 16px 16px 12px;
+  }
+  .gallery-main { height: 72vw; min-height: 280px; }
+  .thumb { width: 60px; height: 60px; }
+  .detail { padding: 24px 16px 48px; gap: 20px; }
+  .detail-name { font-size: 32px; }
+  .detail-sub { font-size: 13px; }
+  .detail-price { font-size: 22px; }
+  .detail-desc { font-size: 14px; }
+  .btn-cart, .btn-buy { padding: 16px; font-size: 12px; }
+  .bag-sidebar { width: 100%; }
+  .info-row { gap: 16px; }
+}
+
 /* ── 컬러 드롭다운 ── */
 .color-dropdown-wrap { position: relative; margin-bottom: 4px; }
 .color-dropdown-btn {
