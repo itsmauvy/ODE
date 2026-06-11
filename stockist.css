@@ -289,3 +289,33 @@
   color: rgba(255,255,255,0.7);
   border-color: rgba(255,255,255,0.25);
 }
+
+/* ── MOBILE ── */
+@media (max-width: 767px) {
+  /* hero */
+  .st-hero { height: 52vh; min-height: 300px; margin-top: 60px; }
+  .st-hero__inner { padding: 0 20px 36px; }
+  .st-hero__title { font-size: clamp(32px, 9vw, 48px); }
+
+  /* experience */
+  .st-experience { grid-template-columns: 1fr; min-height: auto; }
+  .st-experience__img { height: 56vw; min-height: 220px; }
+  .st-experience__text { padding: 40px 20px; }
+  .st-experience__title { font-size: clamp(28px, 8vw, 40px); }
+  .st-experience__body { font-size: 14px; line-height: 2; }
+
+  /* intro */
+  .st-intro { padding: 48px 20px; }
+  .st-intro__text { font-size: clamp(20px, 6vw, 28px); }
+
+  /* store list */
+  .st-stores { padding: 40px 20px 64px; }
+  .st-card { grid-template-columns: 1fr; }
+  .st-card__map { min-height: 260px; }
+  .st-card__info { padding: 36px 20px; }
+  .st-card__name { font-size: clamp(28px, 8vw, 40px); }
+
+  /* cta */
+  .st-cta { flex-direction: column; align-items: flex-start; padding: 48px 20px; gap: 24px; }
+  .st-cta__text { font-size: clamp(22px, 7vw, 32px); }
+}
