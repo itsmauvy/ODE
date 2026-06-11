@@ -915,9 +915,34 @@ body {
 
 /* ── ABOUT ── */
 .about {
-  padding: 100px 48px;
+  padding: 100px 80px;
   position: relative;
   overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+.about-img {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 5 / 4;
+}
+.about-img img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: brightness(0.97) contrast(1.02);
+}
+.about-img::after {
+  content: '';
+  position: absolute; inset: 0;
+  pointer-events: none;
+  background-color: rgba(18, 10, 4, 0.08);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='256' height='256'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.78' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='256' height='256' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 256px;
+  opacity: 0.18;
+  mix-blend-mode: multiply;
 }
 .about-slogan {
   position: absolute;
@@ -1433,7 +1458,8 @@ body {
   .odeu-grid > .odeu-item:first-child { grid-column: span 2; height: 220px; }
   .odeu-grid > .odeu-item:first-child img { object-position: center 20%; }
   /* about */
-  .about { padding: 48px 20px; }
+  .about { padding: 48px 20px; grid-template-columns: 1fr; gap: 40px; }
+  .about-img { aspect-ratio: 4 / 3; }
   .about-slogan { font-size: 32px; }
   .about-eyebrow { font-size: 12px; }
   .about-title { font-size: 28px; }
