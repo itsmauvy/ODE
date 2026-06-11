@@ -184,8 +184,6 @@ document.querySelectorAll('.quick-add').forEach(btn => {
 
 /* ── SUMMER SWIPER ── */
 new Swiper('.summer-swiper', {
-  slidesPerView: 3,
-  spaceBetween: 3,
   loop: true,
   speed: 700,
   grabCursor: true,
@@ -193,6 +191,16 @@ new Swiper('.summer-swiper', {
     delay: 3000,
     disableOnInteraction: false,
     pauseOnMouseEnter: true,
+  },
+  breakpoints: {
+    0: {
+      slidesPerView: 1,
+      spaceBetween: 0,
+    },
+    768: {
+      slidesPerView: 3,
+      spaceBetween: 3,
+    },
   },
 });
 
