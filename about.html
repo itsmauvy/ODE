@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
@@ -17,7 +17,7 @@
   <div class="cursor-follower" id="cursor-follower"></div>
 
   <!-- HEADER -->
-  <header class="header" id="header" style="opacity:1">
+  <header class="header" id="header" style="opacity:1; --header-color:#111; --header-bg:transparent;">
     <nav class="nav-left">
       <div class="nav-item" id="nav-shop">
         <a href="shop.html" class="nav-link">SHOP</a>
@@ -66,198 +66,198 @@
     <div class="bag-footer" id="bag-footer"></div>
   </aside>
 
-  <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━
-       01. HERO — 전면 이미지
-  ━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
-  <section class="bs-hero" id="bs-hero">
-    <div class="bs-hero__img">
-      <img src="images/brand story hero.png" alt="" id="bs-hero-img" />
+  <!-- ══════════════════════════════════════
+       01. HERO — 풀스크린 타이포 히어로
+  ══════════════════════════════════════ -->
+  <section class="ab-hero">
+    <div class="ab-hero__bg">
+      <img src="images/brand story hero.png" alt="" />
     </div>
-    <div class="bs-hero__over">
-      <p class="bs-hero__label" id="bs-hero-label">BRAND STORY</p>
-      <h1 class="bs-hero__title" id="bs-hero-title">
-        <span class="bs-word">Good</span>
-        <span class="bs-word bs-word--i">Things</span><br>
-        <span class="bs-word">Worth</span>
-        <span class="bs-word">Carrying.</span>
+    <div class="ab-hero__overlay"></div>
+    <div class="ab-hero__grain"></div>
+
+    <div class="ab-hero__inner">
+      <p class="ab-hero__eyebrow">ODE · Brand Story</p>
+      <h1 class="ab-hero__title">
+        <em>Good Things</em><br>Worth Carrying.
       </h1>
+      <p class="ab-hero__desc">자연이 남긴 감각을, 가장 가까운 곳에.</p>
     </div>
-    <div class="bs-hero__scroll">
-      <span>SCROLL</span>
-      <div class="bs-hero__line"><div class="bs-hero__fill"></div></div>
+
+    <div class="ab-hero__footer">
+      <span class="ab-hero__scroll-label">SCROLL</span>
+      <div class="ab-hero__scroll-track"><div class="ab-hero__scroll-bar"></div></div>
     </div>
   </section>
 
-  <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━
-       02. INTRO — 핀 + 이미지 reveal
-  ━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
-  <section class="bs-intro" id="bs-intro">
-    <div class="bs-intro__sticky">
-      <p class="bs-intro__num">01</p>
-      <h2 class="bs-intro__headline">
-        자연이<br><em>남긴 것들</em>
-      </h2>
-      <p class="bs-intro__copy">
-        잘 익은 과일의 색과 향,<br>
-        손끝에 남는 부드러운 감촉.<br><br>
-        ODE는 자연에서 발견한 영감을<br>
-        일상 속 작은 순간에 담아냅니다.
-      </p>
-      <a href="shop.html" class="bs-link">SHOP ALL →</a>
-    </div>
-    <div class="bs-intro__frames">
-      <div class="bs-intro__frame" id="bs-frame-a">
-        <img src="images/inspired by nature.png" alt="" />
-      </div>
-      <div class="bs-intro__frame" id="bs-frame-b">
-        <img src="images/ode hero1.png" alt="" />
-      </div>
-    </div>
-  </section>
-
-  <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━
-       MARQUEE
-  ━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
-  <div class="bs-marquee" aria-hidden="true">
-    <div class="bs-marquee__track" id="bs-mq">
-      <span>POCKET BEAUTY</span><b>·</b>
-      <span>NATURE INSPIRED</span><b>·</b>
-      <span>SENSORY BEAUTY</span><b>·</b>
-      <span>GOOD THINGS WORTH CARRYING</span><b>·</b>
-      <span>EVERYDAY MOMENTS</span><b>·</b>
-      <span>SOFT TEXTURE</span><b>·</b>
-      <span>POCKET BEAUTY</span><b>·</b>
-      <span>NATURE INSPIRED</span><b>·</b>
-      <span>SENSORY BEAUTY</span><b>·</b>
-      <span>GOOD THINGS WORTH CARRYING</span><b>·</b>
-      <span>EVERYDAY MOMENTS</span><b>·</b>
-      <span>SOFT TEXTURE</span><b>·</b>
+  <!-- ══════════════════════════════════════
+       MARQUEE — 브랜드 키워드 흐름
+  ══════════════════════════════════════ -->
+  <div class="ab-marquee" aria-hidden="true">
+    <div class="ab-marquee__track">
+      <span>POCKET BEAUTY</span><span class="ab-marquee__dot">·</span>
+      <span>NATURE INSPIRED</span><span class="ab-marquee__dot">·</span>
+      <span>SENSORY BEAUTY</span><span class="ab-marquee__dot">·</span>
+      <span>GOOD THINGS WORTH CARRYING</span><span class="ab-marquee__dot">·</span>
+      <span>EVERYDAY MOMENTS</span><span class="ab-marquee__dot">·</span>
+      <span>SOFT TEXTURE</span><span class="ab-marquee__dot">·</span>
+      <span>POCKET BEAUTY</span><span class="ab-marquee__dot">·</span>
+      <span>NATURE INSPIRED</span><span class="ab-marquee__dot">·</span>
+      <span>SENSORY BEAUTY</span><span class="ab-marquee__dot">·</span>
+      <span>GOOD THINGS WORTH CARRYING</span><span class="ab-marquee__dot">·</span>
+      <span>EVERYDAY MOMENTS</span><span class="ab-marquee__dot">·</span>
+      <span>SOFT TEXTURE</span><span class="ab-marquee__dot">·</span>
     </div>
   </div>
 
-  <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━
-       03. FULLBLEED — 클립패스 reveal
-  ━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
-  <section class="bs-full" id="bs-full">
-    <div class="bs-full__clip" id="bs-full-clip">
+  <!-- ══════════════════════════════════════
+       02. STATEMENT — 브랜드 선언
+  ══════════════════════════════════════ -->
+  <section class="ab-statement">
+    <div class="ab-statement__inner">
+      <p class="ab-tag">ABOUT ODE</p>
+      <p class="ab-statement__quote">
+        잘 익은 과일의 색과 향,<br>손끝에 남는 부드러운 감촉.
+      </p>
+      <div class="ab-statement__divider"></div>
+      <p class="ab-statement__body">
+        ODE는 자연에서 발견한 영감을 일상 속<span class="pc-space"> </span><br class="mobile-br">작은 순간들에 담아냅니다.<br>
+        <br class="mobile-br">좋은 것은 늘 가까이에 있어야 하니까.
+      </p>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       03. EDITORIAL SPREAD — 이미지 + 철학
+  ══════════════════════════════════════ -->
+  <section class="ab-spread">
+    <div class="ab-spread__img ab-spread__img--full">
+      <img src="images/inspired by nature.png" alt="" />
+      <div class="ab-spread__img-caption">
+        <span class="ab-tag">01 — INSPIRED BY NATURE</span>
+        <p>자연이 남긴 것들에서<br>우리는 시작합니다.</p>
+      </div>
+    </div>
+    <div class="ab-spread__text">
+      <h2 class="ab-spread__title">
+        자연이 남긴<br><em>감각을</em>
+      </h2>
+      <p class="ab-spread__body">
+        우리는 자연이 가진 색과 향,<br>
+        그리고 손끝에 남는 감각에서 영감을 받습니다.<br><br>
+        잘 익은 과일의 생기와<br>
+        계절이 남긴 순간들을 담아<br><br>
+        언제든 곁에 둘 수 있는<br>
+        작은 뷰티 오브제를 만듭니다.
+      </p>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       04. NATURE — 풀블리드 컬렉션 비주얼
+  ══════════════════════════════════════ -->
+  <section class="ab-nature">
+    <div class="ab-nature__header">
+      <p class="ab-tag">02 — COLLECTION STORY</p>
+      <h2 class="ab-nature__title">계절의 공기,<br><em>과일의 색,</em><br>그리고 그 순간의 무드.</h2>
+    </div>
+
+    <div class="ab-nature__grid">
+      <div class="ab-nature__item ab-nature__item--a">
+        <img src="images/fig collection.jpg" alt="Late Summer" />
+        <div class="ab-nature__label">
+          <p class="ab-nature__num">LATE SUMMER</p>
+          <p class="ab-nature__desc-sm">Inspired by Fig</p>
+        </div>
+      </div>
+      <div class="ab-nature__item ab-nature__item--b">
+        <img src="images/cherry collection.jpg" alt="Velvet Dusk" />
+        <div class="ab-nature__label">
+          <p class="ab-nature__num">VELVET DUSK</p>
+          <p class="ab-nature__desc-sm">Inspired by Cherry</p>
+        </div>
+      </div>
+      <div class="ab-nature__item ab-nature__item--c">
+        <img src="images/coconut collection.jpg" alt="Sea Breeze" />
+        <div class="ab-nature__label">
+          <p class="ab-nature__num">SEA BREEZE</p>
+          <p class="ab-nature__desc-sm">Inspired by Coconut</p>
+        </div>
+      </div>
+      <div class="ab-nature__item ab-nature__item--d">
+        <img src="images/tangerine collection.jpg" alt="Golden Hour" style="object-position:center 50%;" />
+        <div class="ab-nature__label">
+          <p class="ab-nature__num">GOLDEN HOUR</p>
+          <p class="ab-nature__desc-sm">Inspired by Tangerine</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════
+       06. PRODUCTS — 제품 쇼케이스
+  ══════════════════════════════════════ -->
+  <section class="ab-products">
+    <div class="ab-products__inner">
+      <div class="ab-products__header">
+        <p class="ab-tag">GOOD THINGS WORTH CARRYING</p>
+        <h2 class="ab-products__title">언제든 곁에 두고<br><em>싶은 것들.</em></h2>
+        <p class="ab-products__sub">작지만, 하루를 바꿀 만큼 충분한 것들.</p>
+      </div>
+      <div class="ab-products__row">
+        <a class="ab-pcard" href="product.html?id=1">
+          <div class="ab-pcard__img">
+            <img src="images/ode pocket blush_close.png" alt="Pocket Blush" />
+          </div>
+          <div class="ab-pcard__info">
+            <p class="ab-pcard__name">POCKET BLUSH</p>
+            <p class="ab-pcard__sub">Soft Balm Blush</p>
+            <p class="ab-pcard__price">23,000원</p>
+          </div>
+        </a>
+        <a class="ab-pcard" href="product.html?id=2">
+          <div class="ab-pcard__img">
+            <img src="images/tint_pinkguava.png" alt="Pocket Tint" />
+          </div>
+          <div class="ab-pcard__info">
+            <p class="ab-pcard__name">POCKET TINT</p>
+            <p class="ab-pcard__sub">Dewy Lip Tint</p>
+            <p class="ab-pcard__price">18,000원</p>
+          </div>
+        </a>
+        <a class="ab-pcard" href="product.html?id=3">
+          <div class="ab-pcard__img">
+            <img src="images/ode solid perfume stick .png" alt="Solid Perfume" />
+          </div>
+          <div class="ab-pcard__info">
+            <p class="ab-pcard__name">SOLID PERFUME</p>
+            <p class="ab-pcard__sub">Pocket Perfume Stick</p>
+            <p class="ab-pcard__price">25,000원</p>
+          </div>
+        </a>
+      </div>
+      <div class="ab-products__cta">
+        <a href="shop.html" class="ab-btn">SHOP ALL PRODUCTS →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       07. CLOSING — 마지막 슬로건
+  ══════════════════════════════════════ -->
+  <section class="ab-closing">
+    <div class="ab-closing__bg">
       <img src="images/brand story last hero.png" alt="" />
     </div>
-    <div class="bs-full__text">
-      <p class="bs-full__num">02</p>
-      <h2 class="bs-full__title">
+    <div class="ab-closing__overlay"></div>
+    <div class="ab-closing__grain"></div>
+    <div class="ab-closing__inner">
+      <h2 class="ab-closing__title">
         좋은 것은<br><em>늘 가까이에</em><br>있어야 하니까.
       </h2>
-    </div>
-  </section>
-
-  <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━
-       04. COLLECTION — 가로 스크롤
-  ━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
-  <section class="bs-collection" id="bs-collection">
-    <div class="bs-collection__head">
-      <p class="bs-col__num">03</p>
-      <h2 class="bs-col__title">Collection<br><em>Story</em></h2>
-      <p class="bs-col__copy">계절의 공기, 과일의 색,<br>그리고 그 순간의 무드.</p>
-    </div>
-    <div class="bs-collection__track" id="bs-col-track">
-      <div class="bs-col__item">
-        <div class="bs-col__img"><img src="images/fig collection.jpg" alt="Fig" /></div>
-        <p class="bs-col__name">LATE SUMMER</p>
-        <p class="bs-col__sub">Inspired by Fig</p>
-      </div>
-      <div class="bs-col__item">
-        <div class="bs-col__img"><img src="images/cherry collection.jpg" alt="Cherry" /></div>
-        <p class="bs-col__name">VELVET DUSK</p>
-        <p class="bs-col__sub">Inspired by Cherry</p>
-      </div>
-      <div class="bs-col__item">
-        <div class="bs-col__img"><img src="images/coconut collection.jpg" alt="Coconut" /></div>
-        <p class="bs-col__name">SEA BREEZE</p>
-        <p class="bs-col__sub">Inspired by Coconut</p>
-      </div>
-      <div class="bs-col__item">
-        <div class="bs-col__img"><img src="images/tangerine collection.jpg" alt="Tangerine" /></div>
-        <p class="bs-col__name">GOLDEN HOUR</p>
-        <p class="bs-col__sub">Inspired by Tangerine</p>
-      </div>
-      <div class="bs-col__item">
-        <div class="bs-col__img"><img src="images/guava collection.jpg" alt="Guava" /></div>
-        <p class="bs-col__name">BLUSH GARDEN</p>
-        <p class="bs-col__sub">Inspired by Guava</p>
-      </div>
-      <div class="bs-col__item">
-        <div class="bs-col__img"><img src="images/watermelon collection.jpg" alt="Watermelon" /></div>
-        <p class="bs-col__name">SUMMER CRUSH</p>
-        <p class="bs-col__sub">Inspired by Watermelon</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━
-       05. PROMISE — 브랜드 약속
-  ━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
-  <section class="bs-promise" id="bs-promise">
-    <div class="bs-promise__label">04 — BRAND PROMISE</div>
-    <div class="bs-promise__list">
-      <div class="bs-pm__item" id="pm1">
-        <span class="bs-pm__n">01</span>
-        <div class="bs-pm__body">
-          <h3 class="bs-pm__name">Natural Ingredients</h3>
-          <p class="bs-pm__desc">자연 유래 성분만을 사용합니다.<br>피부에 부담 없이, 감각적으로.</p>
-        </div>
-      </div>
-      <div class="bs-pm__item" id="pm2">
-        <span class="bs-pm__n">02</span>
-        <div class="bs-pm__body">
-          <h3 class="bs-pm__name">Pocket-Size Beauty</h3>
-          <p class="bs-pm__desc">언제든, 어디서든 꺼낼 수 있는<br>작지만 충분한 뷰티.</p>
-        </div>
-      </div>
-      <div class="bs-pm__item" id="pm3">
-        <span class="bs-pm__n">03</span>
-        <div class="bs-pm__body">
-          <h3 class="bs-pm__name">Sensory Experience</h3>
-          <p class="bs-pm__desc">색, 향, 질감 — 모든 감각을 깨우는<br>일상의 작은 의식.</p>
-        </div>
-      </div>
-      <div class="bs-pm__item" id="pm4">
-        <span class="bs-pm__n">04</span>
-        <div class="bs-pm__body">
-          <h3 class="bs-pm__name">Eco Conscious</h3>
-          <p class="bs-pm__desc">환경을 생각한 패키지,<br>지속 가능한 아름다움.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━
-       06. PRODUCTS
-  ━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
-  <section class="bs-products">
-    <div class="bs-products__head">
-      <p class="bs-col__num">05</p>
-      <h2 class="bs-products__title">언제든 곁에 두고<br><em>싶은 것들.</em></h2>
-      <p class="bs-products__sub">작지만, 하루를 바꿀 만큼 충분한 것들.</p>
-    </div>
-    <div class="bs-products__row">
-      <a class="bs-pcard" href="product.html?id=1">
-        <div class="bs-pcard__img"><img src="images/ode pocket blush_close.png" alt="Pocket Blush" /></div>
-        <p class="bs-pcard__name">POCKET BLUSH</p>
-        <p class="bs-pcard__sub">Soft Balm Blush · 23,000원</p>
-      </a>
-      <a class="bs-pcard" href="product.html?id=2">
-        <div class="bs-pcard__img"><img src="images/tint_pinkguava.png" alt="Pocket Tint" /></div>
-        <p class="bs-pcard__name">POCKET TINT</p>
-        <p class="bs-pcard__sub">Dewy Lip Tint · 18,000원</p>
-      </a>
-      <a class="bs-pcard" href="product.html?id=3">
-        <div class="bs-pcard__img"><img src="images/ode solid perfume stick .png" alt="Solid Perfume" /></div>
-        <p class="bs-pcard__name">SOLID PERFUME</p>
-        <p class="bs-pcard__sub">Pocket Perfume Stick · 25,000원</p>
-      </a>
-    </div>
-    <div class="bs-products__cta">
-      <a href="shop.html" class="bs-btn">SHOP ALL PRODUCTS →</a>
+      <p class="ab-closing__en">Good Things Worth Carrying</p>
+      <p class="ab-closing__brand">ODE</p>
     </div>
   </section>
 
@@ -285,104 +285,63 @@
   <script src="nav.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
+  <script src="lenis-init.js"></script>
   <script>
     gsap.registerPlugin(ScrollTrigger);
 
-    /* ── cursor ── */
-    const cursor = document.getElementById('cursor');
+    /* cursor */
+    const cursor   = document.getElementById('cursor');
     const follower = document.getElementById('cursor-follower');
     let mx=0,my=0,fx=0,fy=0;
     window.addEventListener('mousemove', e => { mx=e.clientX; my=e.clientY; gsap.set(cursor,{x:mx,y:my}); });
     (function loop(){ fx+=(mx-fx)*0.15; fy+=(my-fy)*0.15; gsap.set(follower,{x:fx,y:fy}); requestAnimationFrame(loop); })();
 
-    /* ── 01 HERO 진입 애니 ── */
-    const heroTl = gsap.timeline({ delay:0.2 });
+    /* ── hero ── */
+    const heroTl = gsap.timeline({ delay: 0.3 });
     heroTl
-      .from('#bs-hero-label', { opacity:0, y:10, duration:0.6 })
-      .from('.bs-word',  { opacity:0, y:60, stagger:0.12, duration:1, ease:'power3.out' }, '-=0.2');
+      .from('.ab-hero__eyebrow', { opacity:0, y:12, duration:0.7 })
+      .from('.ab-hero__title',   { opacity:0, y:48, duration:1.1, ease:'power3.out' }, '-=0.2')
+      .from('.ab-hero__desc',    { opacity:0, y:16, duration:0.8 }, '-=0.4')
+      .from('.ab-hero__footer',  { opacity:0,        duration:0.8 }, '-=0.3');
 
-    /* 히어로 이미지 패럴렉스 */
-    gsap.to('#bs-hero-img', {
-      yPercent: 20, ease:'none',
-      scrollTrigger:{ trigger:'#bs-hero', start:'top top', end:'bottom top', scrub:true }
+    gsap.to('.ab-hero__bg img', {
+      yPercent: 22, ease:'none',
+      scrollTrigger:{ trigger:'.ab-hero', start:'top top', end:'bottom top', scrub:true }
     });
 
-    /* ── 02 INTRO — 왼쪽 고정, 오른쪽 이미지 스크롤 ── */
-    ScrollTrigger.create({
-      trigger: '#bs-intro',
-      start: 'top top',
-      end: 'bottom bottom',
-      pin: '.bs-intro__sticky',
-      pinSpacing: false,
+    /* ── marquee ── */
+    const track = document.querySelector('.ab-marquee__track');
+    const clone = track.cloneNode(true);
+    document.querySelector('.ab-marquee').appendChild(clone);
+
+    /* ── generic fade-up ── */
+    document.querySelectorAll(
+      '.ab-statement__quote, .ab-statement__body, .ab-spread__title, .ab-spread__body, .ab-nature__header, .ab-values__item, .ab-products__header, .ab-pcard, .ab-closing__title, .ab-closing__en, .ab-closing__brand'
+    ).forEach((el, i) => {
+      gsap.from(el, {
+        opacity:0, y:40, duration:0.9, ease:'power2.out',
+        scrollTrigger:{ trigger:el, start:'top 88%', once:true }
+      });
     });
 
-    /* 인트로 텍스트 페이드인 */
-    gsap.from('.bs-intro__sticky', {
-      opacity:0, x:-30, duration:1,
-      scrollTrigger:{ trigger:'#bs-intro', start:'top 80%', once:true }
+    /* ── spread image parallax ── */
+    gsap.to('.ab-spread__img img', {
+      yPercent: 10, ease:'none',
+      scrollTrigger:{ trigger:'.ab-spread', start:'top bottom', end:'bottom top', scrub:true }
     });
 
-    /* 프레임 스케일/패럴렉스 */
-    gsap.from('#bs-frame-a', {
-      clipPath:'inset(15% 0% 15% 0%)',
-      ease:'power2.out', duration:1.2,
-      scrollTrigger:{ trigger:'#bs-frame-a', start:'top 85%', once:true }
+    /* ── nature grid stagger ── */
+    gsap.from('.ab-nature__item', {
+      opacity:0, y:50, duration:0.85, stagger:0.1, ease:'power2.out',
+      scrollTrigger:{ trigger:'.ab-nature__grid', start:'top 82%', once:true }
     });
-    gsap.to('#bs-frame-a img', {
+
+    /* ── closing parallax ── */
+    gsap.to('.ab-closing__bg img', {
       yPercent:12, ease:'none',
-      scrollTrigger:{ trigger:'#bs-frame-a', start:'top bottom', end:'bottom top', scrub:true }
+      scrollTrigger:{ trigger:'.ab-closing', start:'top bottom', end:'bottom top', scrub:true }
     });
-    gsap.from('#bs-frame-b', {
-      clipPath:'inset(15% 0% 15% 0%)',
-      ease:'power2.out', duration:1.2,
-      scrollTrigger:{ trigger:'#bs-frame-b', start:'top 85%', once:true }
-    });
-    gsap.to('#bs-frame-b img', {
-      yPercent:12, ease:'none',
-      scrollTrigger:{ trigger:'#bs-frame-b', start:'top bottom', end:'bottom top', scrub:true }
-    });
-
-    /* ── 03 FULLBLEED 클립패스 열리기 ── */
-    gsap.fromTo('#bs-full-clip',
-      { clipPath:'inset(100% 0% 0% 0%)' },
-      { clipPath:'inset(0% 0% 0% 0%)', ease:'power3.inOut', duration:1.4,
-        scrollTrigger:{ trigger:'#bs-full', start:'top 70%', once:true } }
-    );
-    gsap.from('.bs-full__text', {
-      opacity:0, y:40, duration:1,
-      scrollTrigger:{ trigger:'#bs-full', start:'top 60%', once:true }
-    });
-    /* fullbleed 이미지 패럴렉스 */
-    gsap.to('#bs-full-clip img', {
-      yPercent:15, ease:'none',
-      scrollTrigger:{ trigger:'#bs-full', start:'top bottom', end:'bottom top', scrub:true }
-    });
-
-    /* ── 04 COLLECTION 헤드 ── */
-    gsap.from('.bs-collection__head', {
-      opacity:0, y:40, duration:0.9,
-      scrollTrigger:{ trigger:'#bs-collection', start:'top 80%', once:true }
-    });
-    gsap.from('.bs-col__item', {
-      opacity:0, y:50, stagger:0.1, duration:0.8, ease:'power2.out',
-      scrollTrigger:{ trigger:'#bs-col-track', start:'top 85%', once:true }
-    });
-
-    /* ── 05 PROMISE 아이템 줄 단위 진입 ── */
-    gsap.from('.bs-pm__item', {
-      opacity:0, y:32, stagger:0.15, duration:0.8, ease:'power2.out',
-      scrollTrigger:{ trigger:'#bs-promise', start:'top 78%', once:true }
-    });
-
-    /* ── 06 PRODUCTS ── */
-    gsap.from('.bs-pcard', {
-      opacity:0, y:40, stagger:0.12, duration:0.8, ease:'power2.out',
-      scrollTrigger:{ trigger:'.bs-products__row', start:'top 85%', once:true }
-    });
-
-    /* ── 마퀴 복제 ── */
-    const mq = document.getElementById('bs-mq');
-    mq.parentNode.appendChild(mq.cloneNode(true));
   </script>
 </body>
 </html>
