@@ -61,9 +61,7 @@
 
 /* ── EXPERIENCE ── */
 .st-experience {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  min-height: 60vh;
+  display: block;
 }
 .st-experience__img {
   overflow: hidden;
