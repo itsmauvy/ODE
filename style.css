@@ -1432,6 +1432,7 @@ body {
   .odeu-item.odeu-wide { grid-column: span 2; }
   .odeu-grid > .odeu-item { height: 180px; }
   .odeu-grid > .odeu-item:first-child { grid-column: span 2; height: 220px; }
+  .odeu-grid > .odeu-item:first-child img { object-position: center 20%; }
   /* about */
   .about { padding: 48px 20px; }
   .about-slogan { font-size: 32px; }

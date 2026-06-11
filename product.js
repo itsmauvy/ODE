@@ -35,7 +35,7 @@ const productData = {
     badge: 'NEW',
     desc: '코코넛 향이 은은하게 퍼지는 바디 미스트. 가볍게 뿌리면 촉촉한 수분막이 형성되어 하루 종일 부드러운 피부와 향을 유지할 수 있어요.',
     colors: [
-      { label: 'Coconut', color: '#d4c4a8', images: ['images/ode body mist 1.png', 'images/ode body mist.jpg'] },
+      { label: 'Coconut', color: '#d4c4a8', images: ['images/ode body mist 1.png', 'images/ode body mist 2.jpg'] },
     ]
   },
   '5': {
