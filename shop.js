@@ -59,7 +59,7 @@ const shopProducts = [
     price: 22000,
     badge: 'NEW',
     cat: ['all', 'new', 'body'],
-    img: 'images/ode body mist 1.png',
+    img: 'images/ode body mist_nobg.png',
     hoverImg: 'images/ode body mist 2.jpg',
     contain: true,
     colors: [],

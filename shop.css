@@ -51,7 +51,7 @@
 .shop-filter-bar {
   position: sticky;
   top: 60px;
-  z-index: 100;
+  z-index: 80;
   background: var(--white);
   border-bottom: 1px solid var(--beige-mid);
   display: flex;
@@ -160,7 +160,7 @@
 }
 .shop-card-img-wrap img.contain {
   object-fit: contain;
-  padding: 16px;
+  padding: 40px;
 }
 .card-main-img { opacity: 1; }
 .card-hover-img { opacity: 0; }
