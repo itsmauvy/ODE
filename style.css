@@ -1393,6 +1393,7 @@ body {
   .nav-search, .nav-right a[href="login.html"], .nav-right a[href="#"]:not(#bag-btn) { display: none; }
   .mobile-search-btn { display: flex; }
   /* hero */
+  .hero-img { object-position: 70% top; }
   .hero-content { left: 24px; bottom: 40px; }
   .hero-title { font-size: 36px; }
   .hero-sub { font-size: 13px; margin-bottom: 20px; }
