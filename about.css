@@ -383,7 +383,7 @@ html, body { overflow-x: hidden; }
   background: #f5f1ed;
   padding: 140px 0;
 }
-.ab-products__inner { max-width: 1200px; margin: 0 auto; padding: 0 80px; }
+.ab-products__inner { padding: 0 80px; }
 .ab-products__header { margin-bottom: 56px; }
 .ab-products__title {
   font-family: 'Gowun Batang', 'Cormorant Garamond', serif;
