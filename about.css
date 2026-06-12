@@ -381,36 +381,43 @@ html, body { overflow-x: hidden; }
 /* ── 06. PRODUCTS ── */
 .ab-products {
   background: #f5f1ed;
-  padding: 140px 80px;
+  padding: 140px 0;
 }
-.ab-products__inner { max-width: 1200px; margin: 0 auto; }
-.ab-products__header {
-  margin-bottom: 72px;
-}
-.ab-products__header .ab-tag { margin-bottom: 24px; }
+.ab-products__inner { max-width: 1200px; margin: 0 auto; padding: 0 80px; }
+.ab-products__header { margin-bottom: 56px; }
 .ab-products__title {
   font-family: 'Gowun Batang', 'Cormorant Garamond', serif;
   font-size: clamp(44px, 5vw, 64px);
   font-weight: 300; line-height: 1.15;
-  color: #111; margin-bottom: 16px;
+  color: #111;
+  text-align: left;
 }
 .ab-products__title em { font-style: normal; }
-.ab-products__sub {
-  font-family: 'Jost', sans-serif;
-  font-size: 13px; font-weight: 300;
-  letter-spacing: 0.08em; color: #999;
+
+/* ── 슬라이더 ── */
+.ab-products__slider {
+  overflow: hidden;
+  margin-bottom: 56px;
 }
-.ab-products__row {
-  display: grid; grid-template-columns: repeat(3,1fr);
-  gap: 24px; margin-bottom: 56px;
+.ab-products__track {
+  display: flex;
+  gap: 20px;
+  width: max-content;
+  animation: ab-products-scroll 28s linear infinite;
+}
+.ab-products__track:hover { animation-play-state: paused; }
+@keyframes ab-products-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 .ab-pcard {
+  flex: 0 0 260px;
   display: block; text-decoration: none; color: #111;
 }
 .ab-pcard__img {
   background: #fff;
   aspect-ratio: 3/4; overflow: hidden;
-  margin-bottom: 18px;
+  margin-bottom: 16px;
   display: flex; align-items: center; justify-content: center;
 }
 .ab-pcard__img img {
@@ -433,7 +440,7 @@ html, body { overflow-x: hidden; }
   font-family: 'Jost', sans-serif;
   font-size: 12px; font-weight: 300; color: #555;
 }
-.ab-products__cta { text-align: center; }
+.ab-products__cta { text-align: left; }
 
 /* ── RESPONSIVE ── */
 
@@ -445,7 +452,8 @@ html, body { overflow-x: hidden; }
   .ab-spread__text { padding: 60px 60px 60px 52px; }
   .ab-nature { padding: 90px 60px 0; }
   .ab-values { padding: 80px 60px 100px; }
-  .ab-products { padding: 100px 60px; }
+  .ab-products { padding: 100px 0; }
+  .ab-products__inner { padding: 0 60px; }
 }
 
 /* iPad */
@@ -475,24 +483,13 @@ html, body { overflow-x: hidden; }
   .ab-nature__grid { grid-template-columns: 1fr 1fr; grid-template-rows: 200px 200px; gap: 0; }
   .ab-nature__item { height: 200px; grid-column: auto !important; grid-row: auto !important; }
   .ab-values { padding: 56px 20px 72px; }
-  .ab-products { padding: 56px 0 56px 20px; }
-  .ab-products__row {
-    display: flex;
-    overflow-x: scroll;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    gap: 12px;
-    padding-right: 20px;
-    scrollbar-width: none;
-    margin-bottom: 40px;
-  }
-  .ab-products__row::-webkit-scrollbar { display: none; }
-  .ab-pcard { flex: 0 0 68%; scroll-snap-align: start; }
+  .ab-products { padding: 56px 0; }
+  .ab-products__inner { padding: 0 20px; }
+  .ab-pcard { flex: 0 0 180px; }
   .ab-nature__title { font-size: clamp(24px, 6.5vw, 32px); }
   .ab-values__title { font-size: 20px; }
   .ab-values__desc { font-size: 13px; }
   .ab-products__title { font-size: clamp(28px, 8vw, 40px); }
-  .ab-products__sub { font-size: 13px; }
   .ab-closing { height: 75vh; min-height: 460px; }
   .ab-closing__title { font-size: clamp(28px, 8vw, 40px); }
   .ab-closing__en { font-size: 13px; }
