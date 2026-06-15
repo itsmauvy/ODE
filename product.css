@@ -402,7 +402,7 @@ body {
   .gallery-main { height: 80vw; min-height: 300px; }
   .gallery-thumbs { padding: 12px 16px 4px; }
   .thumb { width: 56px; height: 56px; }
-  .detail { padding: 24px 16px 48px; gap: 20px; }
+  .detail { width: 100%; padding: 24px 16px 48px; gap: 20px; overflow-y: visible; }
   .detail-name { font-size: 32px; }
   .detail-sub { font-size: 13px; }
   .detail-price { font-size: 22px; }
