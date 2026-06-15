@@ -764,6 +764,212 @@
     }
   </style>
 
+  <!-- ── HOME SCREEN ── -->
+  <section class="screen">
+    <!-- 섹션 타이틀 -->
+    <div class="screen__top">
+      <p class="screen__num">01</p>
+      <h2 class="screen__title">Main Page</h2>
+      <p class="screen__desc">사용자가 브랜드의 감성과 분위기를 먼저 경험한 뒤,<br>자연스럽게 제품 탐색으로 이어질 수 있도록<br>콘텐츠 흐름과 정보 구조를 설계했습니다.</p>
+    </div>
+
+    <!-- 어노테이션 + 이미지 -->
+    <div class="screen__body">
+
+      <!-- 왼쪽 어노테이션 -->
+      <div class="screen__col screen__col--left">
+        <div class="sa" style="top: 100px; left: 300px;">
+          <div class="sa__label-row">
+            <p class="sa__label"><span class="sa__n">01.</span> 브랜드 첫인상 전달</p>
+            <div class="sa__arrow"></div>
+          </div>
+          <p class="sa__text">사용자가 사이트에 진입하는 순간<br>브랜드만의 감성과 분위기를 경험할 수 있도록<br>비주얼 중심의 히어로 섹션을 구성했습니다.</p>
+        </div>
+        <div class="sa" style="top: 650px; left: 300px;">
+          <div class="sa__label-row">
+            <p class="sa__label"><span class="sa__n">03.</span> 라이프스타일 속 제품 발견</p>
+            <div class="sa__arrow"></div>
+          </div>
+          <p class="sa__text">실제 사용자의 라이프스타일 이미지를 활용하고<br>이미지에 사용된 제품 정보를 함께 제공하여<br>브랜드 경험과 제품 탐색이 자연스럽게<br>이어질 수 있도록 설계했습니다.</p>
+        </div>
+      </div>
+
+      <!-- 중앙 이미지 -->
+      <div class="screen__img">
+        <img src="images/ode home.jpg" alt="ODE Main Page" />
+      </div>
+
+      <!-- 오른쪽 어노테이션 -->
+      <div class="screen__col screen__col--right">
+        <div class="sa sa--right" style="top: 300px; left: 100px;">
+          <div class="sa__label-row">
+            <div class="sa__arrow"></div>
+            <p class="sa__label"><span class="sa__n">02.</span> 제품 탐색 경험</p>
+          </div>
+          <p class="sa__text">호버 시 제품을 사용하는 모델 컷과<br>빠른 장바구니 추가 버튼을 제공하여<br>사용자가 제품 사용 모습을 직관적으로<br>확인하고 구매 행동으로 자연스럽게<br>이어질 수 있도록 설계했습니다.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <style>
+    .screen {
+      background: #f5f1ed;
+      padding: 120px 0 100px;
+    }
+    .screen__top {
+      text-align: center;
+      padding: 0 80px;
+      margin-bottom: 72px;
+    }
+    .screen__num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 15px;
+      font-weight: 400;
+      color: #bbb;
+      letter-spacing: 0.1em;
+      margin-bottom: 10px;
+    }
+    .screen__title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(40px, 5vw, 68px);
+      font-weight: 400;
+      color: #1a1612;
+      margin-bottom: 20px;
+      line-height: 1;
+    }
+    .screen__desc {
+      font-size: 13px;
+      font-weight: 300;
+      line-height: 1.9;
+      color: #888;
+    }
+
+    /* body: 3-col */
+    .screen__body {
+      display: grid;
+      grid-template-columns: 1fr 420px 1fr;
+      align-items: start;
+      padding: 0 60px;
+      gap: 0;
+    }
+    .screen__img img {
+      width: 100%;
+      display: block;
+      box-shadow: 0 12px 48px rgba(0,0,0,0.10);
+    }
+
+    /* annotation */
+    .screen__col--left { padding-left: 80px; padding-right: 40px; position: relative; }
+    .screen__col--right { padding-left: 40px; position: relative; }
+    .screen__col .sa { position: absolute; }
+
+    .sa {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .sa__label-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .sa--right .sa__label-row {
+      flex-direction: row;
+    }
+
+    .sa__label {
+      font-size: 14px;
+      font-weight: 500;
+      color: #1a1612;
+      letter-spacing: 0.02em;
+      white-space: nowrap;
+    }
+    .sa__n {
+      font-size: 11px;
+      color: #bbb;
+      margin-right: 4px;
+    }
+    .sa__arrow {
+      flex: 0 0 auto;
+      display: flex;
+      align-items: center;
+    }
+    .sa__arrow::before {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 1px;
+      background: #b0a89e;
+    }
+    .sa__arrow::after {
+      content: '';
+      display: block;
+      width: 5px;
+      height: 5px;
+      border-top: 1px solid #b0a89e;
+      border-right: 1px solid #b0a89e;
+      transform: rotate(45deg);
+      margin-left: -3px;
+    }
+    .sa--right .sa__arrow::before {
+      order: 2;
+    }
+    .sa--right .sa__arrow::after {
+      order: 1;
+      transform: rotate(-135deg);
+      margin-left: 0;
+      margin-right: -3px;
+    }
+    .sa__text {
+      font-size: 13px;
+      font-weight: 300;
+      line-height: 1.9;
+      color: #888;
+    }
+
+    .screen--bs { background: #fff; }
+
+    @media (max-width: 900px) {
+      .screen__body { grid-template-columns: 1fr; padding: 0 24px; }
+      .screen__col--left, .screen__col--right { display: none; }
+      .screen__top { padding: 0 24px; }
+    }
+  </style>
+
+  <!-- ── BRAND STORY SCREEN ── -->
+  <section class="screen screen--bs">
+    <div class="screen__top">
+      <p class="screen__num">02</p>
+      <h2 class="screen__title">Brand Story</h2>
+      <p class="screen__desc">브랜드의 철학과 감성을 직접 경험할 수 있도록<br>스토리텔링 중심의 페이지로 구성했습니다.</p>
+    </div>
+    <div class="screen__body">
+      <div class="screen__col screen__col--left">
+        <div class="sa" style="top: 100px; left: 300px;">
+          <div class="sa__label-row">
+            <p class="sa__label"><span class="sa__n">01.</span> 브랜드 철학 전달</p>
+            <div class="sa__arrow"></div>
+          </div>
+          <p class="sa__text">ODE가 추구하는 가치와 브랜드 스토리를<br>감성적인 이미지와 텍스트로 풀어내어<br>사용자에게 자연스럽게 전달합니다.</p>
+        </div>
+        <div class="sa" style="top: 500px; left: 300px;">
+          <div class="sa__label-row">
+            <p class="sa__label"><span class="sa__n">02.</span> 제품 연결</p>
+            <div class="sa__arrow"></div>
+          </div>
+          <p class="sa__text">브랜드 스토리에서 자연스럽게<br>제품 탐색으로 이어지는 흐름을<br>구성하여 전환율을 높였습니다.</p>
+        </div>
+      </div>
+      <div class="screen__img">
+        <img src="images/brand story.png" alt="ODE Brand Story" />
+      </div>
+      <div class="screen__col screen__col--right"></div>
+    </div>
+  </section>
+
   <script>
     const canvas = document.getElementById('cover-grain');
     const ctx = canvas.getContext('2d');
