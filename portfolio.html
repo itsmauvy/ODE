@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ODE — Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Gowun+Batang:wght@400;700&family=Jost:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { height: 100%; }
+
+    body {
+      font-family: 'Jost', sans-serif;
+      background: #111;
+    }
+
+    /* ── COVER ── */
+    .cover {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      min-height: 600px;
+      overflow: hidden;
+    }
+
+    .cover__bg {
+      position: absolute;
+      inset: 0;
+    }
+    .cover__bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+
+    .cover__overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(0,0,0,0.08) 0%,
+        rgba(0,0,0,0.35) 100%
+      );
+      z-index: 1;
+    }
+
+    .cover__grain {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 2;
+      opacity: 0.10;
+      mix-blend-mode: overlay;
+    }
+
+    .cover__content {
+      position: absolute;
+      inset: 0;
+      z-index: 3;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 80px;
+    }
+
+    .cover__brand {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(52px, 6vw, 88px);
+      font-weight: 400;
+      line-height: 1;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+
+    .cover__title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(30px, 3.8vw, 54px);
+      font-weight: 400;
+      line-height: 1.25;
+      color: #fff;
+      margin-bottom: 24px;
+      letter-spacing: -0.01em;
+    }
+
+    .cover__meta {
+      font-size: 13px;
+      font-weight: 300;
+      color: rgba(255,255,255,0.7);
+      letter-spacing: 0.04em;
+      margin-bottom: 48px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .cover__meta .divider { opacity: 0.5; }
+
+    .cover__desc {
+      font-size: clamp(13px, 1.1vw, 15px);
+      font-weight: 300;
+      line-height: 2;
+      color: rgba(255,255,255,0.85);
+      margin-bottom: 64px;
+      max-width: 480px;
+    }
+
+    .cover__info {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .info-row {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      align-items: baseline;
+    }
+
+    .info-row__label {
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      color: #fff;
+    }
+
+    .info-row__value {
+      font-size: 14px;
+      font-weight: 300;
+      color: rgba(255,255,255,0.8);
+      letter-spacing: 0.02em;
+    }
+
+    @media (max-width: 767px) {
+      .cover__content { padding: 48px 24px; justify-content: flex-end; padding-bottom: 60px; }
+      .info-row { grid-template-columns: 130px 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── COVER ── -->
+  <section class="cover">
+    <div class="cover__bg">
+      <img src="images/ode hero1.png" alt="ODE" />
+    </div>
+    <div class="cover__overlay"></div>
+    <canvas class="cover__grain" id="cover-grain"></canvas>
+    <div class="cover__content">
+      <p class="cover__brand">ODE</p>
+      <h1 class="cover__title">매일을 위한 포켓 뷰티</h1>
+      <p class="cover__meta">
+        개인 프로젝트
+        <span class="divider">|</span>
+        기획, 디자인 100%
+      </p>
+      <p class="cover__desc">
+        언제나 가방 속에 함께하던 소중한 물건처럼,<br>
+        매일 사용하는 뷰티 아이템도<br>
+        자연스럽게 곁에 머물 수 있도록<br>
+        포켓 뷰티 브랜드 ODE를 기획했습니다.
+      </p>
+      <div class="cover__info">
+        <div class="info-row">
+          <span class="info-row__label">PERIOD</span>
+          <span class="info-row__value">5 Days</span>
+        </div>
+        <div class="info-row">
+          <span class="info-row__label">TOOLS</span>
+          <span class="info-row__value">Figma · Photoshop · AI</span>
+        </div>
+        <div class="info-row">
+          <span class="info-row__label">SCOPE OF WORK</span>
+          <span class="info-row__value">Brand Strategy · UX/UI Design · Publishing</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PROJECT OVERVIEW ── -->
+  <section class="overview">
+    <div class="overview__left">
+      <p class="overview__tag">PROJECT OVERVIEW</p>
+      <h2 class="overview__heading">왜 어떤 제품은<br>자꾸 손이 갈까?</h2>
+      <div class="overview__divider"></div>
+      <p class="overview__lead">
+        작고 귀여운 패키지.<br>
+        손이 자주 가는 사용감.<br>
+        가방에 넣고 다니고 싶은 크기.
+      </p>
+      <p class="overview__body">
+        사용자가 자연스럽게 손이 가고,<br>
+        매일 들고 다니고 싶은 뷰티 브랜드를 만들고자 했습니다.
+      </p>
+      <p class="overview__values-tag">BRAND CORE VALUES</p>
+      <div class="overview__cards">
+        <div class="overview__card">
+          <span class="card__num">01</span>
+          <p class="card__en">Desirable</p>
+          <p class="card__ko">한 번쯤<br>써보고 싶은 것</p>
+        </div>
+        <div class="overview__card">
+          <span class="card__num">02</span>
+          <p class="card__en">Portable</p>
+          <p class="card__ko">언제나<br>함께하는 것</p>
+        </div>
+        <div class="overview__card">
+          <span class="card__num">03</span>
+          <p class="card__en">Everyday</p>
+          <p class="card__ko">매일<br>손이 가는 것</p>
+        </div>
+      </div>
+    </div>
+    <div class="overview__right">
+      <img src="images/project overview.jpg" alt="ODE Project Overview" />
+    </div>
+  </section>
+
+  <style>
+    .overview {
+      display: grid;
+      grid-template-columns: 55% 45%;
+      min-height: 100vh;
+      background: #f5f0eb;
+    }
+    .overview__left {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 80px 60px 80px 80px;
+    }
+    .overview__tag {
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      color: #888;
+      margin-bottom: 28px;
+    }
+    .overview__heading {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(32px, 3.2vw, 52px);
+      font-weight: 400;
+      line-height: 1.25;
+      color: #1a1612;
+      margin-bottom: 24px;
+    }
+    .overview__divider {
+      width: 36px;
+      height: 1.5px;
+      background: #1a1612;
+      margin-bottom: 32px;
+    }
+    .overview__lead {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(18px, 1.6vw, 24px);
+      font-weight: 400;
+      line-height: 1.8;
+      color: #1a1612;
+      margin-bottom: 20px;
+    }
+    .overview__body {
+      font-size: 13px;
+      font-weight: 300;
+      line-height: 1.9;
+      color: #666;
+      margin-bottom: 56px;
+    }
+    .overview__values-tag {
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      color: #888;
+      margin-bottom: 20px;
+    }
+    .overview__cards {
+      display: flex;
+      gap: 16px;
+    }
+    .overview__card {
+      flex: 1;
+      border: 1px solid #d8d0c8;
+      border-radius: 12px;
+      padding: 24px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .card__num {
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      color: #aaa;
+    }
+    .card__en {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px;
+      font-weight: 400;
+      color: #1a1612;
+    }
+    .card__ko {
+      font-size: 12px;
+      font-weight: 300;
+      line-height: 1.8;
+      color: #666;
+    }
+    .overview__right {
+      position: relative;
+      overflow: hidden;
+    }
+    .overview__right img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+    @media (max-width: 900px) {
+      .overview { grid-template-columns: 1fr; }
+      .overview__right { height: 70vw; }
+      .overview__left { padding: 56px 24px; }
+    }
+  </style>
+
+  <!-- ── BRAND NAMING ── -->
+  <section class="naming">
+    <div class="naming__bg">
+      <img src="images/brand naming.jpg" alt="Brand Naming" />
+    </div>
+    <div class="naming__overlay"></div>
+    <div class="naming__grain"></div>
+
+    <div class="naming__label">BRAND NAMING</div>
+
+    <div class="naming__center">
+      <div class="naming__circles">
+        <div class="naming__circle">
+          <span>Ordinary</span>
+        </div>
+        <div class="naming__plus">+</div>
+        <div class="naming__circle">
+          <span>Everyday</span>
+        </div>
+      </div>
+      <div class="naming__logo">O &nbsp; D &nbsp; E</div>
+      <p class="naming__en">An ode to everyday moments.</p>
+      <p class="naming__ko">평범한 일상에 보내는 작은 찬가</p>
+    </div>
+  </section>
+
+  <style>
+    .naming {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      min-height: 600px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .naming__bg {
+      position: absolute;
+      inset: 0;
+    }
+    .naming__bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+    .naming__overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.18);
+      z-index: 1;
+    }
+    .naming__grain {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 2;
+      opacity: 0.55;
+      mix-blend-mode: overlay;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+      background-size: 200px 200px;
+    }
+    .naming__label {
+      position: absolute;
+      top: 52px;
+      left: 60px;
+      z-index: 3;
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      color: rgba(255,255,255,0.75);
+    }
+    .naming__center {
+      position: absolute;
+      inset: 0;
+      z-index: 3;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .naming__circles {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      margin-bottom: 40px;
+    }
+    .naming__circle {
+      width: clamp(180px, 22vw, 300px);
+      height: clamp(180px, 22vw, 300px);
+      border-radius: 50%;
+      border: 1.5px solid rgba(255,255,255,0.55);
+      background: rgba(87, 87, 87, 0.10);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .naming__circle span {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(24px, 3vw, 44px);
+      font-weight: 400;
+      color: #fff;
+      letter-spacing: -0.01em;
+    }
+    .naming__plus {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(28px, 3vw, 44px);
+      font-weight: 300;
+      color: rgba(255,255,255,0.8);
+    }
+    .naming__logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(36px, 5.5vw, 80px);
+      font-weight: 400;
+      letter-spacing: 0.25em;
+      color: #fff;
+      margin-bottom: 16px;
+    }
+    .naming__en {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(14px, 1.4vw, 20px);
+      font-weight: 400;
+      color: rgba(255,255,255,0.9);
+      letter-spacing: 0.02em;
+      margin-bottom: 8px;
+    }
+    .naming__ko {
+      font-size: 12px;
+      font-weight: 300;
+      color: rgba(255,255,255,0.65);
+      letter-spacing: 0.06em;
+    }
+    @media (max-width: 767px) {
+      .naming__label { top: 32px; left: 24px; }
+      .naming__circles { gap: 16px; margin-bottom: 28px; }
+      .naming__circle {
+        width: clamp(120px, 36vw, 180px);
+        height: clamp(120px, 36vw, 180px);
+      }
+    }
+  </style>
+
+  <!-- ── DESIGN SYSTEM ── -->
+  <section class="ds">
+    <div class="ds__grain"></div>
+    <p class="ds__section-label">DESIGN SYSTEM</p>
+
+    <div class="ds__body">
+      <div class="ds__left">
+        <p class="ds__col-label">TYPOGRAPHY</p>
+        <div class="ds__type-block">
+          <p class="ds__type-specimen ds__type--gowun">고운바탕</p>
+          <p class="ds__type-desc">브랜드 스토리와 국문 헤드라인에 사용하여<br>따뜻하고 감성적인 브랜드 경험을 전달합니다.</p>
+        </div>
+        <div class="ds__type-block">
+          <p class="ds__type-specimen ds__type--jost">Jost</p>
+          <p class="ds__type-desc">제품 정보와 UI 요소에 적용하여<br>높은 가독성과 직관적인 사용성을 제공합니다.</p>
+        </div>
+        <div class="ds__type-block">
+          <p class="ds__type-specimen ds__type--cormorant">Cormorant Garamond</p>
+          <p class="ds__type-desc">브랜드 로고와 영문 헤드라인에 사용하여<br>ODE만의 우아하고 정제된 무드를 표현합니다.</p>
+        </div>
+      </div>
+
+      <div class="ds__right">
+        <p class="ds__col-label">COLOR PALETTE</p>
+        <div class="ds__colors">
+          <div class="ds__color-row">
+            <div class="ds__swatch" style="background:#F5F1ED;"></div>
+            <div class="ds__color-info">
+              <p class="ds__color-name">Soft Ivory</p>
+              <p class="ds__color-hex">#F5F1ED</p>
+              <p class="ds__color-desc">브랜드의 메인 배경 컬러로,<br>깨끗하고 편안한 인상을 전달합니다.</p>
+            </div>
+          </div>
+          <div class="ds__color-row">
+            <div class="ds__swatch" style="background:#E8E0D8;"></div>
+            <div class="ds__color-info">
+              <p class="ds__color-name">Warm Beige</p>
+              <p class="ds__color-hex">#E8E0D8</p>
+              <p class="ds__color-desc">부드럽고 자연스러운 무드를 더하는<br>서브 베이지 컬러입니다.</p>
+            </div>
+          </div>
+          <div class="ds__color-row">
+            <div class="ds__swatch" style="background:#8D775F;"></div>
+            <div class="ds__color-info">
+              <p class="ds__color-name">Mocha Beige</p>
+              <p class="ds__color-hex">#8D775F</p>
+              <p class="ds__color-desc">ODE만의 따뜻하고 감성적인 분위기를 표현하는<br>시그니처 컬러입니다.</p>
+            </div>
+          </div>
+          <div class="ds__color-row">
+            <div class="ds__swatch" style="background:#5C4F45;"></div>
+            <div class="ds__color-info">
+              <p class="ds__color-name">Deep Taupe</p>
+              <p class="ds__color-hex">#5C4F45</p>
+              <p class="ds__color-desc">텍스트와 강조 요소에 사용되는 컬러로<br>브랜드의 안정감과 깊이를 더합니다.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .ds {
+      position: relative;
+      background: #312829;
+      padding: 80px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    .ds__grain {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 1;
+      opacity: 0.55;
+      mix-blend-mode: overlay;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+      background-size: 200px 200px;
+    }
+    .ds__section-label {
+      position: relative;
+      z-index: 2;
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      color: rgba(255,255,255,0.45);
+      margin-bottom: 60px;
+    }
+    .ds__body {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      flex: 1;
+      align-items: start;
+    }
+    .ds__col-label {
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      color: rgba(255,255,255,0.45);
+      margin-bottom: 40px;
+    }
+    .ds__type-block { margin-bottom: 48px; }
+    .ds__type-specimen {
+      color: #fff;
+      line-height: 1;
+      margin-bottom: 16px;
+    }
+    .ds__type--gowun {
+      font-family: 'Gowun Batang', serif;
+      font-size: clamp(40px, 5vw, 72px);
+      font-weight: 400;
+    }
+    .ds__type--jost {
+      font-family: 'Jost', sans-serif;
+      font-size: clamp(36px, 4.5vw, 66px);
+      font-weight: 700;
+    }
+    .ds__type--cormorant {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(28px, 3.5vw, 52px);
+      font-weight: 400;
+    }
+    .ds__type-desc {
+      font-size: 13px;
+      font-weight: 300;
+      line-height: 1.8;
+      color: rgba(255,255,255,0.55);
+    }
+    .ds__colors {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+    .ds__color-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 24px;
+    }
+    .ds__swatch {
+      flex: 0 0 110px;
+      height: 110px;
+      border-radius: 4px;
+    }
+    .ds__color-info { padding-top: 4px; }
+    .ds__color-name {
+      font-size: 13px;
+      font-weight: 500;
+      color: #fff;
+      margin-bottom: 4px;
+      letter-spacing: 0.02em;
+    }
+    .ds__color-hex {
+      font-size: 12px;
+      font-weight: 300;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 8px;
+      letter-spacing: 0.05em;
+    }
+    .ds__color-desc {
+      font-size: 12px;
+      font-weight: 300;
+      line-height: 1.8;
+      color: rgba(255,255,255,0.5);
+    }
+    @media (max-width: 900px) {
+      .ds { padding: 56px 24px; }
+      .ds__body { grid-template-columns: 1fr; gap: 56px; }
+      .ds__swatch { flex: 0 0 80px; height: 80px; }
+    }
+  </style>
+
+  <!-- ── UX/UI ── -->
+  <section class="uxui">
+    <div class="uxui__left">
+      <p class="uxui__tag">RESPONSIVE WEB DESIGN</p>
+      <h2 class="uxui__heading">모든 화면에서<br>같은 브랜드 경험을</h2>
+      <div class="uxui__divider"></div>
+      <p class="uxui__body">
+        PC와 모바일 환경 모두를 고려한<br>
+        반응형 웹사이트로 설계했습니다.<br><br>
+        어떤 디바이스에서도 ODE의 감성과<br>
+        브랜드 무드가 일관되게 전달될 수 있도록<br>
+        화면 구성을 최적화했습니다.
+      </p>
+      <div class="uxui__pills">
+        <span class="uxui__pill">PC</span>
+        <span class="uxui__pill">Mobile</span>
+        <span class="uxui__pill">Responsive Layout</span>
+        <span class="uxui__pill">Publishing</span>
+      </div>
+    </div>
+    <div class="uxui__right">
+      <div class="uxui__mockups">
+        <img class="uxui__mockup-laptop" src="images/laptop mockup.png" alt="ODE Laptop Mockup" />
+        <img class="uxui__mockup-mobile" src="images/mobile home.png" alt="ODE Mobile Home" />
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .uxui {
+      display: grid;
+      grid-template-columns: 32% 68%;
+      min-height: 100vh;
+      background: #f5f1ed;
+    }
+    .uxui__left {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 80px 60px 80px 80px;
+    }
+    .uxui__tag {
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      color: #aaa;
+      margin-bottom: 28px;
+    }
+    .uxui__heading {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(30px, 2.8vw, 46px);
+      font-weight: 400;
+      line-height: 1.3;
+      color: #1a1612;
+      margin-bottom: 24px;
+    }
+    .uxui__divider {
+      width: 36px;
+      height: 1.5px;
+      background: #1a1612;
+      margin-bottom: 32px;
+    }
+    .uxui__body {
+      font-size: 13px;
+      font-weight: 300;
+      line-height: 2;
+      color: #666;
+      margin-bottom: 40px;
+    }
+    .uxui__pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .uxui__pill {
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      color: #5c4f45;
+      border: 1px solid #c8bfb5;
+      border-radius: 100px;
+      padding: 6px 16px;
+    }
+    .uxui__right {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 60px 0 60px 0;
+    }
+    .uxui__mockups {
+      display: flex;
+      align-items: flex-end;
+      gap: 0px;
+      width: 100%;
+      height: 70vh;
+      justify-content: flex-start;
+    }
+    .uxui__mockup-laptop {
+      height: 100%;
+      width: auto;
+      object-fit: contain;
+      display: block;
+    }
+    .uxui__mockup-mobile {
+      height: 65%;
+      width: auto;
+      object-fit: contain;
+      display: block;
+      margin-left: -150px;
+    }
+    @media (max-width: 900px) {
+      .uxui { grid-template-columns: 1fr; }
+      .uxui__right { padding: 40px 24px; }
+      .uxui__left { padding: 56px 24px; }
+    }
+  </style>
+
+  <script>
+    const canvas = document.getElementById('cover-grain');
+    const ctx = canvas.getContext('2d');
+
+    function resize() {
+      canvas.width  = canvas.offsetWidth;
+      canvas.height = canvas.offsetHeight;
+    }
+
+    function drawGrain() {
+      const w = canvas.width;
+      const h = canvas.height;
+      const imageData = ctx.createImageData(w, h);
+      const data = imageData.data;
+      for (let i = 0; i < data.length; i += 4) {
+        const v = (Math.random() * 255) | 0;
+        data[i] = data[i+1] = data[i+2] = v;
+        data[i+3] = 255;
+      }
+      ctx.putImageData(imageData, 0, 0);
+      requestAnimationFrame(drawGrain);
+    }
+
+    resize();
+    window.addEventListener('resize', resize);
+    drawGrain();
+  </script>
+
+</body>
+</html>
