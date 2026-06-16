@@ -169,6 +169,94 @@
 .shop-card:hover .shop-card-img-wrap img {
   transform: scale(1.04);
 }
+
+/* multi-slide hover (auto-slide between model cuts) */
+.card-hover-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+}
+.card-hover-slide-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.card-hover-slide-img.contain {
+  object-fit: contain;
+  padding: 40px;
+}
+.shop-card:hover .card-hover-slide.slide-0 {
+  animation: cardSlideOut 3.4s ease forwards;
+}
+.shop-card:hover .card-hover-slide.slide-1 {
+  animation: cardSlideIn 3.4s ease forwards;
+}
+@keyframes cardSlideOut {
+  0%, 42%   { opacity: 1; }
+  58%, 100% { opacity: 0; }
+}
+@keyframes cardSlideIn {
+  0%, 42%   { opacity: 0; }
+  58%, 100% { opacity: 1; }
+}
+
+.card-hover-overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 12px;
+  background: linear-gradient(to top, rgba(0,0,0,0.45), rgba(0,0,0,0));
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.shop-card:hover .card-hover-overlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+.card-hover-name {
+  font-family: 'Jost', sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  color: var(--white);
+  line-height: 1.4;
+}
+.card-hover-name em {
+  font-style: normal;
+  font-weight: 500;
+}
+.card-quick-add {
+  flex-shrink: 0;
+  font-family: 'Jost', sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  color: var(--text);
+  background: var(--white);
+  border: none;
+  border-radius: 100px;
+  padding: 8px 12px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.card-quick-add:hover {
+  background: var(--text);
+  color: var(--white);
+}
+.card-quick-add.added {
+  background: #8b6955;
+  color: var(--white);
+}
 .shop-card-badge {
   position: absolute;
   top: 12px;

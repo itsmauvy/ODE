@@ -9,8 +9,12 @@ const shopProducts = [
     badge: '',
     cat: ['all', 'best', 'face'],
     img: 'images/ode pocket blush_close.png',
-    hoverImg: 'images/fig mousse_hover.png',
     contain: true,
+    hoverContain: true,
+    hoverSlides: [
+      { img: 'images/fig mousse_hover.png',   label: 'Fig Mousse',  price: 23000 },
+      { img: 'images/fig mousse hover 2.jpg', label: 'Cherry Kiss', price: 23000 },
+    ],
     colors: [
       { label: 'Fig Mousse',   color: '#c47a7a' },
       { label: 'Coconut Butter', color: '#d4a882' },
@@ -155,11 +159,27 @@ function renderGrid() {
     const badgeHtml = p.badge
       ? `<span class="shop-card-badge${p.badge === 'NEW' ? ' new-badge' : ''}">${p.badge}</span>`
       : '';
+    let hoverHtml = '';
+    if (p.hoverSlides && p.hoverSlides.length) {
+      hoverHtml = p.hoverSlides.map((s, i) => `
+        <div class="card-hover-slide slide-${i}">
+          <img src="${s.img}" alt="${p.name} - ${s.label}" loading="lazy" class="card-hover-slide-img${p.hoverContain ? ' contain' : ''}" />
+          <div class="card-hover-overlay">
+            <span class="card-hover-name">${p.name} <em>${s.label}</em></span>
+            <button class="card-quick-add" type="button"
+              data-id="${p.id}" data-name="${p.name}" data-color="${s.label}" data-price="${s.price}" data-img="${s.img}">
+              ADD TO CART
+            </button>
+          </div>
+        </div>`).join('');
+    } else if (p.hoverImg) {
+      hoverHtml = `<img src="${p.hoverImg}" alt="${p.name}" loading="lazy" class="card-hover-img${p.hoverContain ? ' contain' : ''}" />`;
+    }
     return `
       <a class="shop-card" href="product.html?id=${p.id}">
         <div class="shop-card-img-wrap"${p.cardBg ? ` style="background:${p.cardBg}"` : ''}>
           <img src="${p.img}" alt="${p.name}" loading="lazy" class="card-main-img${p.contain ? ' contain' : ''}"${p.imgPadding ? ` style="padding:${p.imgPadding}"` : ''} />
-          ${p.hoverImg ? `<img src="${p.hoverImg}" alt="${p.name}" loading="lazy" class="card-hover-img${p.hoverContain ? ' contain' : ''}" />` : ''}
+          ${hoverHtml}
           ${badgeHtml}
         </div>
         <div class="shop-card-name">${p.name}</div>
@@ -185,6 +205,32 @@ document.querySelectorAll('.filter-pill').forEach(btn => {
 sortEl.addEventListener('change', () => {
   activeSort = sortEl.value;
   renderGrid();
+});
+
+/* quick add to cart (event delegation, works for re-rendered cards) */
+gridEl.addEventListener('click', (e) => {
+  const btn = e.target.closest('.card-quick-add');
+  if (!btn) return;
+  e.preventDefault();
+  e.stopPropagation();
+
+  cartAdd({
+    key: `${btn.dataset.id}-${btn.dataset.color}`,
+    id: btn.dataset.id,
+    name: btn.dataset.name,
+    color: btn.dataset.color,
+    price: Number(btn.dataset.price),
+    img: btn.dataset.img,
+    qty: 1,
+  });
+
+  const original = btn.textContent;
+  btn.textContent = 'ADDED';
+  btn.classList.add('added');
+  setTimeout(() => {
+    btn.textContent = original;
+    btn.classList.remove('added');
+  }, 1200);
 });
 
 /* init */
