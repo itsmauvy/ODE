@@ -175,12 +175,19 @@ function renderGrid() {
     } else if (p.hoverImg) {
       hoverHtml = `<img src="${p.hoverImg}" alt="${p.name}" loading="lazy" class="card-hover-img${p.hoverContain ? ' contain' : ''}" />`;
     }
+    const wished = wishHas(p.id);
+    const wishBtnHtml = `
+        <button class="shop-card-wish${wished ? ' active' : ''}" data-id="${p.id}" type="button" aria-label="관심상품">
+          <svg class="heart-line" viewBox="0 0 24 24" fill="none"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" stroke="#9e6878" stroke-width="1.4"/></svg>
+          <svg class="heart-fill" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" fill="#9e6878"/></svg>
+        </button>`;
     return `
       <a class="shop-card" href="product.html?id=${p.id}">
         <div class="shop-card-img-wrap"${p.cardBg ? ` style="background:${p.cardBg}"` : ''}>
           <img src="${p.img}" alt="${p.name}" loading="lazy" class="card-main-img${p.contain ? ' contain' : ''}"${p.imgPadding ? ` style="padding:${p.imgPadding}"` : ''} />
           ${hoverHtml}
           ${badgeHtml}
+          ${wishBtnHtml}
         </div>
         <div class="shop-card-name">${p.name}</div>
         <div class="shop-card-sub">${p.sub}</div>
@@ -231,6 +238,16 @@ gridEl.addEventListener('click', (e) => {
     btn.textContent = original;
     btn.classList.remove('added');
   }, 1200);
+});
+
+/* wishlist toggle on cards */
+gridEl.addEventListener('click', (e) => {
+  const wb = e.target.closest('.shop-card-wish');
+  if (!wb) return;
+  e.preventDefault();
+  e.stopPropagation();
+  const added = wishToggle(wb.dataset.id);
+  wb.classList.toggle('active', added);
 });
 
 /* init */

@@ -163,6 +163,7 @@ function renderBag() {
       <span class="bag-subtotal-amt">${selTotal.toLocaleString()}원</span>
     </div>
     <p class="bag-note">*배송비 및 할인은 결제 시 적용됩니다.</p>
+    <a class="bag-viewcart" href="cart.html">VIEW CART →</a>
     <button class="bag-checkout" onclick="location.href='checkout.html'" ${selCount === 0 ? 'disabled style="opacity:0.4;cursor:not-allowed"' : ''}>CHECKOUT</button>`;
 }
 

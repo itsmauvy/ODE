@@ -272,6 +272,28 @@
 .shop-card-badge.new-badge {
   background: #8b6955;
 }
+/* wishlist heart on card */
+.shop-card-wish {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(250,248,246,0.9);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 4;
+  transition: transform 0.18s, background 0.18s;
+}
+.shop-card-wish:hover { transform: scale(1.12); background: #fff; }
+.shop-card-wish svg { width: 17px; height: 17px; pointer-events: none; }
+.shop-card-wish .heart-fill { display: none; }
+.shop-card-wish.active .heart-line { display: none; }
+.shop-card-wish.active .heart-fill { display: block; }
 .shop-card-name {
   font-family: 'Jost', sans-serif;
   font-size: 14px;

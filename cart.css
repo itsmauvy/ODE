@@ -331,6 +331,23 @@
   transition: background 0.2s;
 }
 .bag-checkout:hover { background: #5c4f45; }
+.bag-viewcart {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 10px;
+  background: transparent;
+  color: #2b2420;
+  border: 1px solid #2b2420;
+  border-radius: 30px;
+  font-family: 'Jost', sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.16em;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+.bag-viewcart:hover { background: #2b2420; color: #faf8f6; }
 
 /* ── RESPONSIVE ── */
 @media (max-width: 480px) {

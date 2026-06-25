@@ -304,3 +304,14 @@ document.getElementById('btn-cart').addEventListener('click', () => {
 document.getElementById('btn-buy').addEventListener('click', () => {
   showToast('바로구매 페이지로 이동합니다.');
 });
+
+/* ── 관심상품(위시리스트) ── */
+const wishBtn = document.getElementById('detail-wish');
+if (wishBtn) {
+  if (wishHas(id)) wishBtn.classList.add('active');
+  wishBtn.addEventListener('click', () => {
+    const added = wishToggle(id);
+    wishBtn.classList.toggle('active', added);
+    showToast(added ? '관심상품에 추가했어요.' : '관심상품에서 제거했어요.');
+  });
+}

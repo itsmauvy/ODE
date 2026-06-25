@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WISHLIST — ODE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="cart.css" />
+  <link rel="stylesheet" href="shop.css" />
+  <link rel="stylesheet" href="wishlist.css" />
+</head>
+<body>
+
+  <!-- CURSOR -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursor-follower"></div>
+
+  <!-- HEADER -->
+  <header class="header" id="header" style="opacity:1">
+    <nav class="nav-left">
+      <div class="nav-item" id="nav-shop">
+        <a href="shop.html" class="nav-link">SHOP</a>
+      </div>
+      <a href="about.html" class="nav-link">ABOUT</a>
+      <a href="stockist.html" class="nav-link">STORE</a>
+      <a href="board.html" class="nav-link">BOARD</a>
+    </nav>
+    <a href="index.html" class="logo">
+      <img src="images/ode logo.png" alt="ODE" />
+    </a>
+    <nav class="nav-right">
+      <a href="wishlist.html" class="nav-link">WISH</a>
+      <a href="login.html" class="nav-link">LOGIN</a>
+      <a href="cart.html" class="nav-link">BAG (<span class="bag-count-el">0</span>)</a>
+    </nav>
+    <button class="hamburger" id="hamburger" aria-label="메뉴">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="shop.html" class="mobile-menu-link">SHOP</a>
+    <a href="about.html" class="mobile-menu-link">ABOUT</a>
+    <a href="stockist.html" class="mobile-menu-link">STORE</a>
+    <a href="wishlist.html" class="mobile-menu-link">WISHLIST</a>
+    <a href="board.html" class="mobile-menu-link">BOARD</a>
+    <a href="login.html" class="mobile-menu-link">LOGIN</a>
+  </div>
+
+  <!-- WISHLIST -->
+  <main class="wishpage">
+    <div class="wishpage-head">
+      <p class="wishpage-eyebrow">SAVED FOR LATER</p>
+      <h1 class="wishpage-title">My <em>Wishlist</em></h1>
+      <p class="wishpage-count" id="wish-count"></p>
+    </div>
+
+    <section class="shop-grid-section">
+      <div class="shop-grid" id="wish-grid"></div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-logo">ODE</div>
+      <div class="footer-links">
+        <a href="#">이용약관</a>
+        <a href="#">개인정보처리방침</a>
+        <a href="#">고객센터</a>
+        <a href="about.html">브랜드 소개</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 ODE. All rights reserved.</p>
+      <div class="footer-sns">
+        <a href="#">INSTAGRAM</a>
+        <a href="#">NAVER</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="cart.js"></script>
+  <script src="wish.js"></script>
+  <script src="wishlist.js"></script>
+</body>
+</html>
